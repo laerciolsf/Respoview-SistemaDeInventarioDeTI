@@ -1,0 +1,14 @@
+O que o sistema vai fazer:
+O Sistema vai permitir gerenciar com facilidade e segurança o inventario de equipamentos de informática do Grupo Mallon.
+
+Como o vai ser o sistema:
+1. O sistema deve armazenar todos os itens cadastrados em um banco de dados Oracle.
+2. O sistema permitira que qualquer item seja consultado individualmente.
+3. O sistema devera ter filtros de departamento e loja para as consultas de itens.
+4. Todos os usuários devem conseguir consultar os dados do inventario e utilizar os filtros.
+5. Somente usuários administradores conseguirão cadastrar ou alterar itens do inventario.
+6. O sistema deve ter uma opção para exibir os relatórios na tela.
+7. Deve ser possível imprimir os relatórios a partir dos sistema.
+8. O sistema deve rodar em Windows 10 e Windows 11.
+9. O sistema só devera funcionar dentro da rede da empresa.
+10. O sistema deve ter um histórico com os itens que foram removidos e o motivo da remoção.
