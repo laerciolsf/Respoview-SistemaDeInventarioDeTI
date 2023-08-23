@@ -15,4 +15,4 @@ Como o vai ser o sistema:
 11. O O sistema deve armazenar os segintes dados de cada item do inventario: Usuário(a), Qtde, Equipamento, Tipo, Fabricante, Modelo, Processador, Memória, Qtde de HD/SSD, SO e Valor Estimado
 
 
-Teste 123
+Teste 12
