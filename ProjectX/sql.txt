@@ -1,0 +1,31 @@
+CREATE TABLE `mallon_bd`.`itens` (
+  `id` INT NOT NULL,
+  `usuarioResponsavel` VARCHAR(45) NULL,
+  `nomeEquipamento` VARCHAR(45) NOT NULL,
+  `quantidade` VARCHAR(45) NULL,
+  `tipo` VARCHAR(45) NULL,
+  `fabricante` VARCHAR(45) NULL,
+  `modelo` VARCHAR(45) NULL,
+  `processador` VARCHAR(45) NULL,
+  `memoria` VARCHAR(45) NULL,
+  `hd_ssd` VARCHAR(45) NULL,
+  `sistemaOperacional` VARCHAR(45) NULL,
+  `valorEstimado` DOUBLE NOT NULL,
+  `idLoja` INT NOT NULL,
+  `idDepartamento` INT NOT NULL,
+  PRIMARY KEY (`id`));
+
+
+CREATE TABLE `mallon_bd`.`departamentos` (
+  `idDepartamento` INT NOT NULL,
+  `departamento` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idDepartamento`));
+
+
+CREATE TABLE `mallon_bd`.`lojas` (
+  `idLoja` INT NOT NULL,
+  `loja` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idLoja`));
+
+
+
