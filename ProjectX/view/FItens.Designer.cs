@@ -36,6 +36,26 @@
             botaoPesquisar = new Button();
             textBox1 = new TextBox();
             tabDados = new TabPage();
+            textBox11 = new TextBox();
+            textBox10 = new TextBox();
+            textBox9 = new TextBox();
+            textBox8 = new TextBox();
+            textBox7 = new TextBox();
+            textBox6 = new TextBox();
+            textBox5 = new TextBox();
+            textBox4 = new TextBox();
+            textBox3 = new TextBox();
+            textBox2 = new TextBox();
+            label13 = new Label();
+            label12 = new Label();
+            label11 = new Label();
+            label10 = new Label();
+            label9 = new Label();
+            label8 = new Label();
+            label7 = new Label();
+            label6 = new Label();
+            label5 = new Label();
+            label4 = new Label();
             txtNome = new TextBox();
             label3 = new Label();
             txtId = new TextBox();
@@ -48,26 +68,10 @@
             botaoFechar = new ToolStripButton();
             panel1 = new Panel();
             label1 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            label7 = new Label();
-            label8 = new Label();
-            label9 = new Label();
-            label10 = new Label();
-            label11 = new Label();
-            label12 = new Label();
-            label13 = new Label();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            textBox7 = new TextBox();
-            textBox8 = new TextBox();
-            textBox9 = new TextBox();
-            textBox10 = new TextBox();
-            textBox11 = new TextBox();
+            textBox12 = new TextBox();
+            label14 = new Label();
+            textBox13 = new TextBox();
+            label15 = new Label();
             tabControl1.SuspendLayout();
             tabPesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -144,6 +148,10 @@
             // 
             // tabDados
             // 
+            tabDados.Controls.Add(textBox13);
+            tabDados.Controls.Add(label15);
+            tabDados.Controls.Add(textBox12);
+            tabDados.Controls.Add(label14);
             tabDados.Controls.Add(textBox11);
             tabDados.Controls.Add(textBox10);
             tabDados.Controls.Add(textBox9);
@@ -176,11 +184,182 @@
             tabDados.Text = "Dados Gerais";
             tabDados.UseVisualStyleBackColor = true;
             // 
+            // textBox11
+            // 
+            textBox11.Location = new Point(171, 358);
+            textBox11.Name = "textBox11";
+            textBox11.Size = new Size(72, 23);
+            textBox11.TabIndex = 40;
+            // 
+            // textBox10
+            // 
+            textBox10.Location = new Point(171, 330);
+            textBox10.Name = "textBox10";
+            textBox10.Size = new Size(258, 23);
+            textBox10.TabIndex = 39;
+            // 
+            // textBox9
+            // 
+            textBox9.Location = new Point(171, 301);
+            textBox9.Name = "textBox9";
+            textBox9.Size = new Size(72, 23);
+            textBox9.TabIndex = 38;
+            // 
+            // textBox8
+            // 
+            textBox8.Location = new Point(171, 268);
+            textBox8.Name = "textBox8";
+            textBox8.Size = new Size(258, 23);
+            textBox8.TabIndex = 37;
+            // 
+            // textBox7
+            // 
+            textBox7.Location = new Point(171, 239);
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(258, 23);
+            textBox7.TabIndex = 36;
+            // 
+            // textBox6
+            // 
+            textBox6.Location = new Point(171, 210);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(258, 23);
+            textBox6.TabIndex = 35;
+            // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(171, 181);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(258, 23);
+            textBox5.TabIndex = 34;
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(171, 154);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(258, 23);
+            textBox4.TabIndex = 33;
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(171, 126);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(72, 23);
+            textBox3.TabIndex = 32;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(171, 98);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(258, 23);
+            textBox2.TabIndex = 31;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(43, 78);
+            label13.Name = "label13";
+            label13.Size = new Size(118, 15);
+            label13.TabIndex = 30;
+            label13.Text = "Usuario Responsavel:";
+            label13.TextAlign = ContentAlignment.TopRight;
+            label13.Click += label13_Click;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(46, 338);
+            label12.Name = "label12";
+            label12.Size = new Size(118, 15);
+            label12.TabIndex = 29;
+            label12.Text = "Sistema Operacional:";
+            label12.TextAlign = ContentAlignment.TopRight;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(76, 366);
+            label11.Name = "label11";
+            label11.Size = new Size(88, 15);
+            label11.TabIndex = 28;
+            label11.Text = "Valor Estimado:";
+            label11.TextAlign = ContentAlignment.TopRight;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(99, 189);
+            label10.Name = "label10";
+            label10.Size = new Size(65, 15);
+            label10.TabIndex = 27;
+            label10.Text = "Fabricante:";
+            label10.TextAlign = ContentAlignment.TopRight;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(113, 218);
+            label9.Name = "label9";
+            label9.Size = new Size(51, 15);
+            label9.TabIndex = 26;
+            label9.Text = "Modelo:";
+            label9.TextAlign = ContentAlignment.TopRight;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(90, 247);
+            label8.Name = "label8";
+            label8.Size = new Size(74, 15);
+            label8.TabIndex = 25;
+            label8.Text = "Processador:";
+            label8.TextAlign = ContentAlignment.TopRight;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(103, 276);
+            label7.Name = "label7";
+            label7.Size = new Size(58, 15);
+            label7.TabIndex = 24;
+            label7.Text = "Memória:";
+            label7.TextAlign = ContentAlignment.TopRight;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(31, 307);
+            label6.Name = "label6";
+            label6.Size = new Size(133, 15);
+            label6.TabIndex = 23;
+            label6.Text = "Quantidade de HD/SSD:";
+            label6.TextAlign = ContentAlignment.TopRight;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(131, 162);
+            label5.Name = "label5";
+            label5.Size = new Size(33, 15);
+            label5.TabIndex = 22;
+            label5.Text = "Tipo:";
+            label5.TextAlign = ContentAlignment.TopRight;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(92, 134);
+            label4.Name = "label4";
+            label4.Size = new Size(72, 15);
+            label4.TabIndex = 21;
+            label4.Text = "Quantidade:";
+            label4.TextAlign = ContentAlignment.TopRight;
+            // 
             // txtNome
             // 
             txtNome.Location = new Point(171, 70);
             txtNome.Name = "txtNome";
-            txtNome.Size = new Size(355, 23);
+            txtNome.Size = new Size(258, 23);
             txtNome.TabIndex = 20;
             // 
             // label3
@@ -292,176 +471,38 @@
             label1.Text = "Cadastro de Itens";
             label1.Click += label1_Click;
             // 
-            // label4
+            // textBox12
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(92, 134);
-            label4.Name = "label4";
-            label4.Size = new Size(72, 15);
-            label4.TabIndex = 21;
-            label4.Text = "Quantidade:";
-            label4.TextAlign = ContentAlignment.TopRight;
+            textBox12.Location = new Point(581, 41);
+            textBox12.Name = "textBox12";
+            textBox12.Size = new Size(193, 23);
+            textBox12.TabIndex = 42;
             // 
-            // label5
+            // label14
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(131, 162);
-            label5.Name = "label5";
-            label5.Size = new Size(33, 15);
-            label5.TabIndex = 22;
-            label5.Text = "Tipo:";
-            label5.TextAlign = ContentAlignment.TopRight;
+            label14.AutoSize = true;
+            label14.Location = new Point(496, 49);
+            label14.Name = "label14";
+            label14.Size = new Size(86, 15);
+            label14.TabIndex = 41;
+            label14.Text = "Departamento:";
+            label14.Click += label14_Click;
             // 
-            // label6
+            // textBox13
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(31, 307);
-            label6.Name = "label6";
-            label6.Size = new Size(133, 15);
-            label6.TabIndex = 23;
-            label6.Text = "Quantidade de HD/SSD:";
-            label6.TextAlign = ContentAlignment.TopRight;
+            textBox13.Location = new Point(581, 70);
+            textBox13.Name = "textBox13";
+            textBox13.Size = new Size(193, 23);
+            textBox13.TabIndex = 44;
             // 
-            // label7
+            // label15
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(103, 276);
-            label7.Name = "label7";
-            label7.Size = new Size(58, 15);
-            label7.TabIndex = 24;
-            label7.Text = "Memória:";
-            label7.TextAlign = ContentAlignment.TopRight;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(90, 247);
-            label8.Name = "label8";
-            label8.Size = new Size(74, 15);
-            label8.TabIndex = 25;
-            label8.Text = "Processador:";
-            label8.TextAlign = ContentAlignment.TopRight;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(113, 218);
-            label9.Name = "label9";
-            label9.Size = new Size(51, 15);
-            label9.TabIndex = 26;
-            label9.Text = "Modelo:";
-            label9.TextAlign = ContentAlignment.TopRight;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(99, 189);
-            label10.Name = "label10";
-            label10.Size = new Size(65, 15);
-            label10.TabIndex = 27;
-            label10.Text = "Fabricante:";
-            label10.TextAlign = ContentAlignment.TopRight;
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new Point(76, 366);
-            label11.Name = "label11";
-            label11.Size = new Size(88, 15);
-            label11.TabIndex = 28;
-            label11.Text = "Valor Estimado:";
-            label11.TextAlign = ContentAlignment.TopRight;
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new Point(46, 338);
-            label12.Name = "label12";
-            label12.Size = new Size(118, 15);
-            label12.TabIndex = 29;
-            label12.Text = "Sistema Operacional:";
-            label12.TextAlign = ContentAlignment.TopRight;
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Location = new Point(43, 78);
-            label13.Name = "label13";
-            label13.Size = new Size(118, 15);
-            label13.TabIndex = 30;
-            label13.Text = "Usuario Responsavel:";
-            label13.TextAlign = ContentAlignment.TopRight;
-            label13.Click += label13_Click;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(171, 98);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(355, 23);
-            textBox2.TabIndex = 31;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(171, 126);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(72, 23);
-            textBox3.TabIndex = 32;
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(171, 154);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(355, 23);
-            textBox4.TabIndex = 33;
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(171, 181);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(355, 23);
-            textBox5.TabIndex = 34;
-            // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(171, 210);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(355, 23);
-            textBox6.TabIndex = 35;
-            // 
-            // textBox7
-            // 
-            textBox7.Location = new Point(171, 239);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(355, 23);
-            textBox7.TabIndex = 36;
-            // 
-            // textBox8
-            // 
-            textBox8.Location = new Point(171, 268);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(355, 23);
-            textBox8.TabIndex = 37;
-            // 
-            // textBox9
-            // 
-            textBox9.Location = new Point(171, 301);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(72, 23);
-            textBox9.TabIndex = 38;
-            // 
-            // textBox10
-            // 
-            textBox10.Location = new Point(171, 330);
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(355, 23);
-            textBox10.TabIndex = 39;
-            // 
-            // textBox11
-            // 
-            textBox11.Location = new Point(171, 358);
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(72, 23);
-            textBox11.TabIndex = 40;
+            label15.AutoSize = true;
+            label15.Location = new Point(550, 78);
+            label15.Name = "label15";
+            label15.Size = new Size(32, 15);
+            label15.TabIndex = 43;
+            label15.Text = "Loja:";
             // 
             // FItens
             // 
@@ -528,5 +569,9 @@
         private Label label6;
         private Label label5;
         private Label label4;
+        private TextBox textBox13;
+        private Label label15;
+        private TextBox textBox12;
+        private Label label14;
     }
 }
