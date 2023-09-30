@@ -1,6 +1,6 @@
 ﻿namespace ProjectX
 {
-    partial class Form1
+    partial class FMenu
     {
         /// <summary>
         ///  Required designer variable.
@@ -32,6 +32,7 @@
             inventarioToolStripMenuItem = new ToolStripMenuItem();
             cadastroToolStripMenuItem = new ToolStripMenuItem();
             historicoToolStripMenuItem = new ToolStripMenuItem();
+            rToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -40,13 +41,13 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { inventarioToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 24);
+            menuStrip1.Size = new Size(453, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
             // inventarioToolStripMenuItem
             // 
-            inventarioToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cadastroToolStripMenuItem, historicoToolStripMenuItem });
+            inventarioToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cadastroToolStripMenuItem, historicoToolStripMenuItem, rToolStripMenuItem });
             inventarioToolStripMenuItem.Name = "inventarioToolStripMenuItem";
             inventarioToolStripMenuItem.Size = new Size(72, 20);
             inventarioToolStripMenuItem.Text = "Inventario";
@@ -54,23 +55,30 @@
             // cadastroToolStripMenuItem
             // 
             cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            cadastroToolStripMenuItem.Size = new Size(122, 22);
+            cadastroToolStripMenuItem.Size = new Size(180, 22);
             cadastroToolStripMenuItem.Text = "Cadastro";
             // 
             // historicoToolStripMenuItem
             // 
             historicoToolStripMenuItem.Name = "historicoToolStripMenuItem";
-            historicoToolStripMenuItem.Size = new Size(122, 22);
+            historicoToolStripMenuItem.Size = new Size(180, 22);
             historicoToolStripMenuItem.Text = "Historico";
             // 
-            // Form1
+            // rToolStripMenuItem
+            // 
+            rToolStripMenuItem.Name = "rToolStripMenuItem";
+            rToolStripMenuItem.Size = new Size(180, 22);
+            rToolStripMenuItem.Text = "Relatórios";
+            rToolStripMenuItem.Click += rToolStripMenuItem_Click;
+            // 
+            // FMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(453, 266);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
-            Name = "Form1";
+            Name = "FMenu";
             Text = "RespoView";
             Load += Form1_Load;
             menuStrip1.ResumeLayout(false);
@@ -85,5 +93,6 @@
         private ToolStripMenuItem inventarioToolStripMenuItem;
         private ToolStripMenuItem cadastroToolStripMenuItem;
         private ToolStripMenuItem historicoToolStripMenuItem;
+        private ToolStripMenuItem rToolStripMenuItem;
     }
 }
