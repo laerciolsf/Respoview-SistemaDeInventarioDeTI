@@ -1,3 +1,5 @@
+using ProjectX.view;
+
 namespace ProjectX
 {
     public partial class FMenu : Form
@@ -16,5 +18,12 @@ namespace ProjectX
         {
 
         }
+
+        private void itensToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FItens tela = new FItens();
+            tela.Show();
+        }
     }
+
 }

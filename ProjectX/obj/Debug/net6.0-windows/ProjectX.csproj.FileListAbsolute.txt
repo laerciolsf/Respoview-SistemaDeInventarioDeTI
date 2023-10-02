@@ -15,3 +15,21 @@ C:\Users\laerc\OneDrive\Documentos\Desenvolvimento de Sistemas\ProjectX\obj\Debu
 C:\Users\laerc\OneDrive\Documentos\Desenvolvimento de Sistemas\ProjectX\obj\Debug\net6.0-windows\ProjectX.pdb
 C:\Users\laerc\OneDrive\Documentos\Desenvolvimento de Sistemas\ProjectX\obj\Debug\net6.0-windows\ProjectX.genruntimeconfig.cache
 C:\Users\laerc\OneDrive\Documentos\Desenvolvimento de Sistemas\ProjectX\obj\Debug\net6.0-windows\ref\ProjectX.dll
+D:\ProjetoToyota\ProjectX\bin\Debug\net6.0-windows\ProjectX.exe
+D:\ProjetoToyota\ProjectX\bin\Debug\net6.0-windows\ProjectX.deps.json
+D:\ProjetoToyota\ProjectX\bin\Debug\net6.0-windows\ProjectX.runtimeconfig.json
+D:\ProjetoToyota\ProjectX\bin\Debug\net6.0-windows\ProjectX.dll
+D:\ProjetoToyota\ProjectX\bin\Debug\net6.0-windows\ProjectX.pdb
+D:\ProjetoToyota\ProjectX\obj\Debug\net6.0-windows\ProjectX.csproj.AssemblyReference.cache
+D:\ProjetoToyota\ProjectX\obj\Debug\net6.0-windows\ProjectX.FMenu.resources
+D:\ProjetoToyota\ProjectX\obj\Debug\net6.0-windows\ProjectX.view.FItens.resources
+D:\ProjetoToyota\ProjectX\obj\Debug\net6.0-windows\ProjectX.csproj.GenerateResource.cache
+D:\ProjetoToyota\ProjectX\obj\Debug\net6.0-windows\ProjectX.GeneratedMSBuildEditorConfig.editorconfig
+D:\ProjetoToyota\ProjectX\obj\Debug\net6.0-windows\ProjectX.AssemblyInfoInputs.cache
+D:\ProjetoToyota\ProjectX\obj\Debug\net6.0-windows\ProjectX.AssemblyInfo.cs
+D:\ProjetoToyota\ProjectX\obj\Debug\net6.0-windows\ProjectX.csproj.CoreCompileInputs.cache
+D:\ProjetoToyota\ProjectX\obj\Debug\net6.0-windows\ProjectX.dll
+D:\ProjetoToyota\ProjectX\obj\Debug\net6.0-windows\refint\ProjectX.dll
+D:\ProjetoToyota\ProjectX\obj\Debug\net6.0-windows\ProjectX.pdb
+D:\ProjetoToyota\ProjectX\obj\Debug\net6.0-windows\ProjectX.genruntimeconfig.cache
+D:\ProjetoToyota\ProjectX\obj\Debug\net6.0-windows\ref\ProjectX.dll
