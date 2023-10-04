@@ -80,6 +80,31 @@ namespace ProjectX.controller
             }
 
         }
+        public DataTable buscaPorNome(string nome)
+        {
+            try
+            {
+                DataTable tabela = new DataTable();
+                string sql = "select * from itens where nomeEquipamento like @nomeEquipamento;";
+
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@nomeEquipamento", nome);
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+
+                MySqlDataAdapter da = new MySqlDataAdapter(executacmd);
+                da.Fill(tabela);
+
+                conexao.Close();
+                return tabela;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao consultar: " + ex.Message);
+                return null;
+            }
+
+        }
 
     }
 }

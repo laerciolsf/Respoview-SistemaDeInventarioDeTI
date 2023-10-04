@@ -84,7 +84,7 @@ namespace ProjectX.view
             txtUsuarioResponsavel.Focus();
         }
         //testandoi
-       
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -135,9 +135,9 @@ namespace ProjectX.view
 
             limparCampos();
             desabilitarCampos();
-           // dataGridView1.DataSource = controller.listarProdutos();
+            dataGridView1.DataSource = controller.listarItens();
 
-           // tabControl1.SelectedTab = tabPesquisa;
+            // tabControl1.SelectedTab = tabPesquisa;
 
         }
 
@@ -145,8 +145,22 @@ namespace ProjectX.view
         {
             habilitarCampos();
             limparCampos();
-           // status = "inserindo";
+            // status = "inserindo";
             tabControl1.SelectedTab = tabDados;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string nome = "%" + textBox1.Text + "%";
+
+            itensController controller = new itensController();
+            dataGridView1.DataSource = controller.buscaPorNome(nome);
+
+            if (dataGridView1.Rows.Count == 0)
+            {
+                MessageBox.Show("Nenhum produto encontrado com este nome");
+                dataGridView1.DataSource = controller.listarItens();
+            }
         }
     }
 }

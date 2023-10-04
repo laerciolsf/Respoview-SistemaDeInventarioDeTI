@@ -139,6 +139,7 @@
             button1.Text = "Pesquisar";
             button1.TextImageRelation = TextImageRelation.ImageBeforeText;
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // botaoPesquisar
             // 
