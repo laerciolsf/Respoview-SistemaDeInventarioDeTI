@@ -27,5 +27,8 @@ CREATE TABLE `mallon_bd`.`lojas` (
   `loja` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idLoja`));
 
+ALTER TABLE `mallon_bd`.`itens` 
+CHANGE COLUMN `id` `id` INT NOT NULL AUTO_INCREMENT ;
+
 
 

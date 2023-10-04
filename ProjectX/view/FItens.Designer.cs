@@ -33,23 +33,24 @@
             tabPesquisa = new TabPage();
             dataGridView1 = new DataGridView();
             panel2 = new Panel();
+            button1 = new Button();
             botaoPesquisar = new Button();
             textBox1 = new TextBox();
             tabDados = new TabPage();
-            textBox13 = new TextBox();
+            txtLoja = new TextBox();
             label15 = new Label();
-            textBox12 = new TextBox();
+            txtDpto = new TextBox();
             label14 = new Label();
-            textBox11 = new TextBox();
-            textBox10 = new TextBox();
-            textBox9 = new TextBox();
-            textBox8 = new TextBox();
-            textBox7 = new TextBox();
-            textBox6 = new TextBox();
-            textBox5 = new TextBox();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
+            txtValor = new TextBox();
+            txtSo = new TextBox();
+            txtHd = new TextBox();
+            txtMemoria = new TextBox();
+            txtProcessador = new TextBox();
+            txtModelo = new TextBox();
+            txtFabricante = new TextBox();
+            txtTipo = new TextBox();
+            txtQtde = new TextBox();
+            txtNome = new TextBox();
             label13 = new Label();
             label12 = new Label();
             label11 = new Label();
@@ -60,7 +61,7 @@
             label6 = new Label();
             label5 = new Label();
             label4 = new Label();
-            txtNome = new TextBox();
+            txtUsuarioResponsavel = new TextBox();
             label3 = new Label();
             txtId = new TextBox();
             label2 = new Label();
@@ -72,7 +73,6 @@
             botaoFechar = new ToolStripButton();
             panel1 = new Panel();
             label1 = new Label();
-            button1 = new Button();
             tabControl1.SuspendLayout();
             tabPesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -128,6 +128,18 @@
             panel2.Size = new Size(781, 66);
             panel2.TabIndex = 0;
             // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.Location = new Point(672, 13);
+            button1.Name = "button1";
+            button1.Size = new Size(92, 33);
+            button1.TabIndex = 2;
+            button1.Text = "Pesquisar";
+            button1.TextImageRelation = TextImageRelation.ImageBeforeText;
+            button1.UseVisualStyleBackColor = true;
+            // 
             // botaoPesquisar
             // 
             botaoPesquisar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
@@ -150,20 +162,20 @@
             // 
             // tabDados
             // 
-            tabDados.Controls.Add(textBox13);
+            tabDados.Controls.Add(txtLoja);
             tabDados.Controls.Add(label15);
-            tabDados.Controls.Add(textBox12);
+            tabDados.Controls.Add(txtDpto);
             tabDados.Controls.Add(label14);
-            tabDados.Controls.Add(textBox11);
-            tabDados.Controls.Add(textBox10);
-            tabDados.Controls.Add(textBox9);
-            tabDados.Controls.Add(textBox8);
-            tabDados.Controls.Add(textBox7);
-            tabDados.Controls.Add(textBox6);
-            tabDados.Controls.Add(textBox5);
-            tabDados.Controls.Add(textBox4);
-            tabDados.Controls.Add(textBox3);
-            tabDados.Controls.Add(textBox2);
+            tabDados.Controls.Add(txtValor);
+            tabDados.Controls.Add(txtSo);
+            tabDados.Controls.Add(txtHd);
+            tabDados.Controls.Add(txtMemoria);
+            tabDados.Controls.Add(txtProcessador);
+            tabDados.Controls.Add(txtModelo);
+            tabDados.Controls.Add(txtFabricante);
+            tabDados.Controls.Add(txtTipo);
+            tabDados.Controls.Add(txtQtde);
+            tabDados.Controls.Add(txtNome);
             tabDados.Controls.Add(label13);
             tabDados.Controls.Add(label12);
             tabDados.Controls.Add(label11);
@@ -174,7 +186,7 @@
             tabDados.Controls.Add(label6);
             tabDados.Controls.Add(label5);
             tabDados.Controls.Add(label4);
-            tabDados.Controls.Add(txtNome);
+            tabDados.Controls.Add(txtUsuarioResponsavel);
             tabDados.Controls.Add(label3);
             tabDados.Controls.Add(txtId);
             tabDados.Controls.Add(label2);
@@ -186,12 +198,12 @@
             tabDados.Text = "Dados Gerais";
             tabDados.UseVisualStyleBackColor = true;
             // 
-            // textBox13
+            // txtLoja
             // 
-            textBox13.Location = new Point(581, 70);
-            textBox13.Name = "textBox13";
-            textBox13.Size = new Size(193, 23);
-            textBox13.TabIndex = 44;
+            txtLoja.Location = new Point(581, 70);
+            txtLoja.Name = "txtLoja";
+            txtLoja.Size = new Size(193, 23);
+            txtLoja.TabIndex = 44;
             // 
             // label15
             // 
@@ -202,12 +214,12 @@
             label15.TabIndex = 43;
             label15.Text = "Loja:";
             // 
-            // textBox12
+            // txtDpto
             // 
-            textBox12.Location = new Point(581, 41);
-            textBox12.Name = "textBox12";
-            textBox12.Size = new Size(193, 23);
-            textBox12.TabIndex = 42;
+            txtDpto.Location = new Point(581, 41);
+            txtDpto.Name = "txtDpto";
+            txtDpto.Size = new Size(193, 23);
+            txtDpto.TabIndex = 42;
             // 
             // label14
             // 
@@ -219,75 +231,75 @@
             label14.Text = "Departamento:";
             label14.Click += label14_Click;
             // 
-            // textBox11
+            // txtValor
             // 
-            textBox11.Location = new Point(171, 358);
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(72, 23);
-            textBox11.TabIndex = 40;
+            txtValor.Location = new Point(171, 358);
+            txtValor.Name = "txtValor";
+            txtValor.Size = new Size(72, 23);
+            txtValor.TabIndex = 40;
             // 
-            // textBox10
+            // txtSo
             // 
-            textBox10.Location = new Point(171, 330);
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(258, 23);
-            textBox10.TabIndex = 39;
+            txtSo.Location = new Point(171, 330);
+            txtSo.Name = "txtSo";
+            txtSo.Size = new Size(258, 23);
+            txtSo.TabIndex = 39;
             // 
-            // textBox9
+            // txtHd
             // 
-            textBox9.Location = new Point(171, 301);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(72, 23);
-            textBox9.TabIndex = 38;
+            txtHd.Location = new Point(171, 301);
+            txtHd.Name = "txtHd";
+            txtHd.Size = new Size(72, 23);
+            txtHd.TabIndex = 38;
             // 
-            // textBox8
+            // txtMemoria
             // 
-            textBox8.Location = new Point(171, 268);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(258, 23);
-            textBox8.TabIndex = 37;
+            txtMemoria.Location = new Point(171, 268);
+            txtMemoria.Name = "txtMemoria";
+            txtMemoria.Size = new Size(258, 23);
+            txtMemoria.TabIndex = 37;
             // 
-            // textBox7
+            // txtProcessador
             // 
-            textBox7.Location = new Point(171, 239);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(258, 23);
-            textBox7.TabIndex = 36;
+            txtProcessador.Location = new Point(171, 239);
+            txtProcessador.Name = "txtProcessador";
+            txtProcessador.Size = new Size(258, 23);
+            txtProcessador.TabIndex = 36;
             // 
-            // textBox6
+            // txtModelo
             // 
-            textBox6.Location = new Point(171, 210);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(258, 23);
-            textBox6.TabIndex = 35;
+            txtModelo.Location = new Point(171, 210);
+            txtModelo.Name = "txtModelo";
+            txtModelo.Size = new Size(258, 23);
+            txtModelo.TabIndex = 35;
             // 
-            // textBox5
+            // txtFabricante
             // 
-            textBox5.Location = new Point(171, 181);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(258, 23);
-            textBox5.TabIndex = 34;
+            txtFabricante.Location = new Point(171, 181);
+            txtFabricante.Name = "txtFabricante";
+            txtFabricante.Size = new Size(258, 23);
+            txtFabricante.TabIndex = 34;
             // 
-            // textBox4
+            // txtTipo
             // 
-            textBox4.Location = new Point(171, 154);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(258, 23);
-            textBox4.TabIndex = 33;
+            txtTipo.Location = new Point(171, 154);
+            txtTipo.Name = "txtTipo";
+            txtTipo.Size = new Size(258, 23);
+            txtTipo.TabIndex = 33;
             // 
-            // textBox3
+            // txtQtde
             // 
-            textBox3.Location = new Point(171, 126);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(72, 23);
-            textBox3.TabIndex = 32;
+            txtQtde.Location = new Point(171, 126);
+            txtQtde.Name = "txtQtde";
+            txtQtde.Size = new Size(72, 23);
+            txtQtde.TabIndex = 32;
             // 
-            // textBox2
+            // txtNome
             // 
-            textBox2.Location = new Point(171, 98);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(258, 23);
-            textBox2.TabIndex = 31;
+            txtNome.Location = new Point(171, 98);
+            txtNome.Name = "txtNome";
+            txtNome.Size = new Size(258, 23);
+            txtNome.TabIndex = 31;
             // 
             // label13
             // 
@@ -390,12 +402,12 @@
             label4.Text = "Quantidade:";
             label4.TextAlign = ContentAlignment.TopRight;
             // 
-            // txtNome
+            // txtUsuarioResponsavel
             // 
-            txtNome.Location = new Point(171, 70);
-            txtNome.Name = "txtNome";
-            txtNome.Size = new Size(258, 23);
-            txtNome.TabIndex = 20;
+            txtUsuarioResponsavel.Location = new Point(171, 70);
+            txtUsuarioResponsavel.Name = "txtUsuarioResponsavel";
+            txtUsuarioResponsavel.Size = new Size(258, 23);
+            txtUsuarioResponsavel.TabIndex = 20;
             // 
             // label3
             // 
@@ -414,6 +426,7 @@
             txtId.Name = "txtId";
             txtId.Size = new Size(72, 23);
             txtId.TabIndex = 19;
+            txtId.TextChanged += txtId_TextChanged;
             // 
             // label2
             // 
@@ -453,6 +466,7 @@
             botaoSalvar.Name = "botaoSalvar";
             botaoSalvar.Size = new Size(66, 37);
             botaoSalvar.Text = "Salvar";
+            botaoSalvar.Click += botaoSalvar_Click;
             // 
             // botaoExcluir
             // 
@@ -506,18 +520,6 @@
             label1.Text = "Cadastro de Itens";
             label1.Click += label1_Click;
             // 
-            // button1
-            // 
-            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(672, 13);
-            button1.Name = "button1";
-            button1.Size = new Size(92, 33);
-            button1.TabIndex = 2;
-            button1.Text = "Pesquisar";
-            button1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button1.UseVisualStyleBackColor = true;
-            // 
             // FItens
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -551,7 +553,7 @@
         private Button botaoPesquisar;
         private TextBox textBox1;
         private TabPage tabDados;
-        private TextBox txtNome;
+        private TextBox txtUsuarioResponsavel;
         private Label label3;
         private TextBox txtId;
         private Label label2;
@@ -563,16 +565,16 @@
         private ToolStripButton botaoFechar;
         private Panel panel1;
         private Label label1;
-        private TextBox textBox11;
-        private TextBox textBox10;
-        private TextBox textBox9;
-        private TextBox textBox8;
-        private TextBox textBox7;
-        private TextBox textBox6;
-        private TextBox textBox5;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
+        private TextBox txtValor;
+        private TextBox txtSo;
+        private TextBox txtHd;
+        private TextBox txtMemoria;
+        private TextBox txtProcessador;
+        private TextBox txtModelo;
+        private TextBox txtFabricante;
+        private TextBox txtTipo;
+        private TextBox txtQtde;
+        private TextBox txtNome;
         private Label label13;
         private Label label12;
         private Label label11;
@@ -583,9 +585,9 @@
         private Label label6;
         private Label label5;
         private Label label4;
-        private TextBox textBox13;
+        private TextBox txtLoja;
         private Label label15;
-        private TextBox textBox12;
+        private TextBox txtDpto;
         private Label label14;
         private Button button1;
     }
