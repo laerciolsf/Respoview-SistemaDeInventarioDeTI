@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Reflection;
+using System.Data;
 
 namespace ProjectX.controller
 {
@@ -55,5 +56,30 @@ namespace ProjectX.controller
                 MessageBox.Show("Erro ao cadastrar: " + ex.Message);
             }
         }
+        public DataTable listarItens()
+        {
+            try
+            {
+                DataTable tabela = new DataTable();
+                string sql = "select * from itens;";
+
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+
+                MySqlDataAdapter da = new MySqlDataAdapter(executacmd);
+                da.Fill(tabela);
+
+                conexao.Close();
+                return tabela;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao consultar: " + ex.Message);
+                return null;
+            }
+
+        }
+
     }
 }

@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ProjectX.view
 {
@@ -18,6 +19,72 @@ namespace ProjectX.view
         {
             InitializeComponent();
         }
+
+        public void desabilitarCampos()
+        {
+            txtId.Enabled = false;
+            txtUsuarioResponsavel.Enabled = false;
+            txtNome.Enabled = false;
+            txtQtde.Enabled = false;
+            txtTipo.Enabled = false;
+            txtFabricante.Enabled = false;
+            txtModelo.Enabled = false;
+            txtProcessador.Enabled = false;
+            txtMemoria.Enabled = false;
+            txtHd.Enabled = false;
+            txtSo.Enabled = false;
+            txtValor.Enabled = false;
+            txtLoja.Enabled = false;
+            txtDpto.Enabled = false;
+
+            //desabilita os botoes.
+            botaoSalvar.Enabled = false;
+            botaoEditar.Enabled = false;
+            botaoExcluir.Enabled = false;
+        }
+
+        public void habilitarCampos()
+        {
+            txtId.Enabled = false;
+            txtUsuarioResponsavel.Enabled = true;
+            txtNome.Enabled = true;
+            txtQtde.Enabled = true;
+            txtTipo.Enabled = true;
+            txtFabricante.Enabled = true;
+            txtModelo.Enabled = true;
+            txtProcessador.Enabled = true;
+            txtMemoria.Enabled = true;
+            txtHd.Enabled = true;
+            txtSo.Enabled = true;
+            txtValor.Enabled = true;
+            txtLoja.Enabled = true;
+            txtDpto.Enabled = true;
+
+            //habilita o botão salvar.
+            botaoSalvar.Enabled = true;
+        }
+
+        public void limparCampos()
+        {
+            txtUsuarioResponsavel.Text = String.Empty;
+            txtNome.Text = String.Empty;
+            txtQtde.Text = String.Empty;
+            txtTipo.Text = String.Empty;
+            txtFabricante.Text = String.Empty;
+            txtModelo.Text = String.Empty;
+            txtProcessador.Text = String.Empty;
+            txtMemoria.Text = String.Empty;
+            txtHd.Text = String.Empty;
+            txtSo.Text = String.Empty;
+            txtValor.Text = String.Empty;
+            txtLoja.Text = String.Empty;
+            txtDpto.Text = String.Empty;
+
+            //Trava o cursor no segundo campo.
+            txtUsuarioResponsavel.Focus();
+        }
+        //testandoi
+       
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -66,6 +133,20 @@ namespace ProjectX.view
             itensController controller = new itensController();
             controller.cadastrarItens(obj);
 
+            limparCampos();
+            desabilitarCampos();
+           // dataGridView1.DataSource = controller.listarProdutos();
+
+           // tabControl1.SelectedTab = tabPesquisa;
+
+        }
+
+        private void botaoNovo_Click(object sender, EventArgs e)
+        {
+            habilitarCampos();
+            limparCampos();
+           // status = "inserindo";
+            tabControl1.SelectedTab = tabDados;
         }
     }
 }

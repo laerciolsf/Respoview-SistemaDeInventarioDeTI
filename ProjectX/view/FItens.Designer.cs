@@ -457,6 +457,7 @@
             botaoNovo.Name = "botaoNovo";
             botaoNovo.Size = new Size(64, 37);
             botaoNovo.Text = "Novo";
+            botaoNovo.Click += botaoNovo_Click;
             // 
             // botaoSalvar
             // 
