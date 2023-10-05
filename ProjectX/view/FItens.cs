@@ -9,12 +9,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ProjectX.view
 {
+
     public partial class FItens : Form
     {
+        private string status = "";
         public FItens()
         {
             InitializeComponent();
@@ -45,6 +48,7 @@ namespace ProjectX.view
 
         public void habilitarCampos()
         {
+            txtId.Enabled = true;
             txtId.Enabled = false;
             txtUsuarioResponsavel.Enabled = true;
             txtNome.Enabled = true;
@@ -131,21 +135,36 @@ namespace ProjectX.view
             obj.idDepartamento = int.Parse(txtDpto.Text);
 
             itensController controller = new itensController();
-            controller.cadastrarItens(obj);
+            
 
+
+
+            if (status == "inserindo")
+            {
+                controller.cadastrarItens(obj);
+                status = "";
+            }
+            else if (status == "alterando")
+            {
+                obj.id = int.Parse(txtId.Text);
+                controller.alterarItens(obj);
+                status = "";
+
+            }
             limparCampos();
             desabilitarCampos();
             dataGridView1.DataSource = controller.listarItens();
 
-            // tabControl1.SelectedTab = tabPesquisa;
+            tabControl1.SelectedTab = tabPesquisa;
 
         }
 
         private void botaoNovo_Click(object sender, EventArgs e)
         {
-            habilitarCampos();
             limparCampos();
-            // status = "inserindo";
+            habilitarCampos();
+
+            status = "inserindo";
             tabControl1.SelectedTab = tabDados;
         }
 
@@ -161,6 +180,78 @@ namespace ProjectX.view
                 MessageBox.Show("Nenhum produto encontrado com este nome");
                 dataGridView1.DataSource = controller.listarItens();
             }
+        }
+
+        private void botaoFechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void FItens_Load(object sender, EventArgs e)
+        {
+            desabilitarCampos();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //if para evitar o bug do botao novo
+            if (status == "inserindo")
+            {
+                desabilitarCampos();
+                status = "";
+            }
+
+            //Pegar os dados da grid para os campos
+            txtId.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            txtUsuarioResponsavel.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            txtNome.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            txtQtde.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            txtTipo.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            txtFabricante.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            txtModelo.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+            txtProcessador.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+            txtMemoria.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+            txtHd.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
+            txtSo.Text = dataGridView1.CurrentRow.Cells[10].Value.ToString();
+            txtValor.Text = dataGridView1.CurrentRow.Cells[11].Value.ToString();
+            txtLoja.Text = dataGridView1.CurrentRow.Cells[12].Value.ToString();
+            txtDpto.Text = dataGridView1.CurrentRow.Cells[13].Value.ToString();
+
+            //labelNomeFornecedor.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+            //habilita os botões
+            botaoEditar.Enabled = true;
+            botaoExcluir.Enabled = true;
+            //Vai para a aba de dados
+            tabControl1.SelectedTab = tabDados;
+        }
+
+        private void botaoExcluir_Click(object sender, EventArgs e)
+        {
+
+            DialogResult dialogResult =
+             MessageBox.Show
+             ("Tem certeza que deseja excluir?",
+             "Pergunta", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                //Faz a exclusão
+                Itens obj = new Itens();
+                obj.id = int.Parse(txtId.Text);
+
+                itensController controller = new itensController();
+                controller.excluirItens(obj);
+                dataGridView1.DataSource = controller.listarItens();
+                limparCampos();
+                botaoEditar.Enabled = false;
+                botaoExcluir.Enabled = false;
+                tabControl1.SelectedTab = tabPesquisa;
+            }
+        }
+
+        private void botaoEditar_Click(object sender, EventArgs e)
+        {
+            habilitarCampos();
+            status = "alterando";
         }
     }
 }

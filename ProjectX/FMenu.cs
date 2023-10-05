@@ -1,4 +1,6 @@
+using ProjectX.controller;
 using ProjectX.view;
+using System.Windows.Forms;
 
 namespace ProjectX
 {
@@ -21,6 +23,7 @@ namespace ProjectX
 
         private void itensToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
             FItens tela = new FItens();
             tela.Show();
         }

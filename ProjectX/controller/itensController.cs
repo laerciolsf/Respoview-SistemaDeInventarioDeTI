@@ -45,7 +45,7 @@ namespace ProjectX.controller
                 executacmd.Parameters.AddWithValue("@valorEstimado", obj.valorEstimado);
                 executacmd.Parameters.AddWithValue("@idLoja", obj.idLoja);
                 executacmd.Parameters.AddWithValue("@idDepartamento", obj.idDepartamento);
-                
+
                 conexao.Open();
                 executacmd.ExecuteNonQuery();
                 MessageBox.Show("Item cadastrado com sucesso");
@@ -102,6 +102,81 @@ namespace ProjectX.controller
             {
                 MessageBox.Show("Erro ao consultar: " + ex.Message);
                 return null;
+            }
+
+        }
+        public void alterarItens(Itens obj)
+        {
+            try
+            {
+
+
+                string sql = @"update itens set
+                               usuarioResponsavel = @usuarioResponsavel,
+                               nomeEquipamento = @nomeEquipamento,
+                               quantidade = @quantidade,
+                               tipo = @tipo,
+                               fabricante = @fabricante,
+                               modelo = @modelo,
+                               processador = @processador,
+                               memoria = @memoria,
+                               hd_ssd = @hd_ssd,
+                               sistemaOperacional = @sistemaOperacional,
+                               valorEstimado = @valorEstimado,
+                               idLoja = @idLoja,
+                               idDepartamento = @idDepartamento
+                               where id = @id;";
+
+
+
+
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+
+                executacmd.Parameters.AddWithValue("@usuarioResponsavel", obj.usuarioResponsavel);
+                executacmd.Parameters.AddWithValue("@nomeEquipamento", obj.nomeEquipamento);
+                executacmd.Parameters.AddWithValue("@quantidade", obj.quantidade);
+                executacmd.Parameters.AddWithValue("@tipo", obj.tipo);
+                executacmd.Parameters.AddWithValue("@fabricante", obj.fabricante);
+                executacmd.Parameters.AddWithValue("@modelo", obj.modelo);
+                executacmd.Parameters.AddWithValue("@processador", obj.processador);
+                executacmd.Parameters.AddWithValue("@memoria", obj.memoria);
+                executacmd.Parameters.AddWithValue("@hd_ssd", obj.hd_ssd);
+                executacmd.Parameters.AddWithValue("@sistemaOperacional", obj.sistemaOperacional);
+                executacmd.Parameters.AddWithValue("@valorEstimado", obj.valorEstimado);
+                executacmd.Parameters.AddWithValue("@idLoja", obj.idLoja);
+                executacmd.Parameters.AddWithValue("@idDepartamento", obj.idDepartamento);
+                executacmd.Parameters.AddWithValue("@id", obj.id);
+
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+                MessageBox.Show("Iten alterado com sucesso");
+                conexao.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao alterar: " + ex.Message);
+            }
+
+        }
+        public void excluirItens(Itens obj)
+        {
+            try
+            {
+                string sql = "delete from itens where id = @id;";
+
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@id", obj.id);
+
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+                MessageBox.Show("Item excluído com sucesso!");
+                conexao.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Aconteceu um erro: " + ex.Message);
             }
 
         }

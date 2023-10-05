@@ -116,6 +116,7 @@
             dataGridView1.ReadOnly = true;
             dataGridView1.Size = new Size(781, 331);
             dataGridView1.TabIndex = 1;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // panel2
             // 
@@ -478,6 +479,7 @@
             botaoExcluir.Name = "botaoExcluir";
             botaoExcluir.Size = new Size(70, 37);
             botaoExcluir.Text = "Excluir";
+            botaoExcluir.Click += botaoExcluir_Click;
             // 
             // botaoEditar
             // 
@@ -487,6 +489,7 @@
             botaoEditar.Name = "botaoEditar";
             botaoEditar.Size = new Size(65, 37);
             botaoEditar.Text = "Editar";
+            botaoEditar.Click += botaoEditar_Click;
             // 
             // botaoFechar
             // 
@@ -497,6 +500,7 @@
             botaoFechar.Name = "botaoFechar";
             botaoFechar.Size = new Size(70, 37);
             botaoFechar.Text = "Fechar";
+            botaoFechar.Click += botaoFechar_Click;
             // 
             // panel1
             // 
@@ -532,6 +536,7 @@
             Controls.Add(panel1);
             Name = "FItens";
             Text = "FItens";
+            Load += FItens_Load;
             tabControl1.ResumeLayout(false);
             tabPesquisa.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
