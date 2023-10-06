@@ -53,3 +53,5 @@ D:\ProjetoToyota\ProjectX\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\S
 D:\ProjetoToyota\ProjectX\obj\Debug\net6.0-windows\ProjectX.csproj.CopyComplete
 D:\ProjetoToyota\ProjectX\obj\Debug\net6.0-windows\ProjectX.view.FDpto.resources
 D:\ProjetoToyota\ProjectX\obj\Debug\net6.0-windows\ProjectX.view.FPesquisaDpto.resources
+D:\ProjetoToyota\ProjectX\obj\Debug\net6.0-windows\ProjectX.view.FLoja.resources
+D:\ProjetoToyota\ProjectX\obj\Debug\net6.0-windows\ProjectX.view.FPesquisaLoja.resources

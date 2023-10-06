@@ -1,6 +1,6 @@
 ﻿namespace ProjectX.view
 {
-    partial class FPesquisaDpto
+    partial class FPesquisaLoja
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FPesquisaDpto));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FPesquisaLoja));
             panel2 = new Panel();
             botaoCancelar = new Button();
             botaoConfirmar = new Button();
@@ -46,10 +46,10 @@
             panel2.Controls.Add(botaoCancelar);
             panel2.Controls.Add(botaoConfirmar);
             panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 306);
+            panel2.Location = new Point(0, 329);
             panel2.Name = "panel2";
-            panel2.Size = new Size(610, 60);
-            panel2.TabIndex = 5;
+            panel2.Size = new Size(613, 60);
+            panel2.TabIndex = 8;
             // 
             // botaoCancelar
             // 
@@ -59,7 +59,6 @@
             botaoCancelar.TabIndex = 1;
             botaoCancelar.Text = "Cancelar";
             botaoCancelar.UseVisualStyleBackColor = true;
-            botaoCancelar.Click += botaoCancelar_Click;
             // 
             // botaoConfirmar
             // 
@@ -69,7 +68,6 @@
             botaoConfirmar.TabIndex = 0;
             botaoConfirmar.Text = "Confirmar";
             botaoConfirmar.UseVisualStyleBackColor = true;
-            botaoConfirmar.Click += botaoConfirmar_Click;
             // 
             // GridDpto
             // 
@@ -81,9 +79,8 @@
             GridDpto.Name = "GridDpto";
             GridDpto.ReadOnly = true;
             GridDpto.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            GridDpto.Size = new Size(610, 306);
-            GridDpto.TabIndex = 4;
-            GridDpto.CellContentClick += GridDpto_CellContentClick;
+            GridDpto.Size = new Size(613, 329);
+            GridDpto.TabIndex = 7;
             // 
             // panel1
             // 
@@ -93,8 +90,8 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(610, 60);
-            panel1.TabIndex = 3;
+            panel1.Size = new Size(613, 60);
+            panel1.TabIndex = 6;
             // 
             // botaoPesquisar
             // 
@@ -106,7 +103,6 @@
             botaoPesquisar.Text = "Pesquisar";
             botaoPesquisar.TextImageRelation = TextImageRelation.ImageBeforeText;
             botaoPesquisar.UseVisualStyleBackColor = true;
-            botaoPesquisar.Click += botaoPesquisar_Click;
             // 
             // txtPesquisar
             // 
@@ -114,19 +110,17 @@
             txtPesquisar.Name = "txtPesquisar";
             txtPesquisar.Size = new Size(469, 23);
             txtPesquisar.TabIndex = 0;
-            txtPesquisar.TextChanged += txtPesquisar_TextChanged;
             // 
-            // FPesquisaDpto
+            // FPesquisaLoja
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(610, 366);
+            ClientSize = new Size(613, 389);
             Controls.Add(panel2);
             Controls.Add(GridDpto);
             Controls.Add(panel1);
-            Name = "FPesquisaDpto";
+            Name = "FPesquisaLoja";
             Text = "RespoView";
-            Load += FPesquisaDpto_Load;
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)GridDpto).EndInit();
             panel1.ResumeLayout(false);

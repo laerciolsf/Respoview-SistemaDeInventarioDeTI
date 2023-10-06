@@ -76,6 +76,7 @@
             botaoFechar = new ToolStripButton();
             panel1 = new Panel();
             label1 = new Label();
+            labelNomeLoja = new Label();
             tabControl1.SuspendLayout();
             tabPesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -167,6 +168,7 @@
             // 
             // tabDados
             // 
+            tabDados.Controls.Add(labelNomeLoja);
             tabDados.Controls.Add(labelNomeDpto);
             tabDados.Controls.Add(buttonPesquisa1);
             tabDados.Controls.Add(buttonPesquisa2);
@@ -565,6 +567,15 @@
             label1.Text = "Cadastro de Itens";
             label1.Click += label1_Click;
             // 
+            // labelNomeLoja
+            // 
+            labelNomeLoja.AutoSize = true;
+            labelNomeLoja.Location = new Point(665, 100);
+            labelNomeLoja.Name = "labelNomeLoja";
+            labelNomeLoja.Size = new Size(29, 15);
+            labelNomeLoja.TabIndex = 49;
+            labelNomeLoja.Text = "Loja";
+            // 
             // FItens
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -639,5 +650,6 @@
         private Button buttonPesquisa1;
         private Button buttonPesquisa2;
         private Label labelNomeDpto;
+        private Label labelNomeLoja;
     }
 }
