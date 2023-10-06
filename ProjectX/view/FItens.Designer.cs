@@ -535,7 +535,7 @@
             Controls.Add(toolStrip1);
             Controls.Add(panel1);
             Name = "FItens";
-            Text = "FItens";
+            Text = "RespoView";
             Load += FItens_Load;
             tabControl1.ResumeLayout(false);
             tabPesquisa.ResumeLayout(false);

@@ -31,4 +31,9 @@ ALTER TABLE `mallon_bd`.`itens`
 CHANGE COLUMN `id` `id` INT NOT NULL AUTO_INCREMENT ;
 
 
+ALTER TABLE `mallon_bd`.`departamentos` 
+CHANGE COLUMN `idDepartamento` `idDepartamento` INT NOT NULL AUTO_INCREMENT ;
+
+
+
 

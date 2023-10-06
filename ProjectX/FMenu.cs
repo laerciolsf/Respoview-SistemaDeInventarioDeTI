@@ -27,6 +27,22 @@ namespace ProjectX
             FItens tela = new FItens();
             tela.Show();
         }
+
+        private void cadastroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sobreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void departamentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FDpto tela = new FDpto();
+            tela.Show();
+        }
     }
 
 }

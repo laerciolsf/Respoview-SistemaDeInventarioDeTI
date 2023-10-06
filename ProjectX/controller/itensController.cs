@@ -109,8 +109,6 @@ namespace ProjectX.controller
         {
             try
             {
-
-
                 string sql = @"update itens set
                                usuarioResponsavel = @usuarioResponsavel,
                                nomeEquipamento = @nomeEquipamento,
@@ -126,9 +124,6 @@ namespace ProjectX.controller
                                idLoja = @idLoja,
                                idDepartamento = @idDepartamento
                                where id = @id;";
-
-
-
 
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
 

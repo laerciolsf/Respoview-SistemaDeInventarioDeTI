@@ -1,0 +1,13 @@
+  	    txtUsuarioResponsavel
+            txtNome
+            txtQtde
+            txtTipo
+            txtFabricante
+            txtModelo
+            txtProcessador
+            txtMemoria
+            txtHd
+            txtSo
+            txtValor
+            txtLoja
+            txtDpto

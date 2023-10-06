@@ -119,7 +119,6 @@ namespace ProjectX.view
         {
             Itens obj = new Itens();
 
-
             obj.usuarioResponsavel = txtUsuarioResponsavel.Text;
             obj.nomeEquipamento = txtNome.Text;
             obj.quantidade = txtQtde.Text;
@@ -135,9 +134,6 @@ namespace ProjectX.view
             obj.idDepartamento = int.Parse(txtDpto.Text);
 
             itensController controller = new itensController();
-            
-
-
 
             if (status == "inserindo")
             {
@@ -158,7 +154,6 @@ namespace ProjectX.view
             tabControl1.SelectedTab = tabPesquisa;
 
         }
-
         private void botaoNovo_Click(object sender, EventArgs e)
         {
             limparCampos();
@@ -167,7 +162,6 @@ namespace ProjectX.view
             status = "inserindo";
             tabControl1.SelectedTab = tabDados;
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             string nome = "%" + textBox1.Text + "%";

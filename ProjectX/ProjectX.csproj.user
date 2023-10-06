@@ -4,6 +4,9 @@
     <Compile Update="FMenu.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="view\FDpto.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="view\FItens.cs">
       <SubType>Form</SubType>
     </Compile>
