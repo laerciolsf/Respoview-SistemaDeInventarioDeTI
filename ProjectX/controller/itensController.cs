@@ -173,8 +173,6 @@ namespace ProjectX.controller
             {
                 MessageBox.Show("Aconteceu um erro: " + ex.Message);
             }
-
         }
-
     }
 }

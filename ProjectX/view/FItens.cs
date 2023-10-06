@@ -70,6 +70,7 @@ namespace ProjectX.view
 
         public void limparCampos()
         {
+            txtId.Text = String.Empty;
             txtUsuarioResponsavel.Text = String.Empty;
             txtNome.Text = String.Empty;
             txtQtde.Text = String.Empty;
@@ -156,9 +157,9 @@ namespace ProjectX.view
         }
         private void botaoNovo_Click(object sender, EventArgs e)
         {
-            limparCampos();
+           
             habilitarCampos();
-
+            limparCampos();
             status = "inserindo";
             tabControl1.SelectedTab = tabDados;
         }
