@@ -265,5 +265,13 @@ namespace ProjectX.view
         {
 
         }
+
+        private void buttonPesquisa2_Click(object sender, EventArgs e)
+        {
+            FPesquisaLoja pesquisa = new FPesquisaLoja();
+            pesquisa.ShowDialog();
+            txtLoja.Text = pesquisa.selecionado.id.ToString();
+            labelNomeLoja.Text = pesquisa.selecionado.loja;
+        }
     }
 }

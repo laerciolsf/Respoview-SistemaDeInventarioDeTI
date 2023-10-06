@@ -59,6 +59,7 @@
             botaoCancelar.TabIndex = 1;
             botaoCancelar.Text = "Cancelar";
             botaoCancelar.UseVisualStyleBackColor = true;
+            botaoCancelar.Click += botaoCancelar_Click;
             // 
             // botaoConfirmar
             // 
@@ -68,6 +69,7 @@
             botaoConfirmar.TabIndex = 0;
             botaoConfirmar.Text = "Confirmar";
             botaoConfirmar.UseVisualStyleBackColor = true;
+            botaoConfirmar.Click += botaoConfirmar_Click;
             // 
             // GridLoja
             // 
@@ -81,6 +83,7 @@
             GridLoja.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             GridLoja.Size = new Size(613, 329);
             GridLoja.TabIndex = 7;
+            GridLoja.CellContentClick += GridLoja_CellContentClick;
             // 
             // panel1
             // 

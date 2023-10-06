@@ -37,6 +37,7 @@
             botaoPesquisar = new Button();
             textBox1 = new TextBox();
             tabDados = new TabPage();
+            labelNomeLoja = new Label();
             labelNomeDpto = new Label();
             buttonPesquisa1 = new Button();
             buttonPesquisa2 = new Button();
@@ -76,7 +77,6 @@
             botaoFechar = new ToolStripButton();
             panel1 = new Panel();
             label1 = new Label();
-            labelNomeLoja = new Label();
             tabControl1.SuspendLayout();
             tabPesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -209,6 +209,15 @@
             tabDados.UseVisualStyleBackColor = true;
             tabDados.Click += tabDados_Click;
             // 
+            // labelNomeLoja
+            // 
+            labelNomeLoja.AutoSize = true;
+            labelNomeLoja.Location = new Point(665, 100);
+            labelNomeLoja.Name = "labelNomeLoja";
+            labelNomeLoja.Size = new Size(29, 15);
+            labelNomeLoja.TabIndex = 49;
+            labelNomeLoja.Text = "Loja";
+            // 
             // labelNomeDpto
             // 
             labelNomeDpto.AutoSize = true;
@@ -240,6 +249,7 @@
             buttonPesquisa2.TabIndex = 46;
             buttonPesquisa2.TextImageRelation = TextImageRelation.ImageBeforeText;
             buttonPesquisa2.UseVisualStyleBackColor = true;
+            buttonPesquisa2.Click += buttonPesquisa2_Click;
             // 
             // txtLoja
             // 
@@ -566,15 +576,6 @@
             label1.TabIndex = 0;
             label1.Text = "Cadastro de Itens";
             label1.Click += label1_Click;
-            // 
-            // labelNomeLoja
-            // 
-            labelNomeLoja.AutoSize = true;
-            labelNomeLoja.Location = new Point(665, 100);
-            labelNomeLoja.Name = "labelNomeLoja";
-            labelNomeLoja.Size = new Size(29, 15);
-            labelNomeLoja.TabIndex = 49;
-            labelNomeLoja.Text = "Loja";
             // 
             // FItens
             // 
