@@ -44,6 +44,9 @@ namespace ProjectX.view
             botaoSalvar.Enabled = false;
             botaoEditar.Enabled = false;
             botaoExcluir.Enabled = false;
+            buttonPesquisa1.Enabled = false;
+            buttonPesquisa2.Enabled = false;
+
         }
 
         public void habilitarCampos()
@@ -66,6 +69,8 @@ namespace ProjectX.view
 
             //habilita o botão salvar.
             botaoSalvar.Enabled = true;
+            buttonPesquisa1.Enabled = true;
+            buttonPesquisa2.Enabled = true;
         }
 
         public void limparCampos()
@@ -157,7 +162,6 @@ namespace ProjectX.view
         }
         private void botaoNovo_Click(object sender, EventArgs e)
         {
-           
             habilitarCampos();
             limparCampos();
             status = "inserindo";
@@ -172,7 +176,7 @@ namespace ProjectX.view
 
             if (dataGridView1.Rows.Count == 0)
             {
-                MessageBox.Show("Nenhum produto encontrado com este nome");
+                MessageBox.Show("Nenhum item encontrado com este nome");
                 dataGridView1.DataSource = controller.listarItens();
             }
         }
@@ -212,7 +216,7 @@ namespace ProjectX.view
             txtLoja.Text = dataGridView1.CurrentRow.Cells[12].Value.ToString();
             txtDpto.Text = dataGridView1.CurrentRow.Cells[13].Value.ToString();
 
-            //labelNomeFornecedor.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+
             //habilita os botões
             botaoEditar.Enabled = true;
             botaoExcluir.Enabled = true;
@@ -247,6 +251,19 @@ namespace ProjectX.view
         {
             habilitarCampos();
             status = "alterando";
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            FPesquisaDpto pesquisa = new FPesquisaDpto();
+            pesquisa.ShowDialog();
+            txtDpto.Text = pesquisa.selecionado.id.ToString();
+            labelNomeDpto.Text = pesquisa.selecionado.dpto;
+        }
+
+        private void tabDados_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

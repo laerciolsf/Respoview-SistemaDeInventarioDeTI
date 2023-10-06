@@ -37,6 +37,9 @@
             botaoPesquisar = new Button();
             textBox1 = new TextBox();
             tabDados = new TabPage();
+            labelNomeDpto = new Label();
+            buttonPesquisa1 = new Button();
+            buttonPesquisa2 = new Button();
             txtLoja = new TextBox();
             label15 = new Label();
             txtDpto = new TextBox();
@@ -90,7 +93,7 @@
             tabControl1.Location = new Point(0, 85);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(795, 431);
+            tabControl1.Size = new Size(838, 431);
             tabControl1.TabIndex = 8;
             // 
             // tabPesquisa
@@ -100,7 +103,7 @@
             tabPesquisa.Location = new Point(4, 24);
             tabPesquisa.Name = "tabPesquisa";
             tabPesquisa.Padding = new Padding(3);
-            tabPesquisa.Size = new Size(787, 403);
+            tabPesquisa.Size = new Size(830, 403);
             tabPesquisa.TabIndex = 0;
             tabPesquisa.Text = "Pesquisar";
             tabPesquisa.UseVisualStyleBackColor = true;
@@ -114,7 +117,7 @@
             dataGridView1.Location = new Point(3, 69);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(781, 331);
+            dataGridView1.Size = new Size(824, 331);
             dataGridView1.TabIndex = 1;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -126,14 +129,14 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(3, 3);
             panel2.Name = "panel2";
-            panel2.Size = new Size(781, 66);
+            panel2.Size = new Size(824, 66);
             panel2.TabIndex = 0;
             // 
             // button1
             // 
             button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(672, 13);
+            button1.Location = new Point(715, 13);
             button1.Name = "button1";
             button1.Size = new Size(92, 33);
             button1.TabIndex = 2;
@@ -146,7 +149,7 @@
             // 
             botaoPesquisar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             botaoPesquisar.Image = (Image)resources.GetObject("botaoPesquisar.Image");
-            botaoPesquisar.Location = new Point(1465, 12);
+            botaoPesquisar.Location = new Point(1508, 12);
             botaoPesquisar.Name = "botaoPesquisar";
             botaoPesquisar.Size = new Size(113, 41);
             botaoPesquisar.TabIndex = 1;
@@ -159,11 +162,14 @@
             textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBox1.Location = new Point(18, 19);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(635, 23);
+            textBox1.Size = new Size(678, 23);
             textBox1.TabIndex = 0;
             // 
             // tabDados
             // 
+            tabDados.Controls.Add(labelNomeDpto);
+            tabDados.Controls.Add(buttonPesquisa1);
+            tabDados.Controls.Add(buttonPesquisa2);
             tabDados.Controls.Add(txtLoja);
             tabDados.Controls.Add(label15);
             tabDados.Controls.Add(txtDpto);
@@ -195,22 +201,55 @@
             tabDados.Location = new Point(4, 24);
             tabDados.Name = "tabDados";
             tabDados.Padding = new Padding(3);
-            tabDados.Size = new Size(787, 403);
+            tabDados.Size = new Size(830, 403);
             tabDados.TabIndex = 1;
             tabDados.Text = "Dados Gerais";
             tabDados.UseVisualStyleBackColor = true;
+            tabDados.Click += tabDados_Click;
+            // 
+            // labelNomeDpto
+            // 
+            labelNomeDpto.AutoSize = true;
+            labelNomeDpto.Location = new Point(665, 57);
+            labelNomeDpto.Name = "labelNomeDpto";
+            labelNomeDpto.Size = new Size(83, 15);
+            labelNomeDpto.TabIndex = 48;
+            labelNomeDpto.Text = "Departamento";
+            // 
+            // buttonPesquisa1
+            // 
+            buttonPesquisa1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            buttonPesquisa1.Image = (Image)resources.GetObject("buttonPesquisa1.Image");
+            buttonPesquisa1.Location = new Point(628, 41);
+            buttonPesquisa1.Name = "buttonPesquisa1";
+            buttonPesquisa1.Size = new Size(31, 31);
+            buttonPesquisa1.TabIndex = 47;
+            buttonPesquisa1.TextImageRelation = TextImageRelation.ImageBeforeText;
+            buttonPesquisa1.UseVisualStyleBackColor = true;
+            buttonPesquisa1.Click += button3_Click;
+            // 
+            // buttonPesquisa2
+            // 
+            buttonPesquisa2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            buttonPesquisa2.Image = (Image)resources.GetObject("buttonPesquisa2.Image");
+            buttonPesquisa2.Location = new Point(628, 84);
+            buttonPesquisa2.Name = "buttonPesquisa2";
+            buttonPesquisa2.Size = new Size(31, 31);
+            buttonPesquisa2.TabIndex = 46;
+            buttonPesquisa2.TextImageRelation = TextImageRelation.ImageBeforeText;
+            buttonPesquisa2.UseVisualStyleBackColor = true;
             // 
             // txtLoja
             // 
-            txtLoja.Location = new Point(581, 70);
+            txtLoja.Location = new Point(549, 89);
             txtLoja.Name = "txtLoja";
-            txtLoja.Size = new Size(193, 23);
+            txtLoja.Size = new Size(73, 23);
             txtLoja.TabIndex = 44;
             // 
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(550, 78);
+            label15.Location = new Point(511, 97);
             label15.Name = "label15";
             label15.Size = new Size(32, 15);
             label15.TabIndex = 43;
@@ -218,15 +257,15 @@
             // 
             // txtDpto
             // 
-            txtDpto.Location = new Point(581, 41);
+            txtDpto.Location = new Point(549, 45);
             txtDpto.Name = "txtDpto";
-            txtDpto.Size = new Size(193, 23);
+            txtDpto.Size = new Size(73, 23);
             txtDpto.TabIndex = 42;
             // 
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(496, 49);
+            label14.Location = new Point(457, 49);
             label14.Name = "label14";
             label14.Size = new Size(86, 15);
             label14.TabIndex = 41;
@@ -447,7 +486,7 @@
             toolStrip1.Location = new Point(0, 45);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Padding = new Padding(0, 0, 2, 0);
-            toolStrip1.Size = new Size(795, 40);
+            toolStrip1.Size = new Size(838, 40);
             toolStrip1.TabIndex = 7;
             toolStrip1.Text = "toolStrip1";
             // 
@@ -510,7 +549,7 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(795, 45);
+            panel1.Size = new Size(838, 45);
             panel1.TabIndex = 6;
             // 
             // label1
@@ -530,7 +569,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(795, 516);
+            ClientSize = new Size(838, 516);
             Controls.Add(tabControl1);
             Controls.Add(toolStrip1);
             Controls.Add(panel1);
@@ -597,5 +636,8 @@
         private TextBox txtDpto;
         private Label label14;
         private Button button1;
+        private Button buttonPesquisa1;
+        private Button buttonPesquisa2;
+        private Label labelNomeDpto;
     }
 }
