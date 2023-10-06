@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjectX.controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,22 @@ namespace ProjectX.view
         public FPesquisaLoja()
         {
             InitializeComponent();
+        }
+
+        private void botaoPesquisar_Click(object sender, EventArgs e)
+        {
+            string nome = "%" + txtPesquisar.Text + "%";
+
+            lojaController controller = new lojaController();
+
+
+            GridLoja.DataSource = controller.buscaPorNome(nome);
+
+            if (GridLoja.Rows.Count == 0)
+            {
+                MessageBox.Show("Nenhum loja encontrado com este nome");
+                GridLoja.DataSource = controller.listarLoja();
+            }
         }
     }
 }

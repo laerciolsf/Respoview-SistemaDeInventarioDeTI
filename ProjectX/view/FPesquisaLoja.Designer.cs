@@ -32,12 +32,12 @@
             panel2 = new Panel();
             botaoCancelar = new Button();
             botaoConfirmar = new Button();
-            GridDpto = new DataGridView();
+            GridLoja = new DataGridView();
             panel1 = new Panel();
             botaoPesquisar = new Button();
             txtPesquisar = new TextBox();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)GridDpto).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)GridLoja).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -69,18 +69,18 @@
             botaoConfirmar.Text = "Confirmar";
             botaoConfirmar.UseVisualStyleBackColor = true;
             // 
-            // GridDpto
+            // GridLoja
             // 
-            GridDpto.AllowUserToAddRows = false;
-            GridDpto.AllowUserToDeleteRows = false;
-            GridDpto.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            GridDpto.Dock = DockStyle.Fill;
-            GridDpto.Location = new Point(0, 60);
-            GridDpto.Name = "GridDpto";
-            GridDpto.ReadOnly = true;
-            GridDpto.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            GridDpto.Size = new Size(613, 329);
-            GridDpto.TabIndex = 7;
+            GridLoja.AllowUserToAddRows = false;
+            GridLoja.AllowUserToDeleteRows = false;
+            GridLoja.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            GridLoja.Dock = DockStyle.Fill;
+            GridLoja.Location = new Point(0, 60);
+            GridLoja.Name = "GridLoja";
+            GridLoja.ReadOnly = true;
+            GridLoja.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            GridLoja.Size = new Size(613, 329);
+            GridLoja.TabIndex = 7;
             // 
             // panel1
             // 
@@ -103,6 +103,7 @@
             botaoPesquisar.Text = "Pesquisar";
             botaoPesquisar.TextImageRelation = TextImageRelation.ImageBeforeText;
             botaoPesquisar.UseVisualStyleBackColor = true;
+            botaoPesquisar.Click += botaoPesquisar_Click;
             // 
             // txtPesquisar
             // 
@@ -117,12 +118,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(613, 389);
             Controls.Add(panel2);
-            Controls.Add(GridDpto);
+            Controls.Add(GridLoja);
             Controls.Add(panel1);
             Name = "FPesquisaLoja";
             Text = "RespoView";
             panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)GridDpto).EndInit();
+            ((System.ComponentModel.ISupportInitialize)GridLoja).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -133,7 +134,7 @@
         private Panel panel2;
         private Button botaoCancelar;
         private Button botaoConfirmar;
-        private DataGridView GridDpto;
+        private DataGridView GridLoja;
         private Panel panel1;
         private Button botaoPesquisar;
         private TextBox txtPesquisar;

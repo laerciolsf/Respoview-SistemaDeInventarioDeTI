@@ -70,22 +70,23 @@
             // itensToolStripMenuItem
             // 
             itensToolStripMenuItem.Name = "itensToolStripMenuItem";
-            itensToolStripMenuItem.Size = new Size(150, 22);
+            itensToolStripMenuItem.Size = new Size(180, 22);
             itensToolStripMenuItem.Text = "Item";
             itensToolStripMenuItem.Click += itensToolStripMenuItem_Click;
             // 
             // departamentoToolStripMenuItem
             // 
             departamentoToolStripMenuItem.Name = "departamentoToolStripMenuItem";
-            departamentoToolStripMenuItem.Size = new Size(150, 22);
+            departamentoToolStripMenuItem.Size = new Size(180, 22);
             departamentoToolStripMenuItem.Text = "Departamento";
             departamentoToolStripMenuItem.Click += departamentoToolStripMenuItem_Click;
             // 
             // lojaToolStripMenuItem
             // 
             lojaToolStripMenuItem.Name = "lojaToolStripMenuItem";
-            lojaToolStripMenuItem.Size = new Size(150, 22);
+            lojaToolStripMenuItem.Size = new Size(180, 22);
             lojaToolStripMenuItem.Text = "Loja";
+            lojaToolStripMenuItem.Click += lojaToolStripMenuItem_Click;
             // 
             // historicoToolStripMenuItem
             // 
@@ -117,14 +118,14 @@
             // sobreToolStripMenuItem
             // 
             sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
-            sobreToolStripMenuItem.Size = new Size(180, 22);
+            sobreToolStripMenuItem.Size = new Size(114, 22);
             sobreToolStripMenuItem.Text = "Manual";
             sobreToolStripMenuItem.Click += sobreToolStripMenuItem_Click;
             // 
             // sobreToolStripMenuItem1
             // 
             sobreToolStripMenuItem1.Name = "sobreToolStripMenuItem1";
-            sobreToolStripMenuItem1.Size = new Size(180, 22);
+            sobreToolStripMenuItem1.Size = new Size(114, 22);
             sobreToolStripMenuItem1.Text = "Sobre";
             // 
             // FMenu

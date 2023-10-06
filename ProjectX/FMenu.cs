@@ -43,6 +43,12 @@ namespace ProjectX
             FDpto tela = new FDpto();
             tela.Show();
         }
+
+        private void lojaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FLoja tela = new FLoja();
+            tela.Show();
+        }
     }
 
 }

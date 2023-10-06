@@ -37,3 +37,9 @@ CHANGE COLUMN `idDepartamento` `idDepartamento` INT NOT NULL AUTO_INCREMENT ;
 
 
 
+ALTER TABLE `mallon_bd`.`lojas` 
+CHANGE COLUMN `idLoja` `idLoja` INT NOT NULL AUTO_INCREMENT ;
+
+
+
+
