@@ -124,6 +124,7 @@
             Controls.Add(GridLoja);
             Controls.Add(panel1);
             Name = "FPesquisaLoja";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "RespoView";
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)GridLoja).EndInit();

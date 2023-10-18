@@ -63,28 +63,28 @@
             // 
             cadastroToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { itensToolStripMenuItem, departamentoToolStripMenuItem, lojaToolStripMenuItem });
             cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            cadastroToolStripMenuItem.Size = new Size(180, 22);
+            cadastroToolStripMenuItem.Size = new Size(126, 22);
             cadastroToolStripMenuItem.Text = "Cadastrar";
             cadastroToolStripMenuItem.Click += cadastroToolStripMenuItem_Click;
             // 
             // itensToolStripMenuItem
             // 
             itensToolStripMenuItem.Name = "itensToolStripMenuItem";
-            itensToolStripMenuItem.Size = new Size(180, 22);
+            itensToolStripMenuItem.Size = new Size(150, 22);
             itensToolStripMenuItem.Text = "Item";
             itensToolStripMenuItem.Click += itensToolStripMenuItem_Click;
             // 
             // departamentoToolStripMenuItem
             // 
             departamentoToolStripMenuItem.Name = "departamentoToolStripMenuItem";
-            departamentoToolStripMenuItem.Size = new Size(180, 22);
+            departamentoToolStripMenuItem.Size = new Size(150, 22);
             departamentoToolStripMenuItem.Text = "Departamento";
             departamentoToolStripMenuItem.Click += departamentoToolStripMenuItem_Click;
             // 
             // lojaToolStripMenuItem
             // 
             lojaToolStripMenuItem.Name = "lojaToolStripMenuItem";
-            lojaToolStripMenuItem.Size = new Size(180, 22);
+            lojaToolStripMenuItem.Size = new Size(150, 22);
             lojaToolStripMenuItem.Text = "Loja";
             lojaToolStripMenuItem.Click += lojaToolStripMenuItem_Click;
             // 
@@ -92,7 +92,7 @@
             // 
             historicoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { itensRemovidosToolStripMenuItem });
             historicoToolStripMenuItem.Name = "historicoToolStripMenuItem";
-            historicoToolStripMenuItem.Size = new Size(180, 22);
+            historicoToolStripMenuItem.Size = new Size(126, 22);
             historicoToolStripMenuItem.Text = "Historico";
             // 
             // itensRemovidosToolStripMenuItem
@@ -104,7 +104,7 @@
             // rToolStripMenuItem
             // 
             rToolStripMenuItem.Name = "rToolStripMenuItem";
-            rToolStripMenuItem.Size = new Size(180, 22);
+            rToolStripMenuItem.Size = new Size(126, 22);
             rToolStripMenuItem.Text = "Relatórios";
             rToolStripMenuItem.Click += rToolStripMenuItem_Click;
             // 
@@ -136,7 +136,9 @@
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "FMenu";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "RespoView";
+            WindowState = FormWindowState.Maximized;
             Load += Form1_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();

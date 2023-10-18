@@ -125,6 +125,7 @@
             Controls.Add(GridDpto);
             Controls.Add(panel1);
             Name = "FPesquisaDpto";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "RespoView";
             Load += FPesquisaDpto_Load;
             panel2.ResumeLayout(false);

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ProjetoToyota\\ProjectX\\ProjectX.csproj": {}
+    "D:\\ProjetoMallon\\ProjectX\\ProjectX.csproj": {}
   },
   "projects": {
-    "D:\\ProjetoToyota\\ProjectX\\ProjectX.csproj": {
+    "D:\\ProjetoMallon\\ProjectX\\ProjectX.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ProjetoToyota\\ProjectX\\ProjectX.csproj",
+        "projectUniqueName": "D:\\ProjetoMallon\\ProjectX\\ProjectX.csproj",
         "projectName": "ProjectX",
-        "projectPath": "D:\\ProjetoToyota\\ProjectX\\ProjectX.csproj",
+        "projectPath": "D:\\ProjetoMallon\\ProjectX\\ProjectX.csproj",
         "packagesPath": "C:\\Users\\laerc\\.nuget\\packages\\",
-        "outputPath": "D:\\ProjetoToyota\\ProjectX\\obj\\",
+        "outputPath": "D:\\ProjetoMallon\\ProjectX\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

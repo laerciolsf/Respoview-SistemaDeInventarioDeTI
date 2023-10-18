@@ -64,8 +64,8 @@ namespace ProjectX.view
             txtHd.Enabled = true;
             txtSo.Enabled = true;
             txtValor.Enabled = true;
-            txtLoja.Enabled = true;
-            txtDpto.Enabled = true;
+            txtLoja.Enabled = false;
+            txtDpto.Enabled = false;
 
             //habilita o botão salvar.
             botaoSalvar.Enabled = true;

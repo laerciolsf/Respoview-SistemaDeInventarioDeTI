@@ -33,7 +33,7 @@
             tabPesquisa = new TabPage();
             dataGridView1 = new DataGridView();
             panel2 = new Panel();
-            button1 = new Button();
+            BPesquisa = new Button();
             botaoPesquisar = new Button();
             textBox1 = new TextBox();
             tabDados = new TabPage();
@@ -124,7 +124,7 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(button1);
+            panel2.Controls.Add(BPesquisa);
             panel2.Controls.Add(botaoPesquisar);
             panel2.Controls.Add(textBox1);
             panel2.Dock = DockStyle.Top;
@@ -133,18 +133,18 @@
             panel2.Size = new Size(824, 66);
             panel2.TabIndex = 0;
             // 
-            // button1
+            // BPesquisa
             // 
-            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(715, 13);
-            button1.Name = "button1";
-            button1.Size = new Size(92, 33);
-            button1.TabIndex = 2;
-            button1.Text = "Pesquisar";
-            button1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            BPesquisa.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            BPesquisa.Image = (Image)resources.GetObject("BPesquisa.Image");
+            BPesquisa.Location = new Point(715, 13);
+            BPesquisa.Name = "BPesquisa";
+            BPesquisa.Size = new Size(92, 33);
+            BPesquisa.TabIndex = 2;
+            BPesquisa.Text = "Pesquisar";
+            BPesquisa.TextImageRelation = TextImageRelation.ImageBeforeText;
+            BPesquisa.UseVisualStyleBackColor = true;
+            BPesquisa.Click += button1_Click;
             // 
             // botaoPesquisar
             // 
@@ -214,18 +214,16 @@
             labelNomeLoja.AutoSize = true;
             labelNomeLoja.Location = new Point(665, 100);
             labelNomeLoja.Name = "labelNomeLoja";
-            labelNomeLoja.Size = new Size(29, 15);
+            labelNomeLoja.Size = new Size(0, 15);
             labelNomeLoja.TabIndex = 49;
-            labelNomeLoja.Text = "Loja";
             // 
             // labelNomeDpto
             // 
             labelNomeDpto.AutoSize = true;
             labelNomeDpto.Location = new Point(665, 57);
             labelNomeDpto.Name = "labelNomeDpto";
-            labelNomeDpto.Size = new Size(83, 15);
+            labelNomeDpto.Size = new Size(0, 15);
             labelNomeDpto.TabIndex = 48;
-            labelNomeDpto.Text = "Departamento";
             // 
             // buttonPesquisa1
             // 
@@ -579,6 +577,7 @@
             // 
             // FItens
             // 
+            AcceptButton = BPesquisa;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(838, 516);
@@ -586,6 +585,7 @@
             Controls.Add(toolStrip1);
             Controls.Add(panel1);
             Name = "FItens";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "RespoView";
             Load += FItens_Load;
             tabControl1.ResumeLayout(false);
@@ -647,7 +647,7 @@
         private Label label15;
         private TextBox txtDpto;
         private Label label14;
-        private Button button1;
+        private Button BPesquisa;
         private Button buttonPesquisa1;
         private Button buttonPesquisa2;
         private Label labelNomeDpto;

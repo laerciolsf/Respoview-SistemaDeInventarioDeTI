@@ -33,7 +33,7 @@
             tabPesquisa = new TabPage();
             dataGridView1 = new DataGridView();
             panel2 = new Panel();
-            button2 = new Button();
+            BPesquisa = new Button();
             button1 = new Button();
             botaoPesquisar = new Button();
             textBox1 = new TextBox();
@@ -99,7 +99,7 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(button2);
+            panel2.Controls.Add(BPesquisa);
             panel2.Controls.Add(button1);
             panel2.Controls.Add(botaoPesquisar);
             panel2.Controls.Add(textBox1);
@@ -109,18 +109,18 @@
             panel2.Size = new Size(600, 66);
             panel2.TabIndex = 0;
             // 
-            // button2
+            // BPesquisa
             // 
-            button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.Location = new Point(504, 18);
-            button2.Name = "button2";
-            button2.Size = new Size(91, 29);
-            button2.TabIndex = 3;
-            button2.Text = "Pesquisar";
-            button2.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            BPesquisa.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            BPesquisa.Image = (Image)resources.GetObject("BPesquisa.Image");
+            BPesquisa.Location = new Point(504, 18);
+            BPesquisa.Name = "BPesquisa";
+            BPesquisa.Size = new Size(91, 29);
+            BPesquisa.TabIndex = 3;
+            BPesquisa.Text = "Pesquisar";
+            BPesquisa.TextImageRelation = TextImageRelation.ImageBeforeText;
+            BPesquisa.UseVisualStyleBackColor = true;
+            BPesquisa.Click += button2_Click;
             // 
             // button1
             // 
@@ -312,6 +312,7 @@
             // 
             // FLoja
             // 
+            AcceptButton = BPesquisa;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(614, 450);
@@ -319,6 +320,7 @@
             Controls.Add(toolStrip1);
             Controls.Add(panel1);
             Name = "FLoja";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "RespoView";
             Load += FLoja_Load;
             tabControl1.ResumeLayout(false);
@@ -359,6 +361,6 @@
         private ToolStripButton botaoFechar;
         private Panel panel1;
         private Label label1;
-        private Button button2;
+        private Button BPesquisa;
     }
 }

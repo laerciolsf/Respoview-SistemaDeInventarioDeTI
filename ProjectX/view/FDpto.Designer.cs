@@ -33,7 +33,7 @@
             tabPesquisa = new TabPage();
             dataGridView1 = new DataGridView();
             panel2 = new Panel();
-            button1 = new Button();
+            BPesquisa = new Button();
             botaoPesquisar = new Button();
             textBox1 = new TextBox();
             tabDados = new TabPage();
@@ -98,7 +98,7 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(button1);
+            panel2.Controls.Add(BPesquisa);
             panel2.Controls.Add(botaoPesquisar);
             panel2.Controls.Add(textBox1);
             panel2.Dock = DockStyle.Top;
@@ -107,18 +107,18 @@
             panel2.Size = new Size(653, 66);
             panel2.TabIndex = 0;
             // 
-            // button1
+            // BPesquisa
             // 
-            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(530, 17);
-            button1.Name = "button1";
-            button1.Size = new Size(99, 33);
-            button1.TabIndex = 2;
-            button1.Text = "Pesquisar";
-            button1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            BPesquisa.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            BPesquisa.Image = (Image)resources.GetObject("BPesquisa.Image");
+            BPesquisa.Location = new Point(530, 17);
+            BPesquisa.Name = "BPesquisa";
+            BPesquisa.Size = new Size(99, 33);
+            BPesquisa.TabIndex = 2;
+            BPesquisa.Text = "Pesquisar";
+            BPesquisa.TextImageRelation = TextImageRelation.ImageBeforeText;
+            BPesquisa.UseVisualStyleBackColor = true;
+            BPesquisa.Click += button1_Click;
             // 
             // botaoPesquisar
             // 
@@ -152,7 +152,7 @@
             tabDados.Location = new Point(4, 24);
             tabDados.Name = "tabDados";
             tabDados.Padding = new Padding(3);
-            tabDados.Size = new Size(792, 337);
+            tabDados.Size = new Size(659, 337);
             tabDados.TabIndex = 1;
             tabDados.Text = "Dados Gerais";
             tabDados.UseVisualStyleBackColor = true;
@@ -298,6 +298,7 @@
             // 
             // FDpto
             // 
+            AcceptButton = BPesquisa;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(667, 450);
@@ -305,6 +306,7 @@
             Controls.Add(toolStrip1);
             Controls.Add(panel1);
             Name = "FDpto";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "RespoView";
             Load += FDpto_Load;
             tabControl1.ResumeLayout(false);
@@ -344,6 +346,6 @@
         private ToolStripButton botaoFechar;
         private Panel panel1;
         private Label label1;
-        private Button button1;
+        private Button BPesquisa;
     }
 }

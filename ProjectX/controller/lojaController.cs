@@ -133,7 +133,8 @@ namespace ProjectX.controller
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Aconteceu um erro: " + ex.Message);
+                MessageBox.Show("Ocorreu um erro, talvez existam itens que ainda estão vinculados a essa loja.");
+                MessageBox.Show("Erro: " + ex.Message);
             }
         }
     }
