@@ -41,7 +41,6 @@ namespace ProjectX.controller
             {
                 MessageBox.Show("Erro ao cadastrar: " + ex.Message);
             }
-
         }
         public DataTable listarDpto()
         {
@@ -65,7 +64,6 @@ namespace ProjectX.controller
                 MessageBox.Show("Erro ao consultar: " + ex.Message);
                 return null;
             }
-
         }
         public DataTable buscaPorNome(string nome)
         {
@@ -90,7 +88,6 @@ namespace ProjectX.controller
                 MessageBox.Show("Erro ao consultar: " + ex.Message);
                 return null;
             }
-
         }
         public void alterarDpto(Dpto obj)
         {
@@ -137,7 +134,6 @@ namespace ProjectX.controller
                 MessageBox.Show("Erro: " + ex.Message);
                 
             }
-
         }
     }
 }

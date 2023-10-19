@@ -95,3 +95,5 @@ D:\ProjetoMallon\ProjectX\obj\Debug\net6.0-windows\refint\ProjectX.dll
 D:\ProjetoMallon\ProjectX\obj\Debug\net6.0-windows\ProjectX.pdb
 D:\ProjetoMallon\ProjectX\obj\Debug\net6.0-windows\ProjectX.genruntimeconfig.cache
 D:\ProjetoMallon\ProjectX\obj\Debug\net6.0-windows\ref\ProjectX.dll
+D:\ProjetoMallon\ProjectX\obj\Debug\net6.0-windows\ProjectX.Properties.Resources.resources
+D:\ProjetoMallon\ProjectX\obj\Debug\net6.0-windows\ProjectX.view.FLogin.resources

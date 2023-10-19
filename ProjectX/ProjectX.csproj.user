@@ -10,6 +10,9 @@
     <Compile Update="view\FItens.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="view\FLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="view\FLoja.cs">
       <SubType>Form</SubType>
     </Compile>
