@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjectX.controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,11 +16,38 @@ namespace ProjectX.view
         public FLogin()
         {
             InitializeComponent();
+            FMenu.usuario_logado = null;
         }
 
         private void FLogin_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void ButtonEntrar_Click(object sender, EventArgs e)
+        {
+            if (txtLogin.Text != " ")
+            {
+                usuarioController user = new usuarioController();
+                FMenu.usuario_logado = user.buscaLogin(txtLogin.Text, txtSenha.Text);
+                if (FMenu.usuario_logado == null)
+                {
+                    MessageBox.Show("Usuario ou senha inválidos!");
+                    txtSenha.Clear();
+                    txtLogin.Focus();
+                    txtLogin.SelectAll();
+                }
+                else
+                {
+                    Close();
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Digite o login!");
+                txtLogin.Focus();
+            }
         }
     }
 }

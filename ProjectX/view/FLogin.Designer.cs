@@ -67,6 +67,7 @@
             // 
             txtSenha.Location = new Point(154, 98);
             txtSenha.Name = "txtSenha";
+            txtSenha.PasswordChar = '*';
             txtSenha.Size = new Size(174, 23);
             txtSenha.TabIndex = 2;
             // 
@@ -78,6 +79,7 @@
             ButtonEntrar.TabIndex = 4;
             ButtonEntrar.Text = "Entrar";
             ButtonEntrar.UseVisualStyleBackColor = true;
+            ButtonEntrar.Click += ButtonEntrar_Click;
             // 
             // pictureBox1
             // 
@@ -92,6 +94,7 @@
             // 
             // FLogin
             // 
+            AcceptButton = ButtonEntrar;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(340, 188);
@@ -105,7 +108,8 @@
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FLogin";
-            Text = "FLogin";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "RespoView";
             Load += FLogin_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

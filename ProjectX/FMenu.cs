@@ -12,11 +12,17 @@ namespace ProjectX
         public FMenu()
         {
             InitializeComponent();
+            //Chama a tela de login
+            FLogin login = new FLogin();
+            login.ShowDialog();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            if (usuario_logado == null)
+            {
+                Application.Exit();
+            }
         }
 
         private void rToolStripMenuItem_Click(object sender, EventArgs e)
@@ -57,6 +63,11 @@ namespace ProjectX
         {
             FUsuario tela = new FUsuario();
             tela.Show();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 

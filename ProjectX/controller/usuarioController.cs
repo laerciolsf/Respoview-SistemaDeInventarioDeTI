@@ -158,8 +158,7 @@ namespace ProjectX.controller
             try
             {
                 string sql = "select * from usuarios where login = @login and senha= MD5(@senha)";
-                MySqlCommand executacmd =
-                new MySqlCommand(sql, conexao);
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 executacmd.Parameters.AddWithValue("@login", login);
                 executacmd.Parameters.AddWithValue("@senha", senha);
 
@@ -173,8 +172,8 @@ namespace ProjectX.controller
                 {
                     if (resultado.Read())
                     {
-                        u.id = resultado.GetInt16("idusuario");
-                        u.nome = resultado.GetString("nome");
+                        u.id = resultado.GetInt16("id");
+                        u.nome = resultado.GetString("nomeCompleto");
                         u.login = resultado.GetString("login");
                         u.senha = resultado.GetString("senha");
                         
@@ -198,5 +197,7 @@ namespace ProjectX.controller
                 return null;
             }
         }
+
+       
     }
 }
