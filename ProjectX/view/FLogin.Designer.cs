@@ -50,9 +50,9 @@
             label1.AutoSize = true;
             label1.Location = new Point(154, 36);
             label1.Name = "label1";
-            label1.Size = new Size(37, 15);
+            label1.Size = new Size(52, 15);
             label1.TabIndex = 1;
-            label1.Text = "Login";
+            label1.Text = "Usuários";
             // 
             // label2
             // 
@@ -85,7 +85,7 @@
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(12, 51);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(125, 107);
+            pictureBox1.Size = new Size(125, 113);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
@@ -94,17 +94,19 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(375, 200);
+            ClientSize = new Size(340, 188);
             Controls.Add(pictureBox1);
             Controls.Add(ButtonEntrar);
             Controls.Add(label2);
             Controls.Add(txtSenha);
             Controls.Add(label1);
             Controls.Add(txtLogin);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FLogin";
             Text = "FLogin";
+            Load += FLogin_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

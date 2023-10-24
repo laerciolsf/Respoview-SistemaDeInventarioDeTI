@@ -1,4 +1,5 @@
 using ProjectX.controller;
+using ProjectX.model;
 using ProjectX.view;
 using System.Windows.Forms;
 
@@ -6,6 +7,8 @@ namespace ProjectX
 {
     public partial class FMenu : Form
     {
+        public static Usuario usuario_logado = new Usuario();
+
         public FMenu()
         {
             InitializeComponent();
@@ -47,6 +50,12 @@ namespace ProjectX
         private void lojaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FLoja tela = new FLoja();
+            tela.Show();
+        }
+
+        private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FUsuario tela = new FUsuario();
             tela.Show();
         }
     }

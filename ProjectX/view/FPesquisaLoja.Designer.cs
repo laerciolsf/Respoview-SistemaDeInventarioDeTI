@@ -50,6 +50,7 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(613, 60);
             panel2.TabIndex = 8;
+            panel2.Paint += panel2_Paint;
             // 
             // botaoCancelar
             // 
@@ -123,6 +124,9 @@
             Controls.Add(panel2);
             Controls.Add(GridLoja);
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FPesquisaLoja";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "RespoView";

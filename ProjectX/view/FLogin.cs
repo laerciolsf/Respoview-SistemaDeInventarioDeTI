@@ -16,5 +16,10 @@ namespace ProjectX.view
         {
             InitializeComponent();
         }
+
+        private void FLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

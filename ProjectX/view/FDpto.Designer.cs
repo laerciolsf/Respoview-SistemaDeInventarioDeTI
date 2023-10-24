@@ -68,7 +68,7 @@
             tabControl1.Location = new Point(0, 85);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(667, 365);
+            tabControl1.Size = new Size(640, 335);
             tabControl1.TabIndex = 8;
             // 
             // tabPesquisa
@@ -78,7 +78,7 @@
             tabPesquisa.Location = new Point(4, 24);
             tabPesquisa.Name = "tabPesquisa";
             tabPesquisa.Padding = new Padding(3);
-            tabPesquisa.Size = new Size(659, 337);
+            tabPesquisa.Size = new Size(632, 307);
             tabPesquisa.TabIndex = 0;
             tabPesquisa.Text = "Pesquisar";
             tabPesquisa.UseVisualStyleBackColor = true;
@@ -92,7 +92,7 @@
             dataGridView1.Location = new Point(3, 69);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(653, 265);
+            dataGridView1.Size = new Size(626, 235);
             dataGridView1.TabIndex = 1;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -104,14 +104,14 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(3, 3);
             panel2.Name = "panel2";
-            panel2.Size = new Size(653, 66);
+            panel2.Size = new Size(626, 66);
             panel2.TabIndex = 0;
             // 
             // BPesquisa
             // 
             BPesquisa.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BPesquisa.Image = (Image)resources.GetObject("BPesquisa.Image");
-            BPesquisa.Location = new Point(530, 17);
+            BPesquisa.Location = new Point(522, 17);
             BPesquisa.Name = "BPesquisa";
             BPesquisa.Size = new Size(99, 33);
             BPesquisa.TabIndex = 2;
@@ -124,7 +124,7 @@
             // 
             botaoPesquisar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             botaoPesquisar.Image = (Image)resources.GetObject("botaoPesquisar.Image");
-            botaoPesquisar.Location = new Point(1337, 12);
+            botaoPesquisar.Location = new Point(1310, 12);
             botaoPesquisar.Name = "botaoPesquisar";
             botaoPesquisar.Size = new Size(113, 41);
             botaoPesquisar.TabIndex = 1;
@@ -135,9 +135,9 @@
             // textBox1
             // 
             textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBox1.Location = new Point(23, 23);
+            textBox1.Location = new Point(11, 23);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(488, 23);
+            textBox1.Size = new Size(505, 23);
             textBox1.TabIndex = 0;
             textBox1.TextChanged += textBox1_TextChanged;
             // 
@@ -152,7 +152,7 @@
             tabDados.Location = new Point(4, 24);
             tabDados.Name = "tabDados";
             tabDados.Padding = new Padding(3);
-            tabDados.Size = new Size(659, 337);
+            tabDados.Size = new Size(632, 307);
             tabDados.TabIndex = 1;
             tabDados.Text = "Dados Gerais";
             tabDados.UseVisualStyleBackColor = true;
@@ -218,7 +218,7 @@
             toolStrip1.Location = new Point(0, 45);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Padding = new Padding(0, 0, 2, 0);
-            toolStrip1.Size = new Size(667, 40);
+            toolStrip1.Size = new Size(640, 40);
             toolStrip1.TabIndex = 7;
             toolStrip1.Text = "toolStrip1";
             // 
@@ -281,7 +281,7 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(667, 45);
+            panel1.Size = new Size(640, 45);
             panel1.TabIndex = 6;
             // 
             // label1
@@ -301,10 +301,13 @@
             AcceptButton = BPesquisa;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(667, 450);
+            ClientSize = new Size(640, 420);
             Controls.Add(tabControl1);
             Controls.Add(toolStrip1);
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FDpto";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "RespoView";

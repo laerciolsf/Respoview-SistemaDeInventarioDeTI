@@ -124,6 +124,9 @@
             Controls.Add(panel2);
             Controls.Add(GridDpto);
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FPesquisaDpto";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "RespoView";
