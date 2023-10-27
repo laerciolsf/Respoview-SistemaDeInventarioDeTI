@@ -212,7 +212,7 @@
             // labelNomeLoja
             // 
             labelNomeLoja.AutoSize = true;
-            labelNomeLoja.Location = new Point(665, 100);
+            labelNomeLoja.Location = new Point(668, 97);
             labelNomeLoja.Name = "labelNomeLoja";
             labelNomeLoja.Size = new Size(0, 15);
             labelNomeLoja.TabIndex = 49;
@@ -220,7 +220,7 @@
             // labelNomeDpto
             // 
             labelNomeDpto.AutoSize = true;
-            labelNomeDpto.Location = new Point(665, 57);
+            labelNomeDpto.Location = new Point(668, 54);
             labelNomeDpto.Name = "labelNomeDpto";
             labelNomeDpto.Size = new Size(0, 15);
             labelNomeDpto.TabIndex = 48;
@@ -229,7 +229,7 @@
             // 
             buttonPesquisa1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonPesquisa1.Image = (Image)resources.GetObject("buttonPesquisa1.Image");
-            buttonPesquisa1.Location = new Point(628, 41);
+            buttonPesquisa1.Location = new Point(631, 41);
             buttonPesquisa1.Name = "buttonPesquisa1";
             buttonPesquisa1.Size = new Size(31, 31);
             buttonPesquisa1.TabIndex = 47;
@@ -241,7 +241,7 @@
             // 
             buttonPesquisa2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonPesquisa2.Image = (Image)resources.GetObject("buttonPesquisa2.Image");
-            buttonPesquisa2.Location = new Point(628, 84);
+            buttonPesquisa2.Location = new Point(631, 84);
             buttonPesquisa2.Name = "buttonPesquisa2";
             buttonPesquisa2.Size = new Size(31, 31);
             buttonPesquisa2.TabIndex = 46;
@@ -253,7 +253,7 @@
             // 
             txtLoja.Location = new Point(549, 89);
             txtLoja.Name = "txtLoja";
-            txtLoja.Size = new Size(73, 23);
+            txtLoja.Size = new Size(76, 23);
             txtLoja.TabIndex = 44;
             // 
             // label15
@@ -269,8 +269,9 @@
             // 
             txtDpto.Location = new Point(549, 45);
             txtDpto.Name = "txtDpto";
-            txtDpto.Size = new Size(73, 23);
+            txtDpto.Size = new Size(76, 23);
             txtDpto.TabIndex = 42;
+            txtDpto.TextChanged += txtDpto_TextChanged;
             // 
             // label14
             // 

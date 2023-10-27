@@ -27,7 +27,9 @@ namespace ProjectX
 
         private void rToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            
+            FRelatorio tela = new FRelatorio();
+            tela.Show();
         }
 
         private void itensToolStripMenuItem_Click(object sender, EventArgs e)
@@ -66,6 +68,11 @@ namespace ProjectX
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void itensRemovidosToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

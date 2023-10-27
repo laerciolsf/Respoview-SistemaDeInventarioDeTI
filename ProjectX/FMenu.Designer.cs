@@ -65,7 +65,7 @@
             // 
             cadastroToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { itensToolStripMenuItem, departamentoToolStripMenuItem, lojaToolStripMenuItem, usuarioToolStripMenuItem });
             cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            cadastroToolStripMenuItem.Size = new Size(126, 22);
+            cadastroToolStripMenuItem.Size = new Size(180, 22);
             cadastroToolStripMenuItem.Text = "Cadastrar";
             cadastroToolStripMenuItem.Click += cadastroToolStripMenuItem_Click;
             // 
@@ -101,19 +101,20 @@
             // 
             historicoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { itensRemovidosToolStripMenuItem });
             historicoToolStripMenuItem.Name = "historicoToolStripMenuItem";
-            historicoToolStripMenuItem.Size = new Size(126, 22);
+            historicoToolStripMenuItem.Size = new Size(180, 22);
             historicoToolStripMenuItem.Text = "Historico";
             // 
             // itensRemovidosToolStripMenuItem
             // 
             itensRemovidosToolStripMenuItem.Name = "itensRemovidosToolStripMenuItem";
-            itensRemovidosToolStripMenuItem.Size = new Size(158, 22);
+            itensRemovidosToolStripMenuItem.Size = new Size(180, 22);
             itensRemovidosToolStripMenuItem.Text = "Itens removidos";
+            itensRemovidosToolStripMenuItem.Click += itensRemovidosToolStripMenuItem_Click;
             // 
             // rToolStripMenuItem
             // 
             rToolStripMenuItem.Name = "rToolStripMenuItem";
-            rToolStripMenuItem.Size = new Size(126, 22);
+            rToolStripMenuItem.Size = new Size(180, 22);
             rToolStripMenuItem.Text = "Relatórios";
             rToolStripMenuItem.Click += rToolStripMenuItem_Click;
             // 

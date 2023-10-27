@@ -273,5 +273,10 @@ namespace ProjectX.view
             txtLoja.Text = pesquisa.selecionado.id.ToString();
             labelNomeLoja.Text = pesquisa.selecionado.loja;
         }
+
+        private void txtDpto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
