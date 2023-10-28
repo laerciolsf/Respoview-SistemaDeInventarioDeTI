@@ -27,7 +27,7 @@ namespace ProjectX
 
         private void rToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
             FRelatorio tela = new FRelatorio();
             tela.Show();
         }

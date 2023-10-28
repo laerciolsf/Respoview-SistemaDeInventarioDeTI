@@ -47,5 +47,10 @@ namespace ProjectX.view
         {
 
         }
+
+        private void botaoFechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

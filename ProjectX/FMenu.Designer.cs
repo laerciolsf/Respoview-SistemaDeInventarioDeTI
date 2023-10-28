@@ -41,7 +41,10 @@
             ajudaToolStripMenuItem = new ToolStripMenuItem();
             sobreToolStripMenuItem = new ToolStripMenuItem();
             sobreToolStripMenuItem1 = new ToolStripMenuItem();
+            panel1 = new Panel();
+            label1 = new Label();
             menuStrip1.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
@@ -107,7 +110,7 @@
             // itensRemovidosToolStripMenuItem
             // 
             itensRemovidosToolStripMenuItem.Name = "itensRemovidosToolStripMenuItem";
-            itensRemovidosToolStripMenuItem.Size = new Size(180, 22);
+            itensRemovidosToolStripMenuItem.Size = new Size(158, 22);
             itensRemovidosToolStripMenuItem.Text = "Itens removidos";
             itensRemovidosToolStripMenuItem.Click += itensRemovidosToolStripMenuItem_Click;
             // 
@@ -138,11 +141,35 @@
             sobreToolStripMenuItem1.Size = new Size(114, 22);
             sobreToolStripMenuItem1.Text = "Sobre";
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(64, 64, 64);
+            panel1.Controls.Add(label1);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 24);
+            panel1.Margin = new Padding(4, 5, 4, 5);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1002, 45);
+            panel1.TabIndex = 58;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(18, 14);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(458, 24);
+            label1.TabIndex = 0;
+            label1.Text = "Controle de Inventario Para Equipamentos de TI";
+            // 
             // FMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1002, 539);
+            Controls.Add(panel1);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "FMenu";
@@ -152,6 +179,8 @@
             Load += Form1_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -171,5 +200,7 @@
         private ToolStripMenuItem sobreToolStripMenuItem;
         private ToolStripMenuItem sobreToolStripMenuItem1;
         private ToolStripMenuItem usuarioToolStripMenuItem;
+        private Panel panel1;
+        private Label label1;
     }
 }
