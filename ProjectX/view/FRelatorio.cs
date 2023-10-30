@@ -60,22 +60,28 @@ namespace ProjectX.view
             int idLoja = 0;
             int idDepartamento = 0;
 
-            if (int.TryParse(txtLoja.Text, out idLoja) && int.TryParse(txtDpto.Text, out idDepartamento))
+            if (int.TryParse(txtLoja.Text, out idLoja))
             {
+                if (!string.IsNullOrEmpty(txtDpto.Text) && !int.TryParse(txtDpto.Text, out idDepartamento))
+                {
+                    MessageBox.Show("Informe um ID de departamento válido ou deixe o campo em branco.");
+                    return;
+                }
+
                 itensController controller = new itensController();
                 dataGridView1.DataSource = controller.pesquisaRelatorios(idLoja, idDepartamento);
 
                 if (dataGridView1.Rows.Count == 0)
                 {
                     MessageBox.Show("Nenhum item encontrado com este ID de loja e/ou departamento.");
-
                 }
             }
             else
             {
-                MessageBox.Show("Informe IDs de loja e departamento válidos.");
+                MessageBox.Show("Informe um ID de loja válido.");
             }
         }
+
 
     }
 }
