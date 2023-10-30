@@ -53,7 +53,7 @@
             // 
             buttonPesquisa1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonPesquisa1.Image = (Image)resources.GetObject("buttonPesquisa1.Image");
-            buttonPesquisa1.Location = new Point(672, 97);
+            buttonPesquisa1.Location = new Point(691, 99);
             buttonPesquisa1.Name = "buttonPesquisa1";
             buttonPesquisa1.Size = new Size(31, 31);
             buttonPesquisa1.TabIndex = 53;
@@ -65,7 +65,7 @@
             // 
             buttonPesquisa2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonPesquisa2.Image = (Image)resources.GetObject("buttonPesquisa2.Image");
-            buttonPesquisa2.Location = new Point(267, 97);
+            buttonPesquisa2.Location = new Point(286, 98);
             buttonPesquisa2.Name = "buttonPesquisa2";
             buttonPesquisa2.Size = new Size(31, 31);
             buttonPesquisa2.TabIndex = 52;
@@ -75,7 +75,7 @@
             // 
             // txtLoja
             // 
-            txtLoja.Location = new Point(36, 101);
+            txtLoja.Location = new Point(52, 103);
             txtLoja.Name = "txtLoja";
             txtLoja.Size = new Size(228, 23);
             txtLoja.TabIndex = 51;
@@ -84,7 +84,7 @@
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(-2, 109);
+            label15.Location = new Point(14, 107);
             label15.Name = "label15";
             label15.Size = new Size(32, 15);
             label15.TabIndex = 50;
@@ -92,7 +92,7 @@
             // 
             // txtDpto
             // 
-            txtDpto.Location = new Point(412, 101);
+            txtDpto.Location = new Point(428, 103);
             txtDpto.Name = "txtDpto";
             txtDpto.Size = new Size(257, 23);
             txtDpto.TabIndex = 49;
@@ -100,7 +100,7 @@
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(320, 105);
+            label14.Location = new Point(336, 107);
             label14.Name = "label14";
             label14.Size = new Size(86, 15);
             label14.TabIndex = 48;
@@ -110,7 +110,7 @@
             // 
             BPesquisa.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BPesquisa.Image = (Image)resources.GetObject("BPesquisa.Image");
-            BPesquisa.Location = new Point(777, 486);
+            BPesquisa.Location = new Point(862, 486);
             BPesquisa.Name = "BPesquisa";
             BPesquisa.Size = new Size(99, 33);
             BPesquisa.TabIndex = 54;
@@ -125,14 +125,14 @@
             dataGridView1.Location = new Point(12, 143);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(883, 337);
+            dataGridView1.Size = new Size(965, 337);
             dataGridView1.TabIndex = 55;
             // 
             // button1
             // 
             button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(672, 486);
+            button1.Location = new Point(757, 486);
             button1.Name = "button1";
             button1.Size = new Size(99, 33);
             button1.TabIndex = 56;
@@ -148,7 +148,7 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(904, 45);
+            panel1.Size = new Size(989, 45);
             panel1.TabIndex = 57;
             // 
             // label1
@@ -166,7 +166,7 @@
             // labelNomeLoja
             // 
             labelNomeLoja.AutoSize = true;
-            labelNomeLoja.Location = new Point(78, 105);
+            labelNomeLoja.Location = new Point(94, 107);
             labelNomeLoja.Name = "labelNomeLoja";
             labelNomeLoja.Size = new Size(0, 15);
             labelNomeLoja.TabIndex = 58;
@@ -174,7 +174,7 @@
             // labelNomeDpto
             // 
             labelNomeDpto.AutoSize = true;
-            labelNomeDpto.Location = new Point(451, 105);
+            labelNomeDpto.Location = new Point(467, 107);
             labelNomeDpto.Name = "labelNomeDpto";
             labelNomeDpto.Size = new Size(0, 15);
             labelNomeDpto.TabIndex = 59;
@@ -187,7 +187,7 @@
             toolStrip1.Location = new Point(0, 45);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Padding = new Padding(0, 0, 2, 0);
-            toolStrip1.Size = new Size(904, 40);
+            toolStrip1.Size = new Size(989, 40);
             toolStrip1.TabIndex = 60;
             toolStrip1.Text = "toolStrip1";
             // 
@@ -204,9 +204,10 @@
             // 
             // FRelatorio
             // 
+            AcceptButton = BPesquisa;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(904, 531);
+            ClientSize = new Size(989, 531);
             Controls.Add(toolStrip1);
             Controls.Add(labelNomeDpto);
             Controls.Add(buttonPesquisa1);
@@ -220,7 +221,11 @@
             Controls.Add(label15);
             Controls.Add(txtDpto);
             Controls.Add(label14);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FRelatorio";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FRelatorio";
             Load += FRelatorio_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
