@@ -165,6 +165,7 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(849, 23);
             textBox1.TabIndex = 0;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // tabDados
             // 

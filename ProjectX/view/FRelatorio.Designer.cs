@@ -117,6 +117,7 @@
             BPesquisa.Text = "Pesquisar";
             BPesquisa.TextImageRelation = TextImageRelation.ImageBeforeText;
             BPesquisa.UseVisualStyleBackColor = true;
+            BPesquisa.Click += BPesquisa_Click;
             // 
             // dataGridView1
             // 
@@ -167,9 +168,8 @@
             labelNomeLoja.AutoSize = true;
             labelNomeLoja.Location = new Point(78, 105);
             labelNomeLoja.Name = "labelNomeLoja";
-            labelNomeLoja.Size = new Size(68, 15);
+            labelNomeLoja.Size = new Size(0, 15);
             labelNomeLoja.TabIndex = 58;
-            labelNomeLoja.Text = "Apagar Dps";
             // 
             // labelNomeDpto
             // 
