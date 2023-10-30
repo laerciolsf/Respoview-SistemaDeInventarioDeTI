@@ -57,16 +57,25 @@ namespace ProjectX.view
 
         private void BPesquisa_Click(object sender, EventArgs e)
         {
-            string nome = txtLoja.Text;
+            int idLoja = 0;
+            int idDepartamento = 0;
 
-            itensController controller = new itensController();
-            dataGridView1.DataSource = controller.pesquisaRelatorios(nome);
-
-            if (dataGridView1.Rows.Count == 0)
+            if (int.TryParse(txtLoja.Text, out idLoja) && int.TryParse(txtDpto.Text, out idDepartamento))
             {
-                MessageBox.Show("Nenhum item encontrado com este nome");
-                //dataGridView1.DataSource = controller.listarItens();
+                itensController controller = new itensController();
+                dataGridView1.DataSource = controller.pesquisaRelatorios(idLoja, idDepartamento);
+
+                if (dataGridView1.Rows.Count == 0)
+                {
+                    MessageBox.Show("Nenhum item encontrado com este ID de loja e/ou departamento.");
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Informe IDs de loja e departamento válidos.");
             }
         }
+
     }
 }

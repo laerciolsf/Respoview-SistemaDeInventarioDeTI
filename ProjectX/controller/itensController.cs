@@ -81,15 +81,26 @@ namespace ProjectX.controller
 
         }
 
-        public DataTable pesquisaRelatorios(string nome)
+        public DataTable pesquisaRelatorios(int idLoja, int idDepartamento)
         {
             try
             {
                 DataTable tabela = new DataTable();
-                string sql = "select * from itens where idLoja = @idLoja;";
+                string sql = "SELECT * FROM itens WHERE idLoja = @idLoja";
+
+                if (idDepartamento > 0)
+                {
+                    sql += " AND idDepartamento = @idDepartamento";
+                }
 
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
-                executacmd.Parameters.AddWithValue("@idLoja", nome);
+                executacmd.Parameters.AddWithValue("@idLoja", idLoja);
+
+                if (idDepartamento > 0)
+                {
+                    executacmd.Parameters.AddWithValue("@idDepartamento", idDepartamento);
+                }
+
                 conexao.Open();
                 executacmd.ExecuteNonQuery();
 
@@ -101,10 +112,12 @@ namespace ProjectX.controller
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao consultar relatorio: " + ex.Message);
+                MessageBox.Show("Erro ao consultar relatório: " + ex.Message);
                 return null;
             }
         }
+
+
         public DataTable buscaPorNome(string nome)
         {
             try

@@ -176,9 +176,8 @@
             labelNomeDpto.AutoSize = true;
             labelNomeDpto.Location = new Point(451, 105);
             labelNomeDpto.Name = "labelNomeDpto";
-            labelNomeDpto.Size = new Size(64, 15);
+            labelNomeDpto.Size = new Size(0, 15);
             labelNomeDpto.TabIndex = 59;
-            labelNomeDpto.Text = "Apaga Dps";
             // 
             // toolStrip1
             // 
