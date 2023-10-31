@@ -38,6 +38,7 @@
             historicoToolStripMenuItem = new ToolStripMenuItem();
             itensRemovidosToolStripMenuItem = new ToolStripMenuItem();
             rToolStripMenuItem = new ToolStripMenuItem();
+            relatoriosToolStripMenuItem = new ToolStripMenuItem();
             ajudaToolStripMenuItem = new ToolStripMenuItem();
             sobreToolStripMenuItem = new ToolStripMenuItem();
             sobreToolStripMenuItem1 = new ToolStripMenuItem();
@@ -116,10 +117,18 @@
             // 
             // rToolStripMenuItem
             // 
+            rToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { relatoriosToolStripMenuItem });
             rToolStripMenuItem.Name = "rToolStripMenuItem";
             rToolStripMenuItem.Size = new Size(180, 22);
             rToolStripMenuItem.Text = "Relatórios";
             rToolStripMenuItem.Click += rToolStripMenuItem_Click;
+            // 
+            // relatoriosToolStripMenuItem
+            // 
+            relatoriosToolStripMenuItem.Name = "relatoriosToolStripMenuItem";
+            relatoriosToolStripMenuItem.Size = new Size(180, 22);
+            relatoriosToolStripMenuItem.Text = "Relatórios";
+            relatoriosToolStripMenuItem.Click += relatoriosToolStripMenuItem_Click;
             // 
             // ajudaToolStripMenuItem
             // 
@@ -202,5 +211,6 @@
         private ToolStripMenuItem usuarioToolStripMenuItem;
         private Panel panel1;
         private Label label1;
+        private ToolStripMenuItem relatoriosToolStripMenuItem;
     }
 }

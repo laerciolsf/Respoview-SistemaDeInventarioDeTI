@@ -82,6 +82,12 @@ namespace ProjectX.view
             }
         }
 
-
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FCamposExporta tela = new FCamposExporta();
+            tela.Show();
+        }
     }
 }
+
+
