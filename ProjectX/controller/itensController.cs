@@ -8,6 +8,11 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Reflection;
 using System.Data;
+using System.Reflection.Metadata;
+using PdfSharpCore.Pdf;
+using PdfSharpCore.Drawing;
+using PdfSharpCore.Pdf.IO;
+using PdfSharpCore;
 
 namespace ProjectX.controller
 {
@@ -78,7 +83,6 @@ namespace ProjectX.controller
                 MessageBox.Show("Erro ao consultar: " + ex.Message);
                 return null;
             }
-
         }
 
         public DataTable pesquisaRelatorios(int idLoja, int idDepartamento)
@@ -212,5 +216,47 @@ namespace ProjectX.controller
                 MessageBox.Show("Aconteceu um erro: " + ex.Message);
             }
         }
+        public void ExportarParaPDF(DataTable dados, string caminhoDoArquivo)
+        {
+            // Crie um documento PDF
+            PdfDocument document = new PdfDocument();
+
+            // Defina a orientação da página para paisagem
+            PdfPage page = document.AddPage();
+            page.Orientation = PageOrientation.Landscape;  // Mude para paisagem
+            XGraphics gfx = XGraphics.FromPdfPage(page);
+
+            XFont font = new XFont("Arial", 7, XFontStyle.Regular);
+
+            double x = 20; // Posição inicial horizontal
+            double y = 20; // Posição inicial vertical
+
+            double columnWidth = 80; // Largura da coluna
+
+            // Adicione o cabeçalho da tabela
+            for (int i = 0; i < dados.Columns.Count; i++)
+            {
+                // Desenhe o nome da coluna no PDF
+                gfx.DrawString(dados.Columns[i].ColumnName, font, XBrushes.Black, new XRect(x, y, columnWidth, 20), XStringFormats.TopCenter);
+                x += columnWidth; // Atualize a posição horizontal para a próxima coluna
+            }
+
+            y += 20; // Atualize a posição vertical para os dados
+
+            // Adicione os dados da tabela
+            for (int i = 0; i < dados.Rows.Count; i++)
+            {
+                x = 20; // Reinicie a posição horizontal para a primeira coluna
+                for (int j = 0; j < dados.Columns.Count; j++)
+                {
+                    // Desenhe o valor dos dados no PDF
+                    gfx.DrawString(dados.Rows[i][j].ToString(), font, XBrushes.Black, new XRect(x, y, columnWidth, 20), XStringFormats.TopCenter);
+                    x += columnWidth; // Atualize a posição horizontal para a próxima coluna
+                }
+                y += 20; // Atualize a posição vertical para a próxima linha de dados
+            }
+            document.Save(caminhoDoArquivo); // Salve o documento PDF no caminho especificado
+        }
+
     }
 }

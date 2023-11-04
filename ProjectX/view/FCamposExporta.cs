@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjectX.controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 
 namespace ProjectX.view
 {
@@ -108,7 +111,62 @@ namespace ProjectX.view
 
         private void txtLoja_TextChanged(object sender, EventArgs e)
         {
-             
+
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void BComfirmar_Click(object sender, EventArgs e)
+        {
+            int idLoja = 0;
+            int idDepartamento = 0;
+
+            if (int.TryParse(txtLoja.Text, out idLoja) && idLoja > 0)
+            {
+                if (!string.IsNullOrEmpty(txtDpto.Text) && int.TryParse(txtDpto.Text, out idDepartamento) && idDepartamento <= 0)
+                {
+                    MessageBox.Show("Informe um ID de departamento válido ou deixe o campo em branco.");
+                    return;
+                }
+
+                itensController controller = new itensController();
+                DataTable resultado = controller.pesquisaRelatorios(idLoja, idDepartamento);
+
+                if (resultado.Rows.Count > 0)
+                {
+                    string caminhoDoArquivo = @"C:\Users\laerc\OneDrive\Documentos\Relatorios\relatorio.pdf"; // Defina o caminho desejado aqui
+                    controller.ExportarParaPDF(resultado, caminhoDoArquivo);
+                    MessageBox.Show("Relatório exportado para 'relatorio.pdf'");
+                }
+                else
+                {
+                    MessageBox.Show("Nenhum item encontrado com este ID de loja e/ou departamento.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Informe um ID de loja válido.");
+            }
+        }
+
+
+        private bool ExportarPDF(DataTable dados, string caminhoDoArquivo)
+        {
+            try
+            {
+                itensController controller = new itensController();
+                controller.ExportarParaPDF(dados, caminhoDoArquivo);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao exportar para PDF: " + ex.Message);
+                return false;
+            }
+        }
+
     }
 }

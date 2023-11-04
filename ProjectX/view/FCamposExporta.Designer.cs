@@ -220,6 +220,7 @@
             BComfirmar.TabIndex = 15;
             BComfirmar.Text = "Comfirmar";
             BComfirmar.UseVisualStyleBackColor = true;
+            BComfirmar.Click += BComfirmar_Click;
             // 
             // button3
             // 
@@ -229,6 +230,7 @@
             button3.TabIndex = 16;
             button3.Text = "Cancelar";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // panel1
             // 

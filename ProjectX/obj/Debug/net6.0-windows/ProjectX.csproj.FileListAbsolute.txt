@@ -100,3 +100,9 @@ D:\ProjetoMallon\ProjectX\obj\Debug\net6.0-windows\ProjectX.view.FLogin.resource
 D:\ProjetoMallon\ProjectX\obj\Debug\net6.0-windows\ProjectX.view.FUsuario.resources
 D:\ProjetoMallon\ProjectX\obj\Debug\net6.0-windows\ProjectX.view.FRelatorio.resources
 D:\ProjetoMallon\ProjectX\obj\Debug\net6.0-windows\ProjectX.view.FCamposExporta.resources
+D:\ProjetoMallon\ProjectX\bin\Debug\net6.0-windows\itextsharp.dll
+D:\ProjetoMallon\ProjectX\bin\Debug\net6.0-windows\PdfSharpCore.dll
+D:\ProjetoMallon\ProjectX\bin\Debug\net6.0-windows\ICSharpCode.SharpZipLib.dll
+D:\ProjetoMallon\ProjectX\bin\Debug\net6.0-windows\SixLabors.Fonts.dll
+D:\ProjetoMallon\ProjectX\bin\Debug\net6.0-windows\SixLabors.ImageSharp.dll
+D:\ProjetoMallon\ProjectX\bin\Debug\net6.0-windows\de\PdfSharpCore.resources.dll
