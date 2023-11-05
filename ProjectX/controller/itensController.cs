@@ -226,18 +226,41 @@ namespace ProjectX.controller
             page.Orientation = PageOrientation.Landscape;  // Mude para paisagem
             XGraphics gfx = XGraphics.FromPdfPage(page);
 
-            XFont font = new XFont("Arial", 7, XFontStyle.Regular);
+            XFont font = new XFont("Arial", 6, XFontStyle.Regular);
 
             double x = 20; // Posição inicial horizontal
             double y = 20; // Posição inicial vertical
 
-            double columnWidth = 80; // Largura da coluna
+            // Defina as larguras das colunas individualmente
+            Dictionary<string, double> columnWidths = new Dictionary<string, double>
+    {
+        { "id", 28 },
+        { "usuarioResponsavel", 100 },
+        { "nomeEquipamento", 90 },
+        { "tipo", 55 },
+        { "quantidade", 33 },
+        { "fabricante", 55 },
+        { "modelo", 60 },
+        { "processador", 55 },
+        { "memoria", 50 },
+        { "hd_ssd", 75 },
+        { "sistemaOperacional", 80 },
+        { "valorEstimado", 42 },
+        { "idLoja", 28 },
+        { "idDepartamento", 46 }
+    };
 
             // Adicione o cabeçalho da tabela
-            for (int i = 0; i < dados.Columns.Count; i++)
+            foreach (DataColumn column in dados.Columns)
             {
-                // Desenhe o nome da coluna no PDF
-                gfx.DrawString(dados.Columns[i].ColumnName, font, XBrushes.Black, new XRect(x, y, columnWidth, 20), XStringFormats.TopCenter);
+                double columnWidth = columnWidths.ContainsKey(column.ColumnName) ? columnWidths[column.ColumnName] : 55;
+
+                // Calcule a posição vertical central
+                double centerY = y + 3;
+
+                // Desenhe o nome da coluna no PDF com uma borda
+                gfx.DrawString(column.ColumnName, font, XBrushes.Black, new XRect(x, centerY, columnWidth, 20), XStringFormats.Center);
+                gfx.DrawRectangle(XPens.Black, x, y, columnWidth, 20); // Adicione uma borda à célula
                 x += columnWidth; // Atualize a posição horizontal para a próxima coluna
             }
 
@@ -247,16 +270,21 @@ namespace ProjectX.controller
             for (int i = 0; i < dados.Rows.Count; i++)
             {
                 x = 20; // Reinicie a posição horizontal para a primeira coluna
-                for (int j = 0; j < dados.Columns.Count; j++)
+                foreach (DataColumn column in dados.Columns)
                 {
-                    // Desenhe o valor dos dados no PDF
-                    gfx.DrawString(dados.Rows[i][j].ToString(), font, XBrushes.Black, new XRect(x, y, columnWidth, 20), XStringFormats.TopCenter);
+                    double columnWidth = columnWidths.ContainsKey(column.ColumnName) ? columnWidths[column.ColumnName] : 55;
+
+                    // Calcule a posição vertical central
+                    double centerY = y + 3;
+
+                    // Desenhe o valor dos dados no PDF com uma borda
+                    gfx.DrawString(dados.Rows[i][column].ToString(), font, XBrushes.Black, new XRect(x, centerY, columnWidth, 20), XStringFormats.Center);
+                    gfx.DrawRectangle(XPens.Black, x, y, columnWidth, 20); // Adicione uma borda à célula
                     x += columnWidth; // Atualize a posição horizontal para a próxima coluna
                 }
                 y += 20; // Atualize a posição vertical para a próxima linha de dados
             }
             document.Save(caminhoDoArquivo); // Salve o documento PDF no caminho especificado
         }
-
     }
 }
