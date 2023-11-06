@@ -44,6 +44,8 @@
             toolStrip1 = new ToolStrip();
             botaoFechar = new ToolStripButton();
             button2 = new Button();
+            buttonPdf = new Button();
+            button3 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
             toolStrip1.SuspendLayout();
@@ -192,13 +194,33 @@
             // 
             // button2
             // 
-            button2.Location = new Point(733, 496);
+            button2.Location = new Point(14, 496);
             button2.Name = "button2";
-            button2.Size = new Size(139, 30);
+            button2.Size = new Size(160, 30);
             button2.TabIndex = 61;
-            button2.Text = "Exportar Relatórios";
+            button2.Text = "Exportação Personalizada";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
+            // 
+            // buttonPdf
+            // 
+            buttonPdf.Location = new Point(758, 496);
+            buttonPdf.Name = "buttonPdf";
+            buttonPdf.Size = new Size(114, 30);
+            buttonPdf.TabIndex = 62;
+            buttonPdf.Text = "Exportar em PDF";
+            buttonPdf.UseVisualStyleBackColor = true;
+            buttonPdf.Click += button1_Click_1;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(632, 496);
+            button3.Name = "button3";
+            button3.Size = new Size(120, 30);
+            button3.TabIndex = 63;
+            button3.Text = "Exportar em CSV";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // FRelatorio
             // 
@@ -206,6 +228,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(989, 538);
+            Controls.Add(button3);
+            Controls.Add(buttonPdf);
             Controls.Add(button2);
             Controls.Add(toolStrip1);
             Controls.Add(labelNomeDpto);
@@ -252,5 +276,7 @@
         private ToolStrip toolStrip1;
         private ToolStripButton botaoFechar;
         private Button button2;
+        private Button buttonPdf;
+        private Button button3;
     }
 }

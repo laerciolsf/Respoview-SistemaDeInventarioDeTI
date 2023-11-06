@@ -8,7 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static ProjectX.controller.itensController;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace ProjectX.view
 {
@@ -87,6 +89,79 @@ namespace ProjectX.view
             FCamposExporta tela = new FCamposExporta();
             tela.Show();
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            int idLoja = 0;
+            int idDepartamento = 0;
+
+            if (int.TryParse(txtLoja.Text, out idLoja) && idLoja > 0)
+            {
+                if (!string.IsNullOrEmpty(txtDpto.Text) && int.TryParse(txtDpto.Text, out idDepartamento) && idDepartamento <= 0)
+                {
+                    MessageBox.Show("Informe um ID de departamento válido ou deixe o campo em branco.");
+                    return;
+                }
+
+                itensController controller = new itensController();
+                DataTable resultado = controller.pesquisaRelatorios(idLoja, idDepartamento);
+
+                if (resultado.Rows.Count > 0)
+                {
+                    string caminhoDoArquivo = @"C:\Users\laerc\OneDrive\Documentos\Relatorios\relatorio.pdf"; // Defina o caminho desejado aqui
+                    controller.ExportarParaPDF(resultado, caminhoDoArquivo);
+                    MessageBox.Show("Relatório exportado para 'relatorio.pdf'");
+                }
+                else
+                {
+                    MessageBox.Show("Nenhum item encontrado com este ID de loja e/ou departamento.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Informe um ID de loja válido.");
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int idLoja = 0;
+            int idDepartamento = 0;
+
+            if (int.TryParse(txtLoja.Text, out idLoja) && idLoja > 0)
+            {
+                if (!string.IsNullOrEmpty(txtDpto.Text) && int.TryParse(txtDpto.Text, out idDepartamento) && idDepartamento <= 0)
+                {
+                    MessageBox.Show("Informe um ID de departamento válido ou deixe o campo em branco.");
+                    return;
+                }
+
+              
+
+                itensController controller = new itensController();
+                DataTable resultado = controller.pesquisaRelatorios(idLoja, idDepartamento);
+
+                if (resultado.Rows.Count > 0)
+                {
+                    string caminhoDoArquivoCSV = @"C:\Users\laerc\OneDrive\Documentos\Relatorios\relatorio.csv";
+
+                    // Crie uma instância da classe CSVExporter e exporte os dados
+                    CSVExporter csvExporter = new CSVExporter();
+                    csvExporter.ExportToCSV(resultado, caminhoDoArquivoCSV);
+
+                    MessageBox.Show("Relatório exportado para 'relatorio.csv'");
+                }
+                else
+                {
+                    MessageBox.Show("Nenhum item encontrado com este ID de loja e/ou departamento.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Informe um ID de loja válido.");
+            }
+        }
+
     }
 }
 

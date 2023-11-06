@@ -111,8 +111,8 @@
             // itensRemovidosToolStripMenuItem
             // 
             itensRemovidosToolStripMenuItem.Name = "itensRemovidosToolStripMenuItem";
-            itensRemovidosToolStripMenuItem.Size = new Size(158, 22);
-            itensRemovidosToolStripMenuItem.Text = "Itens removidos";
+            itensRemovidosToolStripMenuItem.Size = new Size(226, 22);
+            itensRemovidosToolStripMenuItem.Text = "Itens alterados ou removidos";
             itensRemovidosToolStripMenuItem.Click += itensRemovidosToolStripMenuItem_Click;
             // 
             // rToolStripMenuItem
@@ -126,7 +126,7 @@
             // relatoriosToolStripMenuItem
             // 
             relatoriosToolStripMenuItem.Name = "relatoriosToolStripMenuItem";
-            relatoriosToolStripMenuItem.Size = new Size(180, 22);
+            relatoriosToolStripMenuItem.Size = new Size(126, 22);
             relatoriosToolStripMenuItem.Text = "Relatórios";
             relatoriosToolStripMenuItem.Click += relatoriosToolStripMenuItem_Click;
             // 

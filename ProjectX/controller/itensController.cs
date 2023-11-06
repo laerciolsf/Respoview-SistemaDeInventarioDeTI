@@ -13,6 +13,10 @@ using PdfSharpCore.Pdf;
 using PdfSharpCore.Drawing;
 using PdfSharpCore.Pdf.IO;
 using PdfSharpCore;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 
 namespace ProjectX.controller
 {
@@ -145,7 +149,6 @@ namespace ProjectX.controller
                 MessageBox.Show("Erro ao consultar: " + ex.Message);
                 return null;
             }
-
         }
         public void alterarItens(Itens obj)
         {
@@ -216,6 +219,68 @@ namespace ProjectX.controller
                 MessageBox.Show("Aconteceu um erro: " + ex.Message);
             }
         }
+
+        public class CSVExporter
+        {
+            public void ExportToCSV(DataTable data, string filePath, string separator = ";")
+            {
+                if (data == null)
+                {
+                    throw new ArgumentNullException("data", "DataTable não pode ser nulo.");
+                }
+
+                if (string.IsNullOrEmpty(filePath))
+                {
+                    throw new ArgumentNullException("filePath", "Caminho do arquivo CSV não pode ser vazio.");
+                }
+
+                using (StreamWriter sw = new StreamWriter(filePath))
+                {
+                    // Escreve o cabeçalho com os nomes das colunas
+                    for (int i = 0; i < data.Columns.Count; i++)
+                    {
+                        sw.Write(data.Columns[i].ColumnName);
+                        if (i < data.Columns.Count - 1)
+                        {
+                            sw.Write(separator);
+                        }
+                    }
+                    sw.WriteLine();
+
+                    // Escreve os dados
+                    foreach (DataRow row in data.Rows)
+                    {
+                        for (int i = 0; i < data.Columns.Count; i++)
+                        {
+                            sw.Write(FormatCSVField(row[i], separator));
+                            if (i < data.Columns.Count - 1)
+                            {
+                                sw.Write(separator);
+                            }
+                        }
+                        sw.WriteLine();
+                    }
+                }
+            }
+
+            private string FormatCSVField(object field, string separator)
+            {
+                if (field == null)
+                {
+                    return "";
+                }
+
+                string fieldStr = field.ToString();
+                if (fieldStr.Contains(separator) || fieldStr.Contains("\"") || fieldStr.Contains("\n") || fieldStr.Contains("\r"))
+                {
+                    fieldStr = fieldStr.Replace("\"", "\"\"");
+                    fieldStr = "\"" + fieldStr + "\"";
+                }
+
+                return fieldStr;
+            }
+        }
+
         public void ExportarParaPDF(DataTable dados, string caminhoDoArquivo)
         {
             // Crie um documento PDF

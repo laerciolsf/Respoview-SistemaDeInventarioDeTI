@@ -37,71 +37,71 @@ namespace ProjectX.view
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-
+            //id
         }
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
-
+            //usuarioResponsavel
         }
 
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
-
+            //nomeEquipamento
         }
 
         private void checkBox4_CheckedChanged(object sender, EventArgs e)
         {
-
+            //quantidade
         }
 
         private void checkBox5_CheckedChanged(object sender, EventArgs e)
         {
-
+            //tipo
         }
 
         private void checkBox6_CheckedChanged(object sender, EventArgs e)
         {
-
+            //fabricante
         }
 
         private void checkBox7_CheckedChanged(object sender, EventArgs e)
         {
-
+            //modelo
         }
 
         private void checkBox8_CheckedChanged(object sender, EventArgs e)
         {
-
+            //processador
         }
 
         private void checkBox9_CheckedChanged(object sender, EventArgs e)
         {
-
+            //memoria
         }
 
         private void checkBox10_CheckedChanged(object sender, EventArgs e)
         {
-
+            //hd_ssd
         }
 
         private void checkBox11_CheckedChanged(object sender, EventArgs e)
         {
-
+            //sistemaOperacional
         }
 
         private void checkBox12_CheckedChanged(object sender, EventArgs e)
         {
-
+            //valorEstimado
         }
 
         private void checkBox13_CheckedChanged(object sender, EventArgs e)
         {
-
+            //idLoja
         }
 
         private void checkBox14_CheckedChanged(object sender, EventArgs e)
         {
-
+            //idDepartamento
         }
 
         private void txtDpto_TextChanged(object sender, EventArgs e)
@@ -151,22 +151,5 @@ namespace ProjectX.view
                 MessageBox.Show("Informe um ID de loja válido.");
             }
         }
-
-
-        private bool ExportarPDF(DataTable dados, string caminhoDoArquivo)
-        {
-            try
-            {
-                itensController controller = new itensController();
-                controller.ExportarParaPDF(dados, caminhoDoArquivo);
-                return true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao exportar para PDF: " + ex.Message);
-                return false;
-            }
-        }
-
     }
 }
