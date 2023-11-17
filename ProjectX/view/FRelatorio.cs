@@ -145,15 +145,13 @@ namespace ProjectX.view
                     return;
                 }
 
+
+
                 itensController controller = new itensController();
                 DataTable resultado = controller.pesquisaRelatorios(idLoja, idDepartamento);
 
                 if (resultado.Rows.Count > 0)
                 {
-                    // Remova as colunas idBitLocker e chaveBitLocker do DataTable antes de exportar para CSV
-                    resultado.Columns.Remove("idBitLocker");
-                    resultado.Columns.Remove("chaveBitLocker");
-
                     string caminhoDoArquivoCSV = @"C:\Users\laerc\OneDrive\Documentos\Relatorios\relatorio.csv";
 
                     // Crie uma instância da classe CSVExporter e exporte os dados

@@ -67,20 +67,28 @@ namespace ProjectX.view
                 itensController controller = new itensController();
                 DataTable resultado = controller.pesquisaRelatorios(idLoja, idDepartamento);
 
-                if (resultado.Rows.Count > 0)
-                {
-                    // Remova as colunas idBitLocker e chaveBitLocker do DataTable antes de exportar para PDF
-                    resultado.Columns.Remove("idBitLocker");
-                    resultado.Columns.Remove("chaveBitLocker");
+                // Obtenha as colunas selecionadas
+                List<string> colunasSelecionadas = ObterColunasSelecionadas();
 
-                    string caminhoDoArquivo = @"C:\Users\laerc\OneDrive\Documentos\Relatorios\relatorio.pdf"; // Defina o caminho desejado aqui
-                    controller.ExportarParaPDF(resultado, caminhoDoArquivo);
-                    MessageBox.Show("Relatório exportado para 'relatorio.pdf'");
-                }
-                else
+                // Verifique se pelo menos uma coluna está selecionada
+                if (colunasSelecionadas.Count == 0)
                 {
-                    MessageBox.Show("Nenhum item encontrado com este ID de loja e/ou departamento.");
+                    MessageBox.Show("Selecione pelo menos uma coluna para exportação.");
+                    return;
                 }
+
+                // Remova as colunas não selecionadas do DataTable
+                foreach (DataColumn column in resultado.Columns.Cast<DataColumn>().ToList())
+                {
+                    if (!colunasSelecionadas.Contains(column.ColumnName))
+                    {
+                        resultado.Columns.Remove(column.ColumnName);
+                    }
+                }
+
+                string caminhoDoArquivo = @"C:\Users\laerc\OneDrive\Documentos\Relatorios\relatorio.pdf"; // Defina o caminho desejado aqui
+                controller.ExportarParaPDF(resultado, caminhoDoArquivo);
+                MessageBox.Show("Relatório exportado para 'relatorio.pdf'");
             }
             else
             {
@@ -104,24 +112,30 @@ namespace ProjectX.view
                 itensController controller = new itensController();
                 DataTable resultado = controller.pesquisaRelatorios(idLoja, idDepartamento);
 
-                if (resultado.Rows.Count > 0)
+                // Obtenha as colunas selecionadas
+                List<string> colunasSelecionadas = ObterColunasSelecionadas();
+
+                // Verifique se pelo menos uma coluna está selecionada
+                if (colunasSelecionadas.Count == 0)
                 {
-                    // Remova as colunas idBitLocker e chaveBitLocker do DataTable antes de exportar para CSV
-                    resultado.Columns.Remove("idBitLocker");
-                    resultado.Columns.Remove("chaveBitLocker");
-
-                    string caminhoDoArquivoCSV = @"C:\Users\laerc\OneDrive\Documentos\Relatorios\relatorio.csv";
-
-                    // Crie uma instância da classe CSVExporter e exporte os dados
-                    CSVExporter csvExporter = new CSVExporter();
-                    csvExporter.ExportToCSV(resultado, caminhoDoArquivoCSV);
-
-                    MessageBox.Show("Relatório exportado para 'relatorio.csv'");
+                    MessageBox.Show("Selecione pelo menos uma coluna para exportação.");
+                    return;
                 }
-                else
+
+                // Remova as colunas não selecionadas do DataTable
+                foreach (DataColumn column in resultado.Columns.Cast<DataColumn>().ToList())
                 {
-                    MessageBox.Show("Nenhum item encontrado com este ID de loja e/ou departamento.");
+                    if (!colunasSelecionadas.Contains(column.ColumnName))
+                    {
+                        resultado.Columns.Remove(column.ColumnName);
+                    }
                 }
+
+                string caminhoDoArquivoCSV = @"C:\Users\laerc\OneDrive\Documentos\Relatorios\relatorio.csv";
+                CSVExporter csvExporter = new CSVExporter();
+                csvExporter.ExportToCSV(resultado, caminhoDoArquivoCSV);
+
+                MessageBox.Show("Relatório exportado para 'relatorio.csv'");
             }
             else
             {
@@ -198,5 +212,32 @@ namespace ProjectX.view
         {
 
         }
+
+
+        private List<string> ObterColunasSelecionadas()
+        {
+            List<string> colunasSelecionadas = new List<string>();
+
+            if (checkBoxId.Checked) colunasSelecionadas.Add("id");
+            if (checkBoxUserRes.Checked) colunasSelecionadas.Add("usuarioResponsavel");
+            if (checkBoxNomeEquipamento.Checked) colunasSelecionadas.Add("nomeEquipamento");
+            if (checkBoxQuantidade.Checked) colunasSelecionadas.Add("quantidade");
+            if (checkBoxTipo.Checked) colunasSelecionadas.Add("tipo");
+            if (checkBoxFabricante.Checked) colunasSelecionadas.Add("fabricante");
+            if (checkBoxModelo.Checked) colunasSelecionadas.Add("modelo");
+            if (checkBoxProcessador.Checked) colunasSelecionadas.Add("processador");
+            if (checkBoxMemoria.Checked) colunasSelecionadas.Add("memoria");
+            if (checkBoxHdSsd.Checked) colunasSelecionadas.Add("hd_ssd");
+            if (checkBoxSistemOperacional.Checked) colunasSelecionadas.Add("sistemaOperacional");
+            if (checkBoxValorEstimado.Checked) colunasSelecionadas.Add("valorEstimado");
+            if (checkBoxIdLoja.Checked) colunasSelecionadas.Add("idLoja");
+            if (checkBoxIdDepartamento.Checked) colunasSelecionadas.Add("idDepartamento");
+
+            return colunasSelecionadas;
+        }
+
+
+
+
     }
 }
