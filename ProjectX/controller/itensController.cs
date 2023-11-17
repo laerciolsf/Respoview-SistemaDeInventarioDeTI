@@ -308,37 +308,53 @@ namespace ProjectX.controller
 
             // Defina as larguras das colunas individualmente
             Dictionary<string, double> columnWidths = new Dictionary<string, double>
-    {
-        { "id", 28 },
-        { "usuarioResponsavel", 100 },
-        { "nomeEquipamento", 90 },
-        { "tipo", 55 },
-        { "quantidade", 33 },
-        { "fabricante", 55 },
-        { "modelo", 60 },
-        { "processador", 55 },
-        { "memoria", 50 },
-        { "hd_ssd", 75 },
-        { "sistemaOperacional", 80 },
-        { "valorEstimado", 42 },
-        { "idLoja", 28 },
-        { "idDepartamento", 46 }
-    };
 
-            // Adicione o cabeçalho da tabela
+
+            {
+                { "id", 28 },
+                { "usuarioResponsavel", 100 },
+                { "nomeEquipamento", 90 },
+                { "tipo", 55 },
+                { "quantidade", 33 },
+                { "fabricante", 55 },
+                { "modelo", 60 },
+                { "processador", 55 },
+                { "memoria", 50 },
+                { "hd_ssd", 75 },
+                { "sistemaOperacional", 80 },
+                { "valorEstimado", 42 },
+                { "idLoja", 28 },
+                { "idDepartamento", 46 }
+            };
+
+            // Remova as colunas que não devem ser exibidas
+            string[] colunasExcluidas = { "idBitLocker", "chaveBitLocker" };
+            foreach (var colunaExcluida in colunasExcluidas)
+            {
+                if (columnWidths.ContainsKey(colunaExcluida))
+                {
+                    columnWidths.Remove(colunaExcluida);
+                }
+            }
+            ///
+
+            // Adicione o cabeçalho da tabela (excluindo as colunas removidas)
             foreach (DataColumn column in dados.Columns)
             {
-                double columnWidth = columnWidths.ContainsKey(column.ColumnName) ? columnWidths[column.ColumnName] : 55;
+                if (columnWidths.ContainsKey(column.ColumnName))
+                {
+                    double columnWidth = columnWidths[column.ColumnName];
 
-                // Calcule a posição vertical central
-                double centerY = y + 3;
+                    // Calcule a posição vertical central
+                    double centerY = y + 3;
 
-                // Desenhe o nome da coluna no PDF com uma borda
-                gfx.DrawString(column.ColumnName, font, XBrushes.Black, new XRect(x, centerY, columnWidth, 20), XStringFormats.Center);
-                gfx.DrawRectangle(XPens.Black, x, y, columnWidth, 20); // Adicione uma borda à célula
-                x += columnWidth; // Atualize a posição horizontal para a próxima coluna
+                    // Desenhe o nome da coluna no PDF com uma borda
+                    gfx.DrawString(column.ColumnName, font, XBrushes.Black, new XRect(x, centerY, columnWidth, 20), XStringFormats.Center);
+                    gfx.DrawRectangle(XPens.Black, x, y, columnWidth, 20); // Adicione uma borda à célula
+                    x += columnWidth; // Atualize a posição horizontal para a próxima coluna
+                }
             }
-
+           
             y += 20; // Atualize a posição vertical para os dados
 
             // Adicione os dados da tabela

@@ -73,6 +73,10 @@ namespace ProjectX.view
                 itensController controller = new itensController();
                 dataGridView1.DataSource = controller.pesquisaRelatorios(idLoja, idDepartamento);
 
+                // Ocultar as colunas idBitLocker e chaveBitLocker
+                dataGridView1.Columns["idBitLocker"].Visible = false;
+                dataGridView1.Columns["chaveBitLocker"].Visible = false;
+
                 if (dataGridView1.Rows.Count == 0)
                 {
                     MessageBox.Show("Nenhum item encontrado com este ID de loja e/ou departamento.");
@@ -108,6 +112,10 @@ namespace ProjectX.view
 
                 if (resultado.Rows.Count > 0)
                 {
+                    // Remova as colunas idBitLocker e chaveBitLocker do DataTable antes de exportar para PDF
+                    resultado.Columns.Remove("idBitLocker");
+                    resultado.Columns.Remove("chaveBitLocker");
+
                     string caminhoDoArquivo = @"C:\Users\laerc\OneDrive\Documentos\Relatorios\relatorio.pdf"; // Defina o caminho desejado aqui
                     controller.ExportarParaPDF(resultado, caminhoDoArquivo);
                     MessageBox.Show("Relatório exportado para 'relatorio.pdf'");
@@ -121,6 +129,7 @@ namespace ProjectX.view
             {
                 MessageBox.Show("Informe um ID de loja válido.");
             }
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -136,13 +145,15 @@ namespace ProjectX.view
                     return;
                 }
 
-
-
                 itensController controller = new itensController();
                 DataTable resultado = controller.pesquisaRelatorios(idLoja, idDepartamento);
 
                 if (resultado.Rows.Count > 0)
                 {
+                    // Remova as colunas idBitLocker e chaveBitLocker do DataTable antes de exportar para CSV
+                    resultado.Columns.Remove("idBitLocker");
+                    resultado.Columns.Remove("chaveBitLocker");
+
                     string caminhoDoArquivoCSV = @"C:\Users\laerc\OneDrive\Documentos\Relatorios\relatorio.csv";
 
                     // Crie uma instância da classe CSVExporter e exporte os dados
@@ -162,6 +173,10 @@ namespace ProjectX.view
             }
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
 
