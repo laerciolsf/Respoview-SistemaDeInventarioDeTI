@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
+using static ProjectX.controller.itensController;
 
 namespace ProjectX.view
 {
@@ -33,75 +34,6 @@ namespace ProjectX.view
             pesquisa.ShowDialog();
             txtDpto.Text = pesquisa.selecionado.id.ToString();
             labelNomeDpto.Text = pesquisa.selecionado.dpto;
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            //id
-        }
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
-        {
-            //usuarioResponsavel
-        }
-
-        private void checkBox3_CheckedChanged(object sender, EventArgs e)
-        {
-            //nomeEquipamento
-        }
-
-        private void checkBox4_CheckedChanged(object sender, EventArgs e)
-        {
-            //quantidade
-        }
-
-        private void checkBox5_CheckedChanged(object sender, EventArgs e)
-        {
-            //tipo
-        }
-
-        private void checkBox6_CheckedChanged(object sender, EventArgs e)
-        {
-            //fabricante
-        }
-
-        private void checkBox7_CheckedChanged(object sender, EventArgs e)
-        {
-            //modelo
-        }
-
-        private void checkBox8_CheckedChanged(object sender, EventArgs e)
-        {
-            //processador
-        }
-
-        private void checkBox9_CheckedChanged(object sender, EventArgs e)
-        {
-            //memoria
-        }
-
-        private void checkBox10_CheckedChanged(object sender, EventArgs e)
-        {
-            //hd_ssd
-        }
-
-        private void checkBox11_CheckedChanged(object sender, EventArgs e)
-        {
-            //sistemaOperacional
-        }
-
-        private void checkBox12_CheckedChanged(object sender, EventArgs e)
-        {
-            //valorEstimado
-        }
-
-        private void checkBox13_CheckedChanged(object sender, EventArgs e)
-        {
-            //idLoja
-        }
-
-        private void checkBox14_CheckedChanged(object sender, EventArgs e)
-        {
-            //idDepartamento
         }
 
         private void txtDpto_TextChanged(object sender, EventArgs e)
@@ -150,6 +82,115 @@ namespace ProjectX.view
             {
                 MessageBox.Show("Informe um ID de loja válido.");
             }
+        }
+
+        private void buttonCsv_Click(object sender, EventArgs e)
+        {
+            int idLoja = 0;
+            int idDepartamento = 0;
+
+            if (int.TryParse(txtLoja.Text, out idLoja) && idLoja > 0)
+            {
+                if (!string.IsNullOrEmpty(txtDpto.Text) && int.TryParse(txtDpto.Text, out idDepartamento) && idDepartamento <= 0)
+                {
+                    MessageBox.Show("Informe um ID de departamento válido ou deixe o campo em branco.");
+                    return;
+                }
+
+
+
+                itensController controller = new itensController();
+                DataTable resultado = controller.pesquisaRelatorios(idLoja, idDepartamento);
+
+                if (resultado.Rows.Count > 0)
+                {
+                    string caminhoDoArquivoCSV = @"C:\Users\laerc\OneDrive\Documentos\Relatorios\relatorio.csv";
+
+                    // Crie uma instância da classe CSVExporter e exporte os dados
+                    CSVExporter csvExporter = new CSVExporter();
+                    csvExporter.ExportToCSV(resultado, caminhoDoArquivoCSV);
+
+                    MessageBox.Show("Relatório exportado para 'relatorio.csv'");
+                }
+                else
+                {
+                    MessageBox.Show("Nenhum item encontrado com este ID de loja e/ou departamento.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Informe um ID de loja válido.");
+            }
+        }
+
+        private void checkBoxId_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxUserRes_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxNomeEquipamento_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxQuantidade_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxTipo_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxFabricante_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxModelo_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxProcessador_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxMemoria_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxHdSsd_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxSistemOperacional_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxValorEstimado_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxIdLoja_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxIdDepartamento_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

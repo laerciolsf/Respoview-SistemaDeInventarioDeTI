@@ -136,7 +136,7 @@ namespace ProjectX.view
                     return;
                 }
 
-              
+
 
                 itensController controller = new itensController();
                 DataTable resultado = controller.pesquisaRelatorios(idLoja, idDepartamento);

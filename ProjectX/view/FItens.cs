@@ -39,6 +39,8 @@ namespace ProjectX.view
             txtValor.Enabled = false;
             txtLoja.Enabled = false;
             txtDpto.Enabled = false;
+            txtchaveBitLocker.Enabled = false;
+            txtidBitLocker.Enabled = false;
 
             //desabilita os botoes.
             botaoSalvar.Enabled = false;
@@ -66,6 +68,8 @@ namespace ProjectX.view
             txtValor.Enabled = true;
             txtLoja.Enabled = false;
             txtDpto.Enabled = false;
+            txtchaveBitLocker.Enabled = true;
+            txtidBitLocker.Enabled = true;
 
             //habilita o botão salvar.
             botaoSalvar.Enabled = true;
@@ -89,6 +93,9 @@ namespace ProjectX.view
             txtValor.Text = String.Empty;
             txtLoja.Text = String.Empty;
             txtDpto.Text = String.Empty;
+            txtchaveBitLocker.Text = String.Empty;
+            txtidBitLocker.Text = String.Empty;
+
 
             //Trava o cursor no segundo campo.
             txtUsuarioResponsavel.Focus();
@@ -138,6 +145,8 @@ namespace ProjectX.view
             obj.valorEstimado = float.Parse(txtValor.Text);
             obj.idLoja = int.Parse(txtLoja.Text);
             obj.idDepartamento = int.Parse(txtDpto.Text);
+            obj.chaveBitLocker = txtchaveBitLocker.Text;
+            obj.idBitLocker = txtchaveBitLocker.Text;
 
             itensController controller = new itensController();
 
@@ -216,6 +225,9 @@ namespace ProjectX.view
             txtLoja.Text = dataGridView1.CurrentRow.Cells[12].Value.ToString();
             txtDpto.Text = dataGridView1.CurrentRow.Cells[13].Value.ToString();
 
+            txtchaveBitLocker.Text = dataGridView1.CurrentRow.Cells[14].Value.ToString();
+            txtidBitLocker.Text = dataGridView1.CurrentRow.Cells[15].Value.ToString();
+
 
             //habilita os botões
             botaoEditar.Enabled = true;
@@ -255,10 +267,7 @@ namespace ProjectX.view
 
         private void button3_Click(object sender, EventArgs e)
         {
-            FPesquisaDpto pesquisa = new FPesquisaDpto();
-            pesquisa.ShowDialog();
-            txtDpto.Text = pesquisa.selecionado.id.ToString();
-            labelNomeDpto.Text = pesquisa.selecionado.dpto;
+
         }
 
         private void tabDados_Click(object sender, EventArgs e)
@@ -268,10 +277,7 @@ namespace ProjectX.view
 
         private void buttonPesquisa2_Click(object sender, EventArgs e)
         {
-            FPesquisaLoja pesquisa = new FPesquisaLoja();
-            pesquisa.ShowDialog();
-            txtLoja.Text = pesquisa.selecionado.id.ToString();
-            labelNomeLoja.Text = pesquisa.selecionado.loja;
+
         }
 
         private void txtDpto_TextChanged(object sender, EventArgs e)
@@ -282,6 +288,32 @@ namespace ProjectX.view
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonPesquisa2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtId_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonPesquisa1_Click(object sender, EventArgs e)
+        {
+            FPesquisaDpto pesquisa = new FPesquisaDpto();
+            pesquisa.ShowDialog();
+            txtDpto.Text = pesquisa.selecionado.id.ToString();
+            labelNomeDpto.Text = pesquisa.selecionado.dpto;
+        }
+
+        private void buttonPesquisa2_Click_2(object sender, EventArgs e)
+        {
+            FPesquisaLoja pesquisa = new FPesquisaLoja();
+            pesquisa.ShowDialog();
+            txtLoja.Text = pesquisa.selecionado.id.ToString();
+            labelNomeLoja.Text = pesquisa.selecionado.loja;
         }
     }
 }

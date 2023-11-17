@@ -39,18 +39,24 @@
             itensRemovidosToolStripMenuItem = new ToolStripMenuItem();
             rToolStripMenuItem = new ToolStripMenuItem();
             relatoriosToolStripMenuItem = new ToolStripMenuItem();
+            usuariosToolStripMenuItem = new ToolStripMenuItem();
+            cadastrarToolStripMenuItem = new ToolStripMenuItem();
+            segurançaToolStripMenuItem = new ToolStripMenuItem();
+            alterarMinhaSenhaToolStripMenuItem = new ToolStripMenuItem();
+            bitlokerToolStripMenuItem = new ToolStripMenuItem();
             ajudaToolStripMenuItem = new ToolStripMenuItem();
             sobreToolStripMenuItem = new ToolStripMenuItem();
             sobreToolStripMenuItem1 = new ToolStripMenuItem();
             panel1 = new Panel();
             label1 = new Label();
+            usuarioToolStripMenuItem1 = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { inventarioToolStripMenuItem, ajudaToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { inventarioToolStripMenuItem, usuariosToolStripMenuItem, segurançaToolStripMenuItem, ajudaToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(1002, 24);
@@ -69,7 +75,7 @@
             // 
             cadastroToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { itensToolStripMenuItem, departamentoToolStripMenuItem, lojaToolStripMenuItem, usuarioToolStripMenuItem });
             cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            cadastroToolStripMenuItem.Size = new Size(180, 22);
+            cadastroToolStripMenuItem.Size = new Size(126, 22);
             cadastroToolStripMenuItem.Text = "Cadastrar";
             cadastroToolStripMenuItem.Click += cadastroToolStripMenuItem_Click;
             // 
@@ -105,7 +111,7 @@
             // 
             historicoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { itensRemovidosToolStripMenuItem });
             historicoToolStripMenuItem.Name = "historicoToolStripMenuItem";
-            historicoToolStripMenuItem.Size = new Size(180, 22);
+            historicoToolStripMenuItem.Size = new Size(126, 22);
             historicoToolStripMenuItem.Text = "Historico";
             // 
             // itensRemovidosToolStripMenuItem
@@ -119,7 +125,7 @@
             // 
             rToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { relatoriosToolStripMenuItem });
             rToolStripMenuItem.Name = "rToolStripMenuItem";
-            rToolStripMenuItem.Size = new Size(180, 22);
+            rToolStripMenuItem.Size = new Size(126, 22);
             rToolStripMenuItem.Text = "Relatórios";
             rToolStripMenuItem.Click += rToolStripMenuItem_Click;
             // 
@@ -129,6 +135,40 @@
             relatoriosToolStripMenuItem.Size = new Size(126, 22);
             relatoriosToolStripMenuItem.Text = "Relatórios";
             relatoriosToolStripMenuItem.Click += relatoriosToolStripMenuItem_Click;
+            // 
+            // usuariosToolStripMenuItem
+            // 
+            usuariosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cadastrarToolStripMenuItem });
+            usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
+            usuariosToolStripMenuItem.Size = new Size(64, 20);
+            usuariosToolStripMenuItem.Text = "Usuarios";
+            // 
+            // cadastrarToolStripMenuItem
+            // 
+            cadastrarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { usuarioToolStripMenuItem1 });
+            cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
+            cadastrarToolStripMenuItem.Size = new Size(180, 22);
+            cadastrarToolStripMenuItem.Text = "Cadastrar";
+            // 
+            // segurançaToolStripMenuItem
+            // 
+            segurançaToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { alterarMinhaSenhaToolStripMenuItem, bitlokerToolStripMenuItem });
+            segurançaToolStripMenuItem.Name = "segurançaToolStripMenuItem";
+            segurançaToolStripMenuItem.Size = new Size(74, 20);
+            segurançaToolStripMenuItem.Text = "Segurança";
+            // 
+            // alterarMinhaSenhaToolStripMenuItem
+            // 
+            alterarMinhaSenhaToolStripMenuItem.Name = "alterarMinhaSenhaToolStripMenuItem";
+            alterarMinhaSenhaToolStripMenuItem.Size = new Size(181, 22);
+            alterarMinhaSenhaToolStripMenuItem.Text = "Alterar Minha Senha";
+            // 
+            // bitlokerToolStripMenuItem
+            // 
+            bitlokerToolStripMenuItem.Name = "bitlokerToolStripMenuItem";
+            bitlokerToolStripMenuItem.Size = new Size(181, 22);
+            bitlokerToolStripMenuItem.Text = "Chaves BitLocker";
+            bitlokerToolStripMenuItem.Click += bitlokerToolStripMenuItem_Click;
             // 
             // ajudaToolStripMenuItem
             // 
@@ -169,9 +209,15 @@
             label1.Location = new Point(18, 14);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(458, 24);
+            label1.Size = new Size(313, 24);
             label1.TabIndex = 0;
-            label1.Text = "Controle de Inventario Para Equipamentos de TI";
+            label1.Text = "Controle de Equipamentos de TI\r\n";
+            // 
+            // usuarioToolStripMenuItem1
+            // 
+            usuarioToolStripMenuItem1.Name = "usuarioToolStripMenuItem1";
+            usuarioToolStripMenuItem1.Size = new Size(180, 22);
+            usuarioToolStripMenuItem1.Text = "Usuario";
             // 
             // FMenu
             // 
@@ -183,7 +229,7 @@
             MainMenuStrip = menuStrip1;
             Name = "FMenu";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "RespoView";
+            Text = " ";
             WindowState = FormWindowState.Maximized;
             Load += Form1_Load;
             menuStrip1.ResumeLayout(false);
@@ -212,5 +258,11 @@
         private Panel panel1;
         private Label label1;
         private ToolStripMenuItem relatoriosToolStripMenuItem;
+        private ToolStripMenuItem usuariosToolStripMenuItem;
+        private ToolStripMenuItem segurançaToolStripMenuItem;
+        private ToolStripMenuItem cadastrarToolStripMenuItem;
+        private ToolStripMenuItem alterarMinhaSenhaToolStripMenuItem;
+        private ToolStripMenuItem bitlokerToolStripMenuItem;
+        private ToolStripMenuItem usuarioToolStripMenuItem1;
     }
 }

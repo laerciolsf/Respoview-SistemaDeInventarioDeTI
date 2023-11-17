@@ -37,14 +37,22 @@
             botaoPesquisar = new Button();
             textBox1 = new TextBox();
             tabDados = new TabPage();
-            labelNomeLoja = new Label();
-            labelNomeDpto = new Label();
-            buttonPesquisa1 = new Button();
-            buttonPesquisa2 = new Button();
+            panel5 = new Panel();
+            label18 = new Label();
+            txtidBitLocker = new TextBox();
+            label17 = new Label();
+            txtchaveBitLocker = new TextBox();
+            label16 = new Label();
+            panel3 = new Panel();
             txtLoja = new TextBox();
-            label15 = new Label();
-            txtDpto = new TextBox();
             label14 = new Label();
+            txtDpto = new TextBox();
+            label15 = new Label();
+            buttonPesquisa2 = new Button();
+            labelNomeLoja = new Label();
+            buttonPesquisa1 = new Button();
+            labelNomeDpto = new Label();
+            panel4 = new Panel();
             txtValor = new TextBox();
             txtSo = new TextBox();
             txtHd = new TextBox();
@@ -82,6 +90,9 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel2.SuspendLayout();
             tabDados.SuspendLayout();
+            panel5.SuspendLayout();
+            panel3.SuspendLayout();
+            panel4.SuspendLayout();
             toolStrip1.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -94,7 +105,7 @@
             tabControl1.Location = new Point(0, 85);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(996, 431);
+            tabControl1.Size = new Size(996, 451);
             tabControl1.TabIndex = 8;
             // 
             // tabPesquisa
@@ -104,7 +115,7 @@
             tabPesquisa.Location = new Point(4, 24);
             tabPesquisa.Name = "tabPesquisa";
             tabPesquisa.Padding = new Padding(3);
-            tabPesquisa.Size = new Size(988, 403);
+            tabPesquisa.Size = new Size(988, 423);
             tabPesquisa.TabIndex = 0;
             tabPesquisa.Text = "Pesquisar";
             tabPesquisa.UseVisualStyleBackColor = true;
@@ -118,7 +129,7 @@
             dataGridView1.Location = new Point(3, 69);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(982, 331);
+            dataGridView1.Size = new Size(982, 351);
             dataGridView1.TabIndex = 1;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -169,325 +180,394 @@
             // 
             // tabDados
             // 
-            tabDados.Controls.Add(labelNomeLoja);
-            tabDados.Controls.Add(labelNomeDpto);
-            tabDados.Controls.Add(buttonPesquisa1);
-            tabDados.Controls.Add(buttonPesquisa2);
-            tabDados.Controls.Add(txtLoja);
-            tabDados.Controls.Add(label15);
-            tabDados.Controls.Add(txtDpto);
-            tabDados.Controls.Add(label14);
-            tabDados.Controls.Add(txtValor);
-            tabDados.Controls.Add(txtSo);
-            tabDados.Controls.Add(txtHd);
-            tabDados.Controls.Add(txtMemoria);
-            tabDados.Controls.Add(txtProcessador);
-            tabDados.Controls.Add(txtModelo);
-            tabDados.Controls.Add(txtFabricante);
-            tabDados.Controls.Add(txtTipo);
-            tabDados.Controls.Add(txtQtde);
-            tabDados.Controls.Add(txtNome);
-            tabDados.Controls.Add(label13);
-            tabDados.Controls.Add(label12);
-            tabDados.Controls.Add(label11);
-            tabDados.Controls.Add(label10);
-            tabDados.Controls.Add(label9);
-            tabDados.Controls.Add(label8);
-            tabDados.Controls.Add(label7);
-            tabDados.Controls.Add(label6);
-            tabDados.Controls.Add(label5);
-            tabDados.Controls.Add(label4);
-            tabDados.Controls.Add(txtUsuarioResponsavel);
-            tabDados.Controls.Add(label3);
-            tabDados.Controls.Add(txtId);
-            tabDados.Controls.Add(label2);
+            tabDados.Controls.Add(panel5);
+            tabDados.Controls.Add(panel3);
+            tabDados.Controls.Add(panel4);
             tabDados.Location = new Point(4, 24);
             tabDados.Name = "tabDados";
             tabDados.Padding = new Padding(3);
-            tabDados.Size = new Size(988, 403);
+            tabDados.Size = new Size(988, 423);
             tabDados.TabIndex = 1;
             tabDados.Text = "Dados Gerais";
             tabDados.UseVisualStyleBackColor = true;
             tabDados.Click += tabDados_Click;
             // 
-            // labelNomeLoja
+            // panel5
             // 
-            labelNomeLoja.AutoSize = true;
-            labelNomeLoja.Location = new Point(668, 97);
-            labelNomeLoja.Name = "labelNomeLoja";
-            labelNomeLoja.Size = new Size(0, 15);
-            labelNomeLoja.TabIndex = 49;
+            panel5.BackColor = Color.LightGray;
+            panel5.Controls.Add(label18);
+            panel5.Controls.Add(txtidBitLocker);
+            panel5.Controls.Add(label17);
+            panel5.Controls.Add(txtchaveBitLocker);
+            panel5.Controls.Add(label16);
+            panel5.Location = new Point(469, 253);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(501, 151);
+            panel5.TabIndex = 57;
             // 
-            // labelNomeDpto
+            // label18
             // 
-            labelNomeDpto.AutoSize = true;
-            labelNomeDpto.Location = new Point(668, 54);
-            labelNomeDpto.Name = "labelNomeDpto";
-            labelNomeDpto.Size = new Size(0, 15);
-            labelNomeDpto.TabIndex = 48;
+            label18.AutoSize = true;
+            label18.Location = new Point(53, 19);
+            label18.Name = "label18";
+            label18.Size = new Size(369, 15);
+            label18.TabIndex = 96;
+            label18.Text = "Chave de recuperação de Criptografia de Unidade de Disco BitLocker";
             // 
-            // buttonPesquisa1
+            // txtidBitLocker
             // 
-            buttonPesquisa1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            buttonPesquisa1.Image = (Image)resources.GetObject("buttonPesquisa1.Image");
-            buttonPesquisa1.Location = new Point(631, 41);
-            buttonPesquisa1.Name = "buttonPesquisa1";
-            buttonPesquisa1.Size = new Size(31, 31);
-            buttonPesquisa1.TabIndex = 47;
-            buttonPesquisa1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            buttonPesquisa1.UseVisualStyleBackColor = true;
-            buttonPesquisa1.Click += button3_Click;
+            txtidBitLocker.Location = new Point(98, 53);
+            txtidBitLocker.Name = "txtidBitLocker";
+            txtidBitLocker.Size = new Size(297, 23);
+            txtidBitLocker.TabIndex = 92;
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Location = new Point(53, 85);
+            label17.Name = "label17";
+            label17.Size = new Size(40, 15);
+            label17.TabIndex = 95;
+            label17.Text = "Chave";
+            // 
+            // txtchaveBitLocker
+            // 
+            txtchaveBitLocker.Location = new Point(98, 82);
+            txtchaveBitLocker.Name = "txtchaveBitLocker";
+            txtchaveBitLocker.Size = new Size(367, 23);
+            txtchaveBitLocker.TabIndex = 93;
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Location = new Point(17, 66);
+            label16.Name = "label16";
+            label16.Size = new Size(74, 15);
+            label16.TabIndex = 94;
+            label16.Text = "Identificador";
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.LightGray;
+            panel3.Controls.Add(txtLoja);
+            panel3.Controls.Add(label14);
+            panel3.Controls.Add(txtDpto);
+            panel3.Controls.Add(label15);
+            panel3.Controls.Add(buttonPesquisa2);
+            panel3.Controls.Add(labelNomeLoja);
+            panel3.Controls.Add(buttonPesquisa1);
+            panel3.Controls.Add(labelNomeDpto);
+            panel3.Location = new Point(456, 22);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(514, 225);
+            panel3.TabIndex = 56;
+            // 
+            // txtLoja
+            // 
+            txtLoja.Location = new Point(137, 52);
+            txtLoja.Name = "txtLoja";
+            txtLoja.Size = new Size(76, 23);
+            txtLoja.TabIndex = 95;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(45, 20);
+            label14.Name = "label14";
+            label14.Size = new Size(86, 15);
+            label14.TabIndex = 92;
+            label14.Text = "Departamento:";
+            // 
+            // txtDpto
+            // 
+            txtDpto.Location = new Point(137, 16);
+            txtDpto.Name = "txtDpto";
+            txtDpto.Size = new Size(76, 23);
+            txtDpto.TabIndex = 93;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new Point(99, 60);
+            label15.Name = "label15";
+            label15.Size = new Size(32, 15);
+            label15.TabIndex = 94;
+            label15.Text = "Loja:";
             // 
             // buttonPesquisa2
             // 
             buttonPesquisa2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonPesquisa2.Image = (Image)resources.GetObject("buttonPesquisa2.Image");
-            buttonPesquisa2.Location = new Point(631, 84);
+            buttonPesquisa2.Location = new Point(219, 47);
             buttonPesquisa2.Name = "buttonPesquisa2";
             buttonPesquisa2.Size = new Size(31, 31);
-            buttonPesquisa2.TabIndex = 46;
+            buttonPesquisa2.TabIndex = 96;
             buttonPesquisa2.TextImageRelation = TextImageRelation.ImageBeforeText;
             buttonPesquisa2.UseVisualStyleBackColor = true;
-            buttonPesquisa2.Click += buttonPesquisa2_Click;
+            buttonPesquisa2.Click += buttonPesquisa2_Click_2;
             // 
-            // txtLoja
+            // labelNomeLoja
             // 
-            txtLoja.Location = new Point(549, 89);
-            txtLoja.Name = "txtLoja";
-            txtLoja.Size = new Size(76, 23);
-            txtLoja.TabIndex = 44;
+            labelNomeLoja.AutoSize = true;
+            labelNomeLoja.Location = new Point(256, 60);
+            labelNomeLoja.Name = "labelNomeLoja";
+            labelNomeLoja.Size = new Size(0, 15);
+            labelNomeLoja.TabIndex = 99;
             // 
-            // label15
+            // buttonPesquisa1
             // 
-            label15.AutoSize = true;
-            label15.Location = new Point(511, 97);
-            label15.Name = "label15";
-            label15.Size = new Size(32, 15);
-            label15.TabIndex = 43;
-            label15.Text = "Loja:";
+            buttonPesquisa1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            buttonPesquisa1.Image = (Image)resources.GetObject("buttonPesquisa1.Image");
+            buttonPesquisa1.Location = new Point(219, 12);
+            buttonPesquisa1.Name = "buttonPesquisa1";
+            buttonPesquisa1.Size = new Size(31, 31);
+            buttonPesquisa1.TabIndex = 97;
+            buttonPesquisa1.TextImageRelation = TextImageRelation.ImageBeforeText;
+            buttonPesquisa1.UseVisualStyleBackColor = true;
+            buttonPesquisa1.Click += buttonPesquisa1_Click;
             // 
-            // txtDpto
+            // labelNomeDpto
             // 
-            txtDpto.Location = new Point(549, 45);
-            txtDpto.Name = "txtDpto";
-            txtDpto.Size = new Size(76, 23);
-            txtDpto.TabIndex = 42;
-            txtDpto.TextChanged += txtDpto_TextChanged;
+            labelNomeDpto.AutoSize = true;
+            labelNomeDpto.Location = new Point(256, 25);
+            labelNomeDpto.Name = "labelNomeDpto";
+            labelNomeDpto.Size = new Size(0, 15);
+            labelNomeDpto.TabIndex = 98;
             // 
-            // label14
+            // panel4
             // 
-            label14.AutoSize = true;
-            label14.Location = new Point(457, 49);
-            label14.Name = "label14";
-            label14.Size = new Size(86, 15);
-            label14.TabIndex = 41;
-            label14.Text = "Departamento:";
-            label14.Click += label14_Click;
+            panel4.BackColor = Color.LightGray;
+            panel4.Controls.Add(txtValor);
+            panel4.Controls.Add(txtSo);
+            panel4.Controls.Add(txtHd);
+            panel4.Controls.Add(txtMemoria);
+            panel4.Controls.Add(txtProcessador);
+            panel4.Controls.Add(txtModelo);
+            panel4.Controls.Add(txtFabricante);
+            panel4.Controls.Add(txtTipo);
+            panel4.Controls.Add(txtQtde);
+            panel4.Controls.Add(txtNome);
+            panel4.Controls.Add(label13);
+            panel4.Controls.Add(label12);
+            panel4.Controls.Add(label11);
+            panel4.Controls.Add(label10);
+            panel4.Controls.Add(label9);
+            panel4.Controls.Add(label8);
+            panel4.Controls.Add(label7);
+            panel4.Controls.Add(label6);
+            panel4.Controls.Add(label5);
+            panel4.Controls.Add(label4);
+            panel4.Controls.Add(txtUsuarioResponsavel);
+            panel4.Controls.Add(label3);
+            panel4.Controls.Add(txtId);
+            panel4.Controls.Add(label2);
+            panel4.Location = new Point(19, 22);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(444, 382);
+            panel4.TabIndex = 55;
             // 
             // txtValor
             // 
-            txtValor.Location = new Point(171, 358);
+            txtValor.Location = new Point(153, 335);
             txtValor.Name = "txtValor";
             txtValor.Size = new Size(72, 23);
-            txtValor.TabIndex = 40;
+            txtValor.TabIndex = 64;
             // 
             // txtSo
             // 
-            txtSo.Location = new Point(171, 330);
+            txtSo.Location = new Point(153, 307);
             txtSo.Name = "txtSo";
             txtSo.Size = new Size(258, 23);
-            txtSo.TabIndex = 39;
+            txtSo.TabIndex = 63;
             // 
             // txtHd
             // 
-            txtHd.Location = new Point(171, 301);
+            txtHd.Location = new Point(153, 278);
             txtHd.Name = "txtHd";
             txtHd.Size = new Size(72, 23);
-            txtHd.TabIndex = 38;
+            txtHd.TabIndex = 62;
             // 
             // txtMemoria
             // 
-            txtMemoria.Location = new Point(171, 268);
+            txtMemoria.Location = new Point(153, 245);
             txtMemoria.Name = "txtMemoria";
             txtMemoria.Size = new Size(258, 23);
-            txtMemoria.TabIndex = 37;
+            txtMemoria.TabIndex = 61;
             // 
             // txtProcessador
             // 
-            txtProcessador.Location = new Point(171, 239);
+            txtProcessador.Location = new Point(153, 216);
             txtProcessador.Name = "txtProcessador";
             txtProcessador.Size = new Size(258, 23);
-            txtProcessador.TabIndex = 36;
+            txtProcessador.TabIndex = 60;
             // 
             // txtModelo
             // 
-            txtModelo.Location = new Point(171, 210);
+            txtModelo.Location = new Point(153, 187);
             txtModelo.Name = "txtModelo";
             txtModelo.Size = new Size(258, 23);
-            txtModelo.TabIndex = 35;
+            txtModelo.TabIndex = 59;
             // 
             // txtFabricante
             // 
-            txtFabricante.Location = new Point(171, 181);
+            txtFabricante.Location = new Point(153, 158);
             txtFabricante.Name = "txtFabricante";
             txtFabricante.Size = new Size(258, 23);
-            txtFabricante.TabIndex = 34;
+            txtFabricante.TabIndex = 58;
             // 
             // txtTipo
             // 
-            txtTipo.Location = new Point(171, 154);
+            txtTipo.Location = new Point(153, 131);
             txtTipo.Name = "txtTipo";
             txtTipo.Size = new Size(258, 23);
-            txtTipo.TabIndex = 33;
+            txtTipo.TabIndex = 57;
             // 
             // txtQtde
             // 
-            txtQtde.Location = new Point(171, 126);
+            txtQtde.Location = new Point(153, 103);
             txtQtde.Name = "txtQtde";
             txtQtde.Size = new Size(72, 23);
-            txtQtde.TabIndex = 32;
+            txtQtde.TabIndex = 56;
             // 
             // txtNome
             // 
-            txtNome.Location = new Point(171, 98);
+            txtNome.Location = new Point(153, 75);
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(258, 23);
-            txtNome.TabIndex = 31;
+            txtNome.TabIndex = 55;
             // 
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(43, 78);
+            label13.Location = new Point(25, 55);
             label13.Name = "label13";
             label13.Size = new Size(118, 15);
-            label13.TabIndex = 30;
+            label13.TabIndex = 54;
             label13.Text = "Usuario Responsavel:";
             label13.TextAlign = ContentAlignment.TopRight;
-            label13.Click += label13_Click;
             // 
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(46, 338);
+            label12.Location = new Point(28, 315);
             label12.Name = "label12";
             label12.Size = new Size(118, 15);
-            label12.TabIndex = 29;
+            label12.TabIndex = 53;
             label12.Text = "Sistema Operacional:";
             label12.TextAlign = ContentAlignment.TopRight;
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(76, 366);
+            label11.Location = new Point(58, 343);
             label11.Name = "label11";
             label11.Size = new Size(88, 15);
-            label11.TabIndex = 28;
+            label11.TabIndex = 52;
             label11.Text = "Valor Estimado:";
             label11.TextAlign = ContentAlignment.TopRight;
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(99, 189);
+            label10.Location = new Point(81, 166);
             label10.Name = "label10";
             label10.Size = new Size(65, 15);
-            label10.TabIndex = 27;
+            label10.TabIndex = 51;
             label10.Text = "Fabricante:";
             label10.TextAlign = ContentAlignment.TopRight;
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(113, 218);
+            label9.Location = new Point(95, 195);
             label9.Name = "label9";
             label9.Size = new Size(51, 15);
-            label9.TabIndex = 26;
+            label9.TabIndex = 50;
             label9.Text = "Modelo:";
             label9.TextAlign = ContentAlignment.TopRight;
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(90, 247);
+            label8.Location = new Point(72, 224);
             label8.Name = "label8";
             label8.Size = new Size(74, 15);
-            label8.TabIndex = 25;
+            label8.TabIndex = 49;
             label8.Text = "Processador:";
             label8.TextAlign = ContentAlignment.TopRight;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(103, 276);
+            label7.Location = new Point(85, 253);
             label7.Name = "label7";
             label7.Size = new Size(58, 15);
-            label7.TabIndex = 24;
+            label7.TabIndex = 48;
             label7.Text = "Memória:";
             label7.TextAlign = ContentAlignment.TopRight;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(31, 307);
+            label6.Location = new Point(13, 284);
             label6.Name = "label6";
             label6.Size = new Size(133, 15);
-            label6.TabIndex = 23;
+            label6.TabIndex = 47;
             label6.Text = "Quantidade de HD/SSD:";
             label6.TextAlign = ContentAlignment.TopRight;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(131, 162);
+            label5.Location = new Point(113, 139);
             label5.Name = "label5";
             label5.Size = new Size(33, 15);
-            label5.TabIndex = 22;
+            label5.TabIndex = 46;
             label5.Text = "Tipo:";
             label5.TextAlign = ContentAlignment.TopRight;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(92, 134);
+            label4.Location = new Point(74, 111);
             label4.Name = "label4";
             label4.Size = new Size(72, 15);
-            label4.TabIndex = 21;
+            label4.TabIndex = 45;
             label4.Text = "Quantidade:";
             label4.TextAlign = ContentAlignment.TopRight;
             // 
             // txtUsuarioResponsavel
             // 
-            txtUsuarioResponsavel.Location = new Point(171, 70);
+            txtUsuarioResponsavel.Location = new Point(153, 47);
             txtUsuarioResponsavel.Name = "txtUsuarioResponsavel";
             txtUsuarioResponsavel.Size = new Size(258, 23);
-            txtUsuarioResponsavel.TabIndex = 20;
+            txtUsuarioResponsavel.TabIndex = 44;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(27, 106);
+            label3.Location = new Point(9, 83);
             label3.Name = "label3";
             label3.Size = new Size(134, 15);
-            label3.TabIndex = 20;
+            label3.TabIndex = 43;
             label3.Text = "Nome do Equipamento:";
             label3.TextAlign = ContentAlignment.TopRight;
-            label3.Click += label3_Click;
             // 
             // txtId
             // 
-            txtId.Location = new Point(171, 40);
+            txtId.Location = new Point(153, 17);
             txtId.Name = "txtId";
             txtId.Size = new Size(72, 23);
-            txtId.TabIndex = 19;
-            txtId.TextChanged += txtId_TextChanged;
+            txtId.TabIndex = 42;
+            txtId.TextChanged += txtId_TextChanged_1;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(140, 48);
+            label2.Location = new Point(122, 25);
             label2.Name = "label2";
             label2.Size = new Size(21, 15);
-            label2.TabIndex = 18;
+            label2.TabIndex = 41;
             label2.Text = "ID:";
             // 
             // toolStrip1
@@ -582,7 +662,7 @@
             AcceptButton = BPesquisa;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(996, 516);
+            ClientSize = new Size(996, 536);
             Controls.Add(tabControl1);
             Controls.Add(toolStrip1);
             Controls.Add(panel1);
@@ -599,7 +679,12 @@
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             tabDados.ResumeLayout(false);
-            tabDados.PerformLayout();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
             panel1.ResumeLayout(false);
@@ -616,10 +701,6 @@
         private Button botaoPesquisar;
         private TextBox textBox1;
         private TabPage tabDados;
-        private TextBox txtUsuarioResponsavel;
-        private Label label3;
-        private TextBox txtId;
-        private Label label2;
         private ToolStrip toolStrip1;
         private ToolStripButton botaoNovo;
         private ToolStripButton botaoSalvar;
@@ -628,6 +709,23 @@
         private ToolStripButton botaoFechar;
         private Panel panel1;
         private Label label1;
+        private Button BPesquisa;
+        private Panel panel5;
+        private Label label18;
+        private TextBox txtidBitLocker;
+        private Label label17;
+        private TextBox txtchaveBitLocker;
+        private Label label16;
+        private Panel panel3;
+        private TextBox txtLoja;
+        private Label label14;
+        private TextBox txtDpto;
+        private Label label15;
+        private Button buttonPesquisa2;
+        private Label labelNomeLoja;
+        private Button buttonPesquisa1;
+        private Label labelNomeDpto;
+        private Panel panel4;
         private TextBox txtValor;
         private TextBox txtSo;
         private TextBox txtHd;
@@ -648,14 +746,9 @@
         private Label label6;
         private Label label5;
         private Label label4;
-        private TextBox txtLoja;
-        private Label label15;
-        private TextBox txtDpto;
-        private Label label14;
-        private Button BPesquisa;
-        private Button buttonPesquisa1;
-        private Button buttonPesquisa2;
-        private Label labelNomeDpto;
-        private Label labelNomeLoja;
+        private TextBox txtUsuarioResponsavel;
+        private Label label3;
+        private TextBox txtId;
+        private Label label2;
     }
 }

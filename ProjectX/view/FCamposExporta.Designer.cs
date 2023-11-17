@@ -29,20 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FCamposExporta));
-            checkBoxId = new CheckBox();
-            checkBoxUser = new CheckBox();
-            checkBoxNomeEquipamento = new CheckBox();
-            checkBoxQuantidade = new CheckBox();
-            checkBoxTipo = new CheckBox();
-            checkBoxFrabricante = new CheckBox();
-            checkBoxModelo = new CheckBox();
-            checkBoxProcessador = new CheckBox();
-            checkBoxMemoria = new CheckBox();
-            checkBoxArmazenamento = new CheckBox();
-            checkBoxSO = new CheckBox();
-            checkBoxValor = new CheckBox();
-            checkBoxIdLoja = new CheckBox();
-            checkBoxIdDpto = new CheckBox();
             BComfirmar = new Button();
             button3 = new Button();
             panel1 = new Panel();
@@ -55,162 +41,23 @@
             label15 = new Label();
             txtDpto = new TextBox();
             label14 = new Label();
+            buttonCsv = new Button();
+            checkBoxIdDepartamento = new CheckBox();
+            checkBoxIdLoja = new CheckBox();
+            checkBoxModelo = new CheckBox();
+            checkBoxProcessador = new CheckBox();
+            checkBoxMemoria = new CheckBox();
+            checkBoxHdSsd = new CheckBox();
+            checkBoxSistemOperacional = new CheckBox();
+            checkBoxValorEstimado = new CheckBox();
+            checkBoxFabricante = new CheckBox();
+            checkBoxTipo = new CheckBox();
+            checkBoxQuantidade = new CheckBox();
+            checkBoxNomeEquipamento = new CheckBox();
+            checkBoxUserRes = new CheckBox();
+            checkBoxId = new CheckBox();
             panel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // checkBoxId
-            // 
-            checkBoxId.AutoSize = true;
-            checkBoxId.Location = new Point(20, 121);
-            checkBoxId.Name = "checkBoxId";
-            checkBoxId.Size = new Size(36, 19);
-            checkBoxId.TabIndex = 0;
-            checkBoxId.Text = "Id";
-            checkBoxId.UseVisualStyleBackColor = true;
-            checkBoxId.CheckedChanged += checkBox1_CheckedChanged;
-            // 
-            // checkBoxUser
-            // 
-            checkBoxUser.AutoSize = true;
-            checkBoxUser.Location = new Point(20, 146);
-            checkBoxUser.Name = "checkBoxUser";
-            checkBoxUser.Size = new Size(134, 19);
-            checkBoxUser.TabIndex = 1;
-            checkBoxUser.Text = "Usuario Responsavel";
-            checkBoxUser.UseVisualStyleBackColor = true;
-            checkBoxUser.CheckedChanged += checkBox2_CheckedChanged;
-            // 
-            // checkBoxNomeEquipamento
-            // 
-            checkBoxNomeEquipamento.AutoSize = true;
-            checkBoxNomeEquipamento.Location = new Point(20, 171);
-            checkBoxNomeEquipamento.Name = "checkBoxNomeEquipamento";
-            checkBoxNomeEquipamento.Size = new Size(150, 19);
-            checkBoxNomeEquipamento.TabIndex = 2;
-            checkBoxNomeEquipamento.Text = "Nome do Equipamento";
-            checkBoxNomeEquipamento.UseVisualStyleBackColor = true;
-            checkBoxNomeEquipamento.CheckedChanged += checkBox3_CheckedChanged;
-            // 
-            // checkBoxQuantidade
-            // 
-            checkBoxQuantidade.AutoSize = true;
-            checkBoxQuantidade.Location = new Point(20, 196);
-            checkBoxQuantidade.Name = "checkBoxQuantidade";
-            checkBoxQuantidade.Size = new Size(88, 19);
-            checkBoxQuantidade.TabIndex = 3;
-            checkBoxQuantidade.Text = "Quantidade";
-            checkBoxQuantidade.UseVisualStyleBackColor = true;
-            checkBoxQuantidade.CheckedChanged += checkBox4_CheckedChanged;
-            // 
-            // checkBoxTipo
-            // 
-            checkBoxTipo.AutoSize = true;
-            checkBoxTipo.Location = new Point(20, 221);
-            checkBoxTipo.Name = "checkBoxTipo";
-            checkBoxTipo.Size = new Size(49, 19);
-            checkBoxTipo.TabIndex = 4;
-            checkBoxTipo.Text = "Tipo";
-            checkBoxTipo.UseVisualStyleBackColor = true;
-            checkBoxTipo.CheckedChanged += checkBox5_CheckedChanged;
-            // 
-            // checkBoxFrabricante
-            // 
-            checkBoxFrabricante.AutoSize = true;
-            checkBoxFrabricante.Location = new Point(20, 246);
-            checkBoxFrabricante.Name = "checkBoxFrabricante";
-            checkBoxFrabricante.Size = new Size(81, 19);
-            checkBoxFrabricante.TabIndex = 5;
-            checkBoxFrabricante.Text = "Fabricante";
-            checkBoxFrabricante.UseVisualStyleBackColor = true;
-            checkBoxFrabricante.CheckedChanged += checkBox6_CheckedChanged;
-            // 
-            // checkBoxModelo
-            // 
-            checkBoxModelo.AutoSize = true;
-            checkBoxModelo.Location = new Point(20, 271);
-            checkBoxModelo.Name = "checkBoxModelo";
-            checkBoxModelo.Size = new Size(67, 19);
-            checkBoxModelo.TabIndex = 11;
-            checkBoxModelo.Text = "Modelo";
-            checkBoxModelo.UseVisualStyleBackColor = true;
-            checkBoxModelo.CheckedChanged += checkBox7_CheckedChanged;
-            // 
-            // checkBoxProcessador
-            // 
-            checkBoxProcessador.AutoSize = true;
-            checkBoxProcessador.Location = new Point(20, 296);
-            checkBoxProcessador.Name = "checkBoxProcessador";
-            checkBoxProcessador.Size = new Size(90, 19);
-            checkBoxProcessador.TabIndex = 10;
-            checkBoxProcessador.Text = "Processador";
-            checkBoxProcessador.UseVisualStyleBackColor = true;
-            checkBoxProcessador.CheckedChanged += checkBox8_CheckedChanged;
-            // 
-            // checkBoxMemoria
-            // 
-            checkBoxMemoria.AutoSize = true;
-            checkBoxMemoria.Location = new Point(20, 321);
-            checkBoxMemoria.Name = "checkBoxMemoria";
-            checkBoxMemoria.Size = new Size(74, 19);
-            checkBoxMemoria.TabIndex = 9;
-            checkBoxMemoria.Text = "Memória";
-            checkBoxMemoria.UseVisualStyleBackColor = true;
-            checkBoxMemoria.CheckedChanged += checkBox9_CheckedChanged;
-            // 
-            // checkBoxArmazenamento
-            // 
-            checkBoxArmazenamento.AutoSize = true;
-            checkBoxArmazenamento.Location = new Point(20, 346);
-            checkBoxArmazenamento.Name = "checkBoxArmazenamento";
-            checkBoxArmazenamento.Size = new Size(114, 19);
-            checkBoxArmazenamento.TabIndex = 8;
-            checkBoxArmazenamento.Text = "Armazenamento";
-            checkBoxArmazenamento.UseVisualStyleBackColor = true;
-            checkBoxArmazenamento.CheckedChanged += checkBox10_CheckedChanged;
-            // 
-            // checkBoxSO
-            // 
-            checkBoxSO.AutoSize = true;
-            checkBoxSO.Location = new Point(20, 371);
-            checkBoxSO.Name = "checkBoxSO";
-            checkBoxSO.Size = new Size(134, 19);
-            checkBoxSO.TabIndex = 7;
-            checkBoxSO.Text = "Sistema Operacional";
-            checkBoxSO.UseVisualStyleBackColor = true;
-            checkBoxSO.CheckedChanged += checkBox11_CheckedChanged;
-            // 
-            // checkBoxValor
-            // 
-            checkBoxValor.AutoSize = true;
-            checkBoxValor.Location = new Point(20, 396);
-            checkBoxValor.Name = "checkBoxValor";
-            checkBoxValor.Size = new Size(104, 19);
-            checkBoxValor.TabIndex = 6;
-            checkBoxValor.Text = "Valor Estimado";
-            checkBoxValor.UseVisualStyleBackColor = true;
-            checkBoxValor.CheckedChanged += checkBox12_CheckedChanged;
-            // 
-            // checkBoxIdLoja
-            // 
-            checkBoxIdLoja.AutoSize = true;
-            checkBoxIdLoja.Location = new Point(20, 421);
-            checkBoxIdLoja.Name = "checkBoxIdLoja";
-            checkBoxIdLoja.Size = new Size(61, 19);
-            checkBoxIdLoja.TabIndex = 12;
-            checkBoxIdLoja.Text = "Id Loja";
-            checkBoxIdLoja.UseVisualStyleBackColor = true;
-            checkBoxIdLoja.CheckedChanged += checkBox13_CheckedChanged;
-            // 
-            // checkBoxIdDpto
-            // 
-            checkBoxIdDpto.AutoSize = true;
-            checkBoxIdDpto.Location = new Point(20, 446);
-            checkBoxIdDpto.Name = "checkBoxIdDpto";
-            checkBoxIdDpto.Size = new Size(115, 19);
-            checkBoxIdDpto.TabIndex = 13;
-            checkBoxIdDpto.Text = "Id Departamento";
-            checkBoxIdDpto.UseVisualStyleBackColor = true;
-            checkBoxIdDpto.CheckedChanged += checkBox14_CheckedChanged;
             // 
             // BComfirmar
             // 
@@ -218,13 +65,13 @@
             BComfirmar.Name = "BComfirmar";
             BComfirmar.Size = new Size(105, 33);
             BComfirmar.TabIndex = 15;
-            BComfirmar.Text = "Comfirmar";
+            BComfirmar.Text = "Exportar em PDF";
             BComfirmar.UseVisualStyleBackColor = true;
             BComfirmar.Click += BComfirmar_Click;
             // 
             // button3
             // 
-            button3.Location = new Point(505, 479);
+            button3.Location = new Point(395, 479);
             button3.Name = "button3";
             button3.Size = new Size(98, 33);
             button3.TabIndex = 16;
@@ -329,12 +176,191 @@
             label14.TabIndex = 60;
             label14.Text = "Departamento:";
             // 
+            // buttonCsv
+            // 
+            buttonCsv.Location = new Point(499, 479);
+            buttonCsv.Name = "buttonCsv";
+            buttonCsv.Size = new Size(104, 33);
+            buttonCsv.TabIndex = 68;
+            buttonCsv.Text = "Exportar em CSV";
+            buttonCsv.UseVisualStyleBackColor = true;
+            buttonCsv.Click += buttonCsv_Click;
+            // 
+            // checkBoxIdDepartamento
+            // 
+            checkBoxIdDepartamento.AutoSize = true;
+            checkBoxIdDepartamento.Location = new Point(20, 441);
+            checkBoxIdDepartamento.Name = "checkBoxIdDepartamento";
+            checkBoxIdDepartamento.Size = new Size(115, 19);
+            checkBoxIdDepartamento.TabIndex = 82;
+            checkBoxIdDepartamento.Text = "Id Departamento";
+            checkBoxIdDepartamento.UseVisualStyleBackColor = true;
+            checkBoxIdDepartamento.CheckedChanged += checkBoxIdDepartamento_CheckedChanged;
+            // 
+            // checkBoxIdLoja
+            // 
+            checkBoxIdLoja.AutoSize = true;
+            checkBoxIdLoja.Location = new Point(20, 416);
+            checkBoxIdLoja.Name = "checkBoxIdLoja";
+            checkBoxIdLoja.Size = new Size(61, 19);
+            checkBoxIdLoja.TabIndex = 81;
+            checkBoxIdLoja.Text = "Id Loja";
+            checkBoxIdLoja.UseVisualStyleBackColor = true;
+            checkBoxIdLoja.CheckedChanged += checkBoxIdLoja_CheckedChanged;
+            // 
+            // checkBoxModelo
+            // 
+            checkBoxModelo.AutoSize = true;
+            checkBoxModelo.Location = new Point(20, 266);
+            checkBoxModelo.Name = "checkBoxModelo";
+            checkBoxModelo.Size = new Size(67, 19);
+            checkBoxModelo.TabIndex = 80;
+            checkBoxModelo.Text = "Modelo";
+            checkBoxModelo.UseVisualStyleBackColor = true;
+            checkBoxModelo.CheckedChanged += checkBoxModelo_CheckedChanged;
+            // 
+            // checkBoxProcessador
+            // 
+            checkBoxProcessador.AutoSize = true;
+            checkBoxProcessador.Location = new Point(20, 291);
+            checkBoxProcessador.Name = "checkBoxProcessador";
+            checkBoxProcessador.Size = new Size(90, 19);
+            checkBoxProcessador.TabIndex = 79;
+            checkBoxProcessador.Text = "Processador";
+            checkBoxProcessador.UseVisualStyleBackColor = true;
+            checkBoxProcessador.CheckedChanged += checkBoxProcessador_CheckedChanged;
+            // 
+            // checkBoxMemoria
+            // 
+            checkBoxMemoria.AutoSize = true;
+            checkBoxMemoria.Location = new Point(20, 316);
+            checkBoxMemoria.Name = "checkBoxMemoria";
+            checkBoxMemoria.Size = new Size(74, 19);
+            checkBoxMemoria.TabIndex = 78;
+            checkBoxMemoria.Text = "Memória";
+            checkBoxMemoria.UseVisualStyleBackColor = true;
+            checkBoxMemoria.CheckedChanged += checkBoxMemoria_CheckedChanged;
+            // 
+            // checkBoxHdSsd
+            // 
+            checkBoxHdSsd.AutoSize = true;
+            checkBoxHdSsd.Location = new Point(20, 341);
+            checkBoxHdSsd.Name = "checkBoxHdSsd";
+            checkBoxHdSsd.Size = new Size(114, 19);
+            checkBoxHdSsd.TabIndex = 77;
+            checkBoxHdSsd.Text = "Armazenamento";
+            checkBoxHdSsd.UseVisualStyleBackColor = true;
+            checkBoxHdSsd.CheckedChanged += checkBoxHdSsd_CheckedChanged;
+            // 
+            // checkBoxSistemOperacional
+            // 
+            checkBoxSistemOperacional.AutoSize = true;
+            checkBoxSistemOperacional.Location = new Point(20, 366);
+            checkBoxSistemOperacional.Name = "checkBoxSistemOperacional";
+            checkBoxSistemOperacional.Size = new Size(134, 19);
+            checkBoxSistemOperacional.TabIndex = 76;
+            checkBoxSistemOperacional.Text = "Sistema Operacional";
+            checkBoxSistemOperacional.UseVisualStyleBackColor = true;
+            checkBoxSistemOperacional.CheckedChanged += checkBoxSistemOperacional_CheckedChanged;
+            // 
+            // checkBoxValorEstimado
+            // 
+            checkBoxValorEstimado.AutoSize = true;
+            checkBoxValorEstimado.Location = new Point(20, 391);
+            checkBoxValorEstimado.Name = "checkBoxValorEstimado";
+            checkBoxValorEstimado.Size = new Size(104, 19);
+            checkBoxValorEstimado.TabIndex = 75;
+            checkBoxValorEstimado.Text = "Valor Estimado";
+            checkBoxValorEstimado.UseVisualStyleBackColor = true;
+            checkBoxValorEstimado.CheckedChanged += checkBoxValorEstimado_CheckedChanged;
+            // 
+            // checkBoxFabricante
+            // 
+            checkBoxFabricante.AutoSize = true;
+            checkBoxFabricante.Location = new Point(20, 241);
+            checkBoxFabricante.Name = "checkBoxFabricante";
+            checkBoxFabricante.Size = new Size(81, 19);
+            checkBoxFabricante.TabIndex = 74;
+            checkBoxFabricante.Text = "Fabricante";
+            checkBoxFabricante.UseVisualStyleBackColor = true;
+            checkBoxFabricante.CheckedChanged += checkBoxFabricante_CheckedChanged;
+            // 
+            // checkBoxTipo
+            // 
+            checkBoxTipo.AutoSize = true;
+            checkBoxTipo.Location = new Point(20, 216);
+            checkBoxTipo.Name = "checkBoxTipo";
+            checkBoxTipo.Size = new Size(49, 19);
+            checkBoxTipo.TabIndex = 73;
+            checkBoxTipo.Text = "Tipo";
+            checkBoxTipo.UseVisualStyleBackColor = true;
+            checkBoxTipo.CheckedChanged += checkBoxTipo_CheckedChanged;
+            // 
+            // checkBoxQuantidade
+            // 
+            checkBoxQuantidade.AutoSize = true;
+            checkBoxQuantidade.Location = new Point(20, 191);
+            checkBoxQuantidade.Name = "checkBoxQuantidade";
+            checkBoxQuantidade.Size = new Size(88, 19);
+            checkBoxQuantidade.TabIndex = 72;
+            checkBoxQuantidade.Text = "Quantidade";
+            checkBoxQuantidade.UseVisualStyleBackColor = true;
+            checkBoxQuantidade.CheckedChanged += checkBoxQuantidade_CheckedChanged;
+            // 
+            // checkBoxNomeEquipamento
+            // 
+            checkBoxNomeEquipamento.AutoSize = true;
+            checkBoxNomeEquipamento.Location = new Point(20, 166);
+            checkBoxNomeEquipamento.Name = "checkBoxNomeEquipamento";
+            checkBoxNomeEquipamento.Size = new Size(150, 19);
+            checkBoxNomeEquipamento.TabIndex = 71;
+            checkBoxNomeEquipamento.Text = "Nome do Equipamento";
+            checkBoxNomeEquipamento.UseVisualStyleBackColor = true;
+            checkBoxNomeEquipamento.CheckedChanged += checkBoxNomeEquipamento_CheckedChanged;
+            // 
+            // checkBoxUserRes
+            // 
+            checkBoxUserRes.AutoSize = true;
+            checkBoxUserRes.Location = new Point(20, 141);
+            checkBoxUserRes.Name = "checkBoxUserRes";
+            checkBoxUserRes.Size = new Size(134, 19);
+            checkBoxUserRes.TabIndex = 70;
+            checkBoxUserRes.Text = "Usuario Responsavel";
+            checkBoxUserRes.UseVisualStyleBackColor = true;
+            checkBoxUserRes.CheckedChanged += checkBoxUserRes_CheckedChanged;
+            // 
+            // checkBoxId
+            // 
+            checkBoxId.AutoSize = true;
+            checkBoxId.Location = new Point(20, 116);
+            checkBoxId.Name = "checkBoxId";
+            checkBoxId.Size = new Size(36, 19);
+            checkBoxId.TabIndex = 69;
+            checkBoxId.Text = "Id";
+            checkBoxId.UseVisualStyleBackColor = true;
+            checkBoxId.CheckedChanged += checkBoxId_CheckedChanged;
+            // 
             // FCamposExporta
             // 
             AcceptButton = BComfirmar;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(723, 524);
+            Controls.Add(checkBoxIdDepartamento);
+            Controls.Add(checkBoxIdLoja);
+            Controls.Add(checkBoxModelo);
+            Controls.Add(checkBoxProcessador);
+            Controls.Add(checkBoxMemoria);
+            Controls.Add(checkBoxHdSsd);
+            Controls.Add(checkBoxSistemOperacional);
+            Controls.Add(checkBoxValorEstimado);
+            Controls.Add(checkBoxFabricante);
+            Controls.Add(checkBoxTipo);
+            Controls.Add(checkBoxQuantidade);
+            Controls.Add(checkBoxNomeEquipamento);
+            Controls.Add(checkBoxUserRes);
+            Controls.Add(checkBoxId);
+            Controls.Add(buttonCsv);
             Controls.Add(labelNomeDpto);
             Controls.Add(buttonPesquisa1);
             Controls.Add(labelNomeLoja);
@@ -346,20 +372,6 @@
             Controls.Add(panel1);
             Controls.Add(button3);
             Controls.Add(BComfirmar);
-            Controls.Add(checkBoxIdDpto);
-            Controls.Add(checkBoxIdLoja);
-            Controls.Add(checkBoxModelo);
-            Controls.Add(checkBoxProcessador);
-            Controls.Add(checkBoxMemoria);
-            Controls.Add(checkBoxArmazenamento);
-            Controls.Add(checkBoxSO);
-            Controls.Add(checkBoxValor);
-            Controls.Add(checkBoxFrabricante);
-            Controls.Add(checkBoxTipo);
-            Controls.Add(checkBoxQuantidade);
-            Controls.Add(checkBoxNomeEquipamento);
-            Controls.Add(checkBoxUser);
-            Controls.Add(checkBoxId);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             MinimizeBox = false;
@@ -373,21 +385,6 @@
         }
 
         #endregion
-
-        private CheckBox checkBoxId;
-        private CheckBox checkBoxUser;
-        private CheckBox checkBoxNomeEquipamento;
-        private CheckBox checkBoxQuantidade;
-        private CheckBox checkBoxTipo;
-        private CheckBox checkBoxFrabricante;
-        private CheckBox checkBoxModelo;
-        private CheckBox checkBoxProcessador;
-        private CheckBox checkBoxMemoria;
-        private CheckBox checkBoxArmazenamento;
-        private CheckBox checkBoxSO;
-        private CheckBox checkBoxValor;
-        private CheckBox checkBoxIdLoja;
-        private CheckBox checkBoxIdDpto;
         private Button BComfirmar;
         private Button button3;
         private Panel panel1;
@@ -400,5 +397,20 @@
         private Label label15;
         private TextBox txtDpto;
         private Label label14;
+        private Button buttonCsv;
+        private CheckBox checkBoxIdDepartamento;
+        private CheckBox checkBoxIdLoja;
+        private CheckBox checkBoxModelo;
+        private CheckBox checkBoxProcessador;
+        private CheckBox checkBoxMemoria;
+        private CheckBox checkBoxHdSsd;
+        private CheckBox checkBoxSistemOperacional;
+        private CheckBox checkBoxValorEstimado;
+        private CheckBox checkBoxFabricante;
+        private CheckBox checkBoxTipo;
+        private CheckBox checkBoxQuantidade;
+        private CheckBox checkBoxNomeEquipamento;
+        private CheckBox checkBoxUserRes;
+        private CheckBox checkBoxId;
     }
 }

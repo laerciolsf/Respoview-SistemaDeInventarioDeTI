@@ -34,10 +34,10 @@ namespace ProjectX.controller
                 string sql = @"insert into itens 
                                 (usuarioResponsavel,nomeEquipamento,quantidade,tipo,fabricante,
                                 modelo,processador,memoria,hd_ssd,sistemaOperacional,valorEstimado,
-                                idLoja,idDepartamento) values 
+                                idLoja,idDepartamento,idBitLocker,chaveBitLocker) values 
                                 (@usuarioResponsavel,@nomeEquipamento,@quantidade,@tipo,@fabricante,
                                 @modelo,@processador,@memoria,@hd_ssd,@sistemaOperacional,@valorEstimado,
-                                @idLoja,@idDepartamento);";
+                                @idLoja,@idDepartamento,@idBitLocker,@chaveBitLocker);";
 
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
 
@@ -54,6 +54,9 @@ namespace ProjectX.controller
                 executacmd.Parameters.AddWithValue("@valorEstimado", obj.valorEstimado);
                 executacmd.Parameters.AddWithValue("@idLoja", obj.idLoja);
                 executacmd.Parameters.AddWithValue("@idDepartamento", obj.idDepartamento);
+                executacmd.Parameters.AddWithValue("@idBitLocker", obj.idBitLocker);
+                executacmd.Parameters.AddWithValue("@chaveBitLocker", obj.chaveBitLocker);
+
 
                 conexao.Open();
                 executacmd.ExecuteNonQuery();
@@ -166,6 +169,10 @@ namespace ProjectX.controller
                                hd_ssd = @hd_ssd,
                                sistemaOperacional = @sistemaOperacional,
                                valorEstimado = @valorEstimado,
+
+                               idBitLocker = @idBitLocker,
+                               chaveBitLocker = @chaveBitLocker,
+
                                idLoja = @idLoja,
                                idDepartamento = @idDepartamento
                                where id = @id;";
@@ -186,6 +193,8 @@ namespace ProjectX.controller
                 executacmd.Parameters.AddWithValue("@idLoja", obj.idLoja);
                 executacmd.Parameters.AddWithValue("@idDepartamento", obj.idDepartamento);
                 executacmd.Parameters.AddWithValue("@id", obj.id);
+                executacmd.Parameters.AddWithValue("@chaveBitLocker", obj.chaveBitLocker);
+                executacmd.Parameters.AddWithValue("@idBitLocker", obj.idBitLocker);
 
                 conexao.Open();
                 executacmd.ExecuteNonQuery();
@@ -281,6 +290,7 @@ namespace ProjectX.controller
             }
         }
 
+
         public void ExportarParaPDF(DataTable dados, string caminhoDoArquivo)
         {
             // Crie um documento PDF
@@ -349,7 +359,10 @@ namespace ProjectX.controller
                 }
                 y += 20; // Atualize a posição vertical para a próxima linha de dados
             }
+
             document.Save(caminhoDoArquivo); // Salve o documento PDF no caminho especificado
+
         }
     }
 }
+

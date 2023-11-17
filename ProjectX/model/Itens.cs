@@ -23,6 +23,8 @@ namespace ProjectX.model
         public double valorEstimado { get; set; }
         public int idLoja { get; set; }
         public int idDepartamento { get; set; }
+        public string idBitLocker { get; set; }
+        public string chaveBitLocker { get; set; }
 
     }
 }

@@ -80,6 +80,11 @@ namespace ProjectX
             FRelatorio tela = new FRelatorio();
             tela.Show();
         }
+
+        private void bitlokerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
