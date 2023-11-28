@@ -34,13 +34,13 @@
             itensToolStripMenuItem = new ToolStripMenuItem();
             departamentoToolStripMenuItem = new ToolStripMenuItem();
             lojaToolStripMenuItem = new ToolStripMenuItem();
-            usuarioToolStripMenuItem = new ToolStripMenuItem();
             historicoToolStripMenuItem = new ToolStripMenuItem();
             itensRemovidosToolStripMenuItem = new ToolStripMenuItem();
             rToolStripMenuItem = new ToolStripMenuItem();
             relatoriosToolStripMenuItem = new ToolStripMenuItem();
             usuariosToolStripMenuItem = new ToolStripMenuItem();
             cadastrarToolStripMenuItem = new ToolStripMenuItem();
+            usuarioToolStripMenuItem1 = new ToolStripMenuItem();
             segurançaToolStripMenuItem = new ToolStripMenuItem();
             alterarMinhaSenhaToolStripMenuItem = new ToolStripMenuItem();
             bitlokerToolStripMenuItem = new ToolStripMenuItem();
@@ -49,7 +49,6 @@
             sobreToolStripMenuItem1 = new ToolStripMenuItem();
             panel1 = new Panel();
             label1 = new Label();
-            usuarioToolStripMenuItem1 = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -73,45 +72,38 @@
             // 
             // cadastroToolStripMenuItem
             // 
-            cadastroToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { itensToolStripMenuItem, departamentoToolStripMenuItem, lojaToolStripMenuItem, usuarioToolStripMenuItem });
+            cadastroToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { itensToolStripMenuItem, departamentoToolStripMenuItem, lojaToolStripMenuItem });
             cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            cadastroToolStripMenuItem.Size = new Size(126, 22);
+            cadastroToolStripMenuItem.Size = new Size(180, 22);
             cadastroToolStripMenuItem.Text = "Cadastrar";
             cadastroToolStripMenuItem.Click += cadastroToolStripMenuItem_Click;
             // 
             // itensToolStripMenuItem
             // 
             itensToolStripMenuItem.Name = "itensToolStripMenuItem";
-            itensToolStripMenuItem.Size = new Size(150, 22);
+            itensToolStripMenuItem.Size = new Size(180, 22);
             itensToolStripMenuItem.Text = "Item";
             itensToolStripMenuItem.Click += itensToolStripMenuItem_Click;
             // 
             // departamentoToolStripMenuItem
             // 
             departamentoToolStripMenuItem.Name = "departamentoToolStripMenuItem";
-            departamentoToolStripMenuItem.Size = new Size(150, 22);
+            departamentoToolStripMenuItem.Size = new Size(180, 22);
             departamentoToolStripMenuItem.Text = "Departamento";
             departamentoToolStripMenuItem.Click += departamentoToolStripMenuItem_Click;
             // 
             // lojaToolStripMenuItem
             // 
             lojaToolStripMenuItem.Name = "lojaToolStripMenuItem";
-            lojaToolStripMenuItem.Size = new Size(150, 22);
+            lojaToolStripMenuItem.Size = new Size(180, 22);
             lojaToolStripMenuItem.Text = "Loja";
             lojaToolStripMenuItem.Click += lojaToolStripMenuItem_Click;
-            // 
-            // usuarioToolStripMenuItem
-            // 
-            usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
-            usuarioToolStripMenuItem.Size = new Size(150, 22);
-            usuarioToolStripMenuItem.Text = "Usuario";
-            usuarioToolStripMenuItem.Click += usuarioToolStripMenuItem_Click;
             // 
             // historicoToolStripMenuItem
             // 
             historicoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { itensRemovidosToolStripMenuItem });
             historicoToolStripMenuItem.Name = "historicoToolStripMenuItem";
-            historicoToolStripMenuItem.Size = new Size(126, 22);
+            historicoToolStripMenuItem.Size = new Size(180, 22);
             historicoToolStripMenuItem.Text = "Historico";
             // 
             // itensRemovidosToolStripMenuItem
@@ -125,14 +117,14 @@
             // 
             rToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { relatoriosToolStripMenuItem });
             rToolStripMenuItem.Name = "rToolStripMenuItem";
-            rToolStripMenuItem.Size = new Size(126, 22);
+            rToolStripMenuItem.Size = new Size(180, 22);
             rToolStripMenuItem.Text = "Relatórios";
             rToolStripMenuItem.Click += rToolStripMenuItem_Click;
             // 
             // relatoriosToolStripMenuItem
             // 
             relatoriosToolStripMenuItem.Name = "relatoriosToolStripMenuItem";
-            relatoriosToolStripMenuItem.Size = new Size(126, 22);
+            relatoriosToolStripMenuItem.Size = new Size(180, 22);
             relatoriosToolStripMenuItem.Text = "Relatórios";
             relatoriosToolStripMenuItem.Click += relatoriosToolStripMenuItem_Click;
             // 
@@ -149,6 +141,13 @@
             cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
             cadastrarToolStripMenuItem.Size = new Size(180, 22);
             cadastrarToolStripMenuItem.Text = "Cadastrar";
+            // 
+            // usuarioToolStripMenuItem1
+            // 
+            usuarioToolStripMenuItem1.Name = "usuarioToolStripMenuItem1";
+            usuarioToolStripMenuItem1.Size = new Size(180, 22);
+            usuarioToolStripMenuItem1.Text = "Usuario";
+            usuarioToolStripMenuItem1.Click += usuarioToolStripMenuItem1_Click;
             // 
             // segurançaToolStripMenuItem
             // 
@@ -180,14 +179,14 @@
             // sobreToolStripMenuItem
             // 
             sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
-            sobreToolStripMenuItem.Size = new Size(114, 22);
+            sobreToolStripMenuItem.Size = new Size(180, 22);
             sobreToolStripMenuItem.Text = "Manual";
             sobreToolStripMenuItem.Click += sobreToolStripMenuItem_Click;
             // 
             // sobreToolStripMenuItem1
             // 
             sobreToolStripMenuItem1.Name = "sobreToolStripMenuItem1";
-            sobreToolStripMenuItem1.Size = new Size(114, 22);
+            sobreToolStripMenuItem1.Size = new Size(180, 22);
             sobreToolStripMenuItem1.Text = "Sobre";
             // 
             // panel1
@@ -212,12 +211,6 @@
             label1.Size = new Size(313, 24);
             label1.TabIndex = 0;
             label1.Text = "Controle de Equipamentos de TI\r\n";
-            // 
-            // usuarioToolStripMenuItem1
-            // 
-            usuarioToolStripMenuItem1.Name = "usuarioToolStripMenuItem1";
-            usuarioToolStripMenuItem1.Size = new Size(180, 22);
-            usuarioToolStripMenuItem1.Text = "Usuario";
             // 
             // FMenu
             // 
@@ -254,7 +247,6 @@
         private ToolStripMenuItem ajudaToolStripMenuItem;
         private ToolStripMenuItem sobreToolStripMenuItem;
         private ToolStripMenuItem sobreToolStripMenuItem1;
-        private ToolStripMenuItem usuarioToolStripMenuItem;
         private Panel panel1;
         private Label label1;
         private ToolStripMenuItem relatoriosToolStripMenuItem;

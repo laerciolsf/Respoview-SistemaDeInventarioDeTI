@@ -146,7 +146,7 @@ namespace ProjectX.view
             obj.idLoja = int.Parse(txtLoja.Text);
             obj.idDepartamento = int.Parse(txtDpto.Text);
             obj.chaveBitLocker = txtchaveBitLocker.Text;
-            obj.idBitLocker = txtchaveBitLocker.Text;
+            obj.idBitLocker = txtidBitLocker.Text;
 
             itensController controller = new itensController();
 
@@ -314,6 +314,11 @@ namespace ProjectX.view
             pesquisa.ShowDialog();
             txtLoja.Text = pesquisa.selecionado.id.ToString();
             labelNomeLoja.Text = pesquisa.selecionado.loja;
+        }
+
+        private void txtidBitLocker_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -61,8 +61,7 @@ namespace ProjectX
 
         private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FUsuario tela = new FUsuario();
-            tela.Show();
+
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -83,7 +82,14 @@ namespace ProjectX
 
         private void bitlokerToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            FBitlocker tela = new FBitlocker();
+            tela.Show();
+        }
 
+        private void usuarioToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FUsuario tela = new FUsuario();
+            tela.Show();
         }
     }
 

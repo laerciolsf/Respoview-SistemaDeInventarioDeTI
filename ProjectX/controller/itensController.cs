@@ -208,6 +208,35 @@ namespace ProjectX.controller
             }
 
         }
+
+        public string BuscarChavePorIdentificador(string identificador)
+        {
+            try
+            {
+                using (MySqlCommand executacmd = new MySqlCommand("SELECT chaveBitLocker FROM itens WHERE idBitLocker = @identificador;", conexao))
+                {
+                    executacmd.Parameters.AddWithValue("@identificador", identificador);
+
+                    conexao.Open();
+                    object resultado = executacmd.ExecuteScalar();
+
+                    // Verifica se o resultado não é nulo antes de chamar ToString()
+                    string chave = resultado != null ? resultado.ToString() : null;
+                    return chave;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Registre a exceção em um log (ex: log4net, NLog) e, opcionalmente, relance a exceção
+                Console.WriteLine("Erro ao buscar chave: " + ex.Message);
+                throw;
+            }
+            finally
+            {
+                conexao.Close(); // Certifique-se de fechar a conexão mesmo se ocorrer uma exceção
+            }
+        }
+
         public void excluirItens(Itens obj)
         {
             try

@@ -220,6 +220,7 @@
             txtidBitLocker.Name = "txtidBitLocker";
             txtidBitLocker.Size = new Size(297, 23);
             txtidBitLocker.TabIndex = 92;
+            txtidBitLocker.TextChanged += txtidBitLocker_TextChanged;
             // 
             // label17
             // 
