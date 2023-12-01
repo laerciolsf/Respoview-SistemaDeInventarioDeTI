@@ -129,30 +129,59 @@ namespace ProjectX.controller
         }
 
 
+        // Método para buscar registros na tabela 'itens' com base em um valor de pesquisa no nome ou outros campos
         public DataTable buscaPorNome(string nome)
         {
             try
             {
+                // Cria uma nova tabela para armazenar os resultados da consulta
                 DataTable tabela = new DataTable();
-                string sql = "select * from itens where nomeEquipamento like @nomeEquipamento;";
 
-                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
-                executacmd.Parameters.AddWithValue("@nomeEquipamento", nome);
-                conexao.Open();
-                executacmd.ExecuteNonQuery();
+                // Definição da consulta SQL parametrizada usando o comando SELECT
+                string sql = "SELECT * FROM itens WHERE " +
+                             "nomeEquipamento LIKE @valorPesquisa " +
+                             "OR usuarioResponsavel LIKE @valorPesquisa " +
+                             "OR tipo LIKE @valorPesquisa " +
+                             "OR fabricante LIKE @valorPesquisa " +
+                             "OR modelo LIKE @valorPesquisa " +
+                             "OR CAST(id AS CHAR) LIKE @valorPesquisa;";
 
-                MySqlDataAdapter da = new MySqlDataAdapter(executacmd);
-                da.Fill(tabela);
+                // Cria um novo comando MySQL parametrizado
+                using (MySqlCommand executacmd = new MySqlCommand(sql, conexao))
+                {
+                    // Adiciona um parâmetro para o valor de pesquisa, usando '%' para corresponder a qualquer parte do texto
+                    executacmd.Parameters.AddWithValue("@valorPesquisa", "%" + nome + "%");
 
-                conexao.Close();
+                    // Abre a conexão com o banco de dados
+                    conexao.Open();
+
+                    // Cria um adaptador MySQL para preencher a tabela com os resultados da consulta
+                    using (MySqlDataAdapter da = new MySqlDataAdapter(executacmd))
+                    {
+                        // Preenche a tabela com os resultados da consulta
+                        da.Fill(tabela);
+                    }
+                }
+
+                // Retorna a tabela resultante da consulta
                 return tabela;
             }
             catch (Exception ex)
             {
+                // Exibe uma mensagem de erro em caso de exceção
                 MessageBox.Show("Erro ao consultar: " + ex.Message);
+
+                // Retorna nulo em caso de erro
                 return null;
             }
+            finally
+            {
+                // Garante que a conexão é fechada mesmo em caso de exceção
+                conexao.Close();
+            }
         }
+
+
         public void alterarItens(Itens obj)
         {
             try
@@ -272,7 +301,10 @@ namespace ProjectX.controller
                     throw new ArgumentNullException("filePath", "Caminho do arquivo CSV não pode ser vazio.");
                 }
 
-                using (StreamWriter sw = new StreamWriter(filePath))
+                // Gera um nome de arquivo alternativo se o arquivo já existir
+                string filePathAlternativo = GerarNomeAlternativo(filePath, "csv");
+
+                using (StreamWriter sw = new StreamWriter(filePathAlternativo))
                 {
                     // Escreve o cabeçalho com os nomes das colunas
                     for (int i = 0; i < data.Columns.Count; i++)
@@ -299,6 +331,24 @@ namespace ProjectX.controller
                         sw.WriteLine();
                     }
                 }
+            }
+
+            private string GerarNomeAlternativo(string filePath, string extensao)
+            {
+                string diretorio = Path.GetDirectoryName(filePath);
+                string nomeArquivo = Path.GetFileNameWithoutExtension(filePath);
+
+                int numero = 1;
+                string filePathAlternativo = Path.Combine(diretorio, $"{nomeArquivo}_{numero}.{extensao}");
+
+                // Verifica se o arquivo com o nome alternativo já existe
+                while (File.Exists(filePathAlternativo))
+                {
+                    numero++;
+                    filePathAlternativo = Path.Combine(diretorio, $"{nomeArquivo}_{numero}.{extensao}");
+                }
+
+                return filePathAlternativo;
             }
 
             private string FormatCSVField(object field, string separator)
@@ -337,24 +387,22 @@ namespace ProjectX.controller
 
             // Defina as larguras das colunas individualmente
             Dictionary<string, double> columnWidths = new Dictionary<string, double>
-
-
-            {
-                { "id", 28 },
-                { "usuarioResponsavel", 100 },
-                { "nomeEquipamento", 90 },
-                { "tipo", 55 },
-                { "quantidade", 33 },
-                { "fabricante", 55 },
-                { "modelo", 60 },
-                { "processador", 55 },
-                { "memoria", 50 },
-                { "hd_ssd", 75 },
-                { "sistemaOperacional", 80 },
-                { "valorEstimado", 42 },
-                { "idLoja", 28 },
-                { "idDepartamento", 46 }
-            };
+    {
+        { "id", 28 },
+        { "usuarioResponsavel", 100 },
+        { "nomeEquipamento", 90 },
+        { "tipo", 55 },
+        { "quantidade", 33 },
+        { "fabricante", 55 },
+        { "modelo", 60 },
+        { "processador", 55 },
+        { "memoria", 50 },
+        { "hd_ssd", 75 },
+        { "sistemaOperacional", 80 },
+        { "valorEstimado", 42 },
+        { "idLoja", 28 },
+        { "idDepartamento", 46 }
+    };
 
             // Remova as colunas que não devem ser exibidas
             string[] colunasExcluidas = { "idBitLocker", "chaveBitLocker" };
@@ -365,7 +413,6 @@ namespace ProjectX.controller
                     columnWidths.Remove(colunaExcluida);
                 }
             }
-            ///
 
             // Adicione o cabeçalho da tabela (excluindo as colunas removidas)
             foreach (DataColumn column in dados.Columns)
@@ -383,7 +430,7 @@ namespace ProjectX.controller
                     x += columnWidth; // Atualize a posição horizontal para a próxima coluna
                 }
             }
-           
+
             y += 20; // Atualize a posição vertical para os dados
 
             // Adicione os dados da tabela
@@ -405,9 +452,32 @@ namespace ProjectX.controller
                 y += 20; // Atualize a posição vertical para a próxima linha de dados
             }
 
-            document.Save(caminhoDoArquivo); // Salve o documento PDF no caminho especificado
+            // Gere um nome de arquivo alternativo se o arquivo já existir
+            string caminhoAlternativo = GerarNomeAlternativo(caminhoDoArquivo);
 
+            // Salve o documento PDF no caminho especificado ou no caminho alternativo gerado
+            document.Save(caminhoAlternativo);
         }
+
+        private string GerarNomeAlternativo(string caminhoDoArquivo)
+        {
+            string diretorio = Path.GetDirectoryName(caminhoDoArquivo);
+            string nomeArquivo = Path.GetFileNameWithoutExtension(caminhoDoArquivo);
+            string extensao = Path.GetExtension(caminhoDoArquivo);
+
+            int numero = 1;
+            string caminhoAlternativo = Path.Combine(diretorio, $"{nomeArquivo}_{numero}{extensao}");
+
+            // Verifique se o arquivo com o nome alternativo já existe
+            while (File.Exists(caminhoAlternativo))
+            {
+                numero++;
+                caminhoAlternativo = Path.Combine(diretorio, $"{nomeArquivo}_{numero}{extensao}");
+            }
+
+            return caminhoAlternativo;
+        }
+
     }
 }
 
