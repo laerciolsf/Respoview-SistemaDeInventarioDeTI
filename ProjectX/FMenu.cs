@@ -34,7 +34,7 @@ namespace ProjectX
         {
 
             FItens tela = new FItens();
-            tela.Show();
+            tela.ShowDialog();
         }
 
         private void cadastroToolStripMenuItem_Click(object sender, EventArgs e)
@@ -50,13 +50,13 @@ namespace ProjectX
         private void departamentoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FDpto tela = new FDpto();
-            tela.Show();
+            tela.ShowDialog();
         }
 
         private void lojaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FLoja tela = new FLoja();
-            tela.Show();
+            tela.ShowDialog();
         }
 
         private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -77,19 +77,19 @@ namespace ProjectX
         private void relatoriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FRelatorio tela = new FRelatorio();
-            tela.Show();
+            tela.ShowDialog();
         }
 
         private void bitlokerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FBitlocker tela = new FBitlocker();
-            tela.Show();
+            tela.ShowDialog();
         }
 
         private void usuarioToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             FUsuario tela = new FUsuario();
-            tela.Show();
+            tela.ShowDialog();
         }
     }
 
