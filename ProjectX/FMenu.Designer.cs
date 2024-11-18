@@ -36,6 +36,7 @@
             lojaToolStripMenuItem = new ToolStripMenuItem();
             historicoToolStripMenuItem = new ToolStripMenuItem();
             itensRemovidosToolStripMenuItem = new ToolStripMenuItem();
+            itensAlteradosToolStripMenuItem = new ToolStripMenuItem();
             rToolStripMenuItem = new ToolStripMenuItem();
             relatoriosToolStripMenuItem = new ToolStripMenuItem();
             usuariosToolStripMenuItem = new ToolStripMenuItem();
@@ -101,7 +102,7 @@
             // 
             // historicoToolStripMenuItem
             // 
-            historicoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { itensRemovidosToolStripMenuItem });
+            historicoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { itensRemovidosToolStripMenuItem, itensAlteradosToolStripMenuItem });
             historicoToolStripMenuItem.Name = "historicoToolStripMenuItem";
             historicoToolStripMenuItem.Size = new Size(180, 22);
             historicoToolStripMenuItem.Text = "Historico";
@@ -110,8 +111,15 @@
             // 
             itensRemovidosToolStripMenuItem.Name = "itensRemovidosToolStripMenuItem";
             itensRemovidosToolStripMenuItem.Size = new Size(180, 22);
-            itensRemovidosToolStripMenuItem.Text = "Itens removidos";
+            itensRemovidosToolStripMenuItem.Text = "Itens Excluidos";
             itensRemovidosToolStripMenuItem.Click += itensRemovidosToolStripMenuItem_Click;
+            // 
+            // itensAlteradosToolStripMenuItem
+            // 
+            itensAlteradosToolStripMenuItem.Name = "itensAlteradosToolStripMenuItem";
+            itensAlteradosToolStripMenuItem.Size = new Size(180, 22);
+            itensAlteradosToolStripMenuItem.Text = "Itens Alterados";
+            itensAlteradosToolStripMenuItem.Click += itensAlteradosToolStripMenuItem_Click;
             // 
             // rToolStripMenuItem
             // 
@@ -256,5 +264,6 @@
         private ToolStripMenuItem alterarMinhaSenhaToolStripMenuItem;
         private ToolStripMenuItem bitlokerToolStripMenuItem;
         private ToolStripMenuItem usuarioToolStripMenuItem1;
+        private ToolStripMenuItem itensAlteradosToolStripMenuItem;
     }
 }

@@ -13,7 +13,10 @@
     <Compile Update="view\FDpto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="view\FhistoricoExclusao.cs">
+    <Compile Update="view\FhistoricoItensExcluidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="view\FhistoricoItensAlterados.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="view\FItens.cs">

@@ -71,7 +71,7 @@ namespace ProjectX
 
         private void itensRemovidosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FhistoricoExclusao tela = new FhistoricoExclusao();
+            FhistoricoItensExcluidos tela = new FhistoricoItensExcluidos();
             tela.ShowDialog();
         }
 
@@ -90,6 +90,12 @@ namespace ProjectX
         private void usuarioToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             FUsuario tela = new FUsuario();
+            tela.ShowDialog();
+        }
+
+        private void itensAlteradosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FhistoricoItensAlterados tela = new FhistoricoItensAlterados();
             tela.ShowDialog();
         }
     }

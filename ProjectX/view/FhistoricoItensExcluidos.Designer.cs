@@ -1,6 +1,6 @@
 ﻿namespace ProjectX.view
 {
-    partial class FhistoricoExclusao
+    partial class FhistoricoItensExcluidos
     {
         /// <summary>
         /// Required designer variable.

@@ -11,34 +11,19 @@ using System.Windows.Forms;
 
 namespace ProjectX.view
 {
-    public partial class FhistoricoExclusao : Form
+    public partial class FhistoricoItensAlterados : Form
     {
-        public FhistoricoExclusao()
+        public FhistoricoItensAlterados()
         {
             InitializeComponent();
-        }
-
-        private void FhistoricoExclusao_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void buttonAtualizar_Click(object sender, EventArgs e)
         {
             try
             {
-                ItensRemovidosController controller = new ItensRemovidosController();
-                DataTable tabela = controller.listarItensRemovidos();
+                itensAlteradosController controller = new itensAlteradosController();
+                DataTable tabela = controller.listarItensAlterados();
 
                 if (tabela != null && tabela.Rows.Count > 0)
                 {
