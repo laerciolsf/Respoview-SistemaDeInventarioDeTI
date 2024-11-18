@@ -107,3 +107,4 @@ D:\ProjetoMallon\ProjectX\bin\Debug\net6.0-windows\SixLabors.Fonts.dll
 D:\ProjetoMallon\ProjectX\bin\Debug\net6.0-windows\SixLabors.ImageSharp.dll
 D:\ProjetoMallon\ProjectX\bin\Debug\net6.0-windows\de\PdfSharpCore.resources.dll
 D:\ProjetoMallon\ProjectX\obj\Debug\net6.0-windows\ProjectX.view.FBitlocker.resources
+D:\ProjetoMallon\ProjectX\obj\Debug\net6.0-windows\ProjectX.view.FhistoricoExclusao.resources

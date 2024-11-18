@@ -81,21 +81,21 @@
             // itensToolStripMenuItem
             // 
             itensToolStripMenuItem.Name = "itensToolStripMenuItem";
-            itensToolStripMenuItem.Size = new Size(180, 22);
+            itensToolStripMenuItem.Size = new Size(150, 22);
             itensToolStripMenuItem.Text = "Item";
             itensToolStripMenuItem.Click += itensToolStripMenuItem_Click;
             // 
             // departamentoToolStripMenuItem
             // 
             departamentoToolStripMenuItem.Name = "departamentoToolStripMenuItem";
-            departamentoToolStripMenuItem.Size = new Size(180, 22);
+            departamentoToolStripMenuItem.Size = new Size(150, 22);
             departamentoToolStripMenuItem.Text = "Departamento";
             departamentoToolStripMenuItem.Click += departamentoToolStripMenuItem_Click;
             // 
             // lojaToolStripMenuItem
             // 
             lojaToolStripMenuItem.Name = "lojaToolStripMenuItem";
-            lojaToolStripMenuItem.Size = new Size(180, 22);
+            lojaToolStripMenuItem.Size = new Size(150, 22);
             lojaToolStripMenuItem.Text = "Loja";
             lojaToolStripMenuItem.Click += lojaToolStripMenuItem_Click;
             // 
@@ -109,8 +109,8 @@
             // itensRemovidosToolStripMenuItem
             // 
             itensRemovidosToolStripMenuItem.Name = "itensRemovidosToolStripMenuItem";
-            itensRemovidosToolStripMenuItem.Size = new Size(226, 22);
-            itensRemovidosToolStripMenuItem.Text = "Itens alterados ou removidos";
+            itensRemovidosToolStripMenuItem.Size = new Size(180, 22);
+            itensRemovidosToolStripMenuItem.Text = "Itens removidos";
             itensRemovidosToolStripMenuItem.Click += itensRemovidosToolStripMenuItem_Click;
             // 
             // rToolStripMenuItem
@@ -124,7 +124,7 @@
             // relatoriosToolStripMenuItem
             // 
             relatoriosToolStripMenuItem.Name = "relatoriosToolStripMenuItem";
-            relatoriosToolStripMenuItem.Size = new Size(180, 22);
+            relatoriosToolStripMenuItem.Size = new Size(126, 22);
             relatoriosToolStripMenuItem.Text = "Relatórios";
             relatoriosToolStripMenuItem.Click += relatoriosToolStripMenuItem_Click;
             // 
@@ -139,13 +139,13 @@
             // 
             cadastrarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { usuarioToolStripMenuItem1 });
             cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
-            cadastrarToolStripMenuItem.Size = new Size(180, 22);
+            cadastrarToolStripMenuItem.Size = new Size(124, 22);
             cadastrarToolStripMenuItem.Text = "Cadastrar";
             // 
             // usuarioToolStripMenuItem1
             // 
             usuarioToolStripMenuItem1.Name = "usuarioToolStripMenuItem1";
-            usuarioToolStripMenuItem1.Size = new Size(180, 22);
+            usuarioToolStripMenuItem1.Size = new Size(114, 22);
             usuarioToolStripMenuItem1.Text = "Usuario";
             usuarioToolStripMenuItem1.Click += usuarioToolStripMenuItem1_Click;
             // 
@@ -179,14 +179,14 @@
             // sobreToolStripMenuItem
             // 
             sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
-            sobreToolStripMenuItem.Size = new Size(180, 22);
+            sobreToolStripMenuItem.Size = new Size(114, 22);
             sobreToolStripMenuItem.Text = "Manual";
             sobreToolStripMenuItem.Click += sobreToolStripMenuItem_Click;
             // 
             // sobreToolStripMenuItem1
             // 
             sobreToolStripMenuItem1.Name = "sobreToolStripMenuItem1";
-            sobreToolStripMenuItem1.Size = new Size(180, 22);
+            sobreToolStripMenuItem1.Size = new Size(114, 22);
             sobreToolStripMenuItem1.Text = "Sobre";
             // 
             // panel1

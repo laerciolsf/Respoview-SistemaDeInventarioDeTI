@@ -71,7 +71,8 @@ namespace ProjectX
 
         private void itensRemovidosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FhistoricoExclusao tela = new FhistoricoExclusao();
+            tela.ShowDialog();
         }
 
         private void relatoriosToolStripMenuItem_Click(object sender, EventArgs e)

@@ -17,7 +17,7 @@ namespace ProjectX.controller
 
         public usuarioController()
         {
-            this.conexao = new conn().GetConnection();  
+            this.conexao = new conn().GetConnection();
         }
 
         public void cadastrarUsuario(Usuario obj)
