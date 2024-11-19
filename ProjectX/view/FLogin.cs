@@ -26,13 +26,13 @@ namespace ProjectX.view
 
         private void ButtonEntrar_Click(object sender, EventArgs e)
         {
-            if (txtLogin.Text != " ")
+            if (!string.IsNullOrWhiteSpace(txtLogin.Text))
             {
                 usuarioController user = new usuarioController();
                 FMenu.usuario_logado = user.buscaLogin(txtLogin.Text, txtSenha.Text);
                 if (FMenu.usuario_logado == null)
                 {
-                    MessageBox.Show("Usuario ou senha inválidos!");
+                    MessageBox.Show("Usuário ou senha inválidos!");
                     txtSenha.Clear();
                     txtLogin.Focus();
                     txtLogin.SelectAll();
@@ -41,7 +41,6 @@ namespace ProjectX.view
                 {
                     Close();
                 }
-
             }
             else
             {
@@ -49,5 +48,6 @@ namespace ProjectX.view
                 txtLogin.Focus();
             }
         }
+
     }
 }

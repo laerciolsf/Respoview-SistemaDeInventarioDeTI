@@ -23,6 +23,25 @@ namespace ProjectX
             {
                 Application.Exit();
             }
+            else if (usuario_logado.nivelAcesso != 1)
+            {
+                MessageBox.Show($"Usuário logado: {usuario_logado.nome}, Nível de Acesso: {usuario_logado.nivelAcesso}");
+                // Oculta menus administrativos para gerenciar usuarios
+                if (usuariosToolStripMenuItem != null)
+                {
+                    usuariosToolStripMenuItem.Enabled = false;
+                }
+              
+            }
+            else if (usuario_logado.nivelAcesso == 1)
+            {
+                MessageBox.Show($"Usuário logado: {usuario_logado.nome}, Nível de Acesso: {usuario_logado.nivelAcesso}");
+                // Exibe menus administrativos para gerenciar usuarios
+                if (usuariosToolStripMenuItem != null)
+                {
+                    usuariosToolStripMenuItem.Enabled = true;
+                }
+            }
         }
 
         private void rToolStripMenuItem_Click(object sender, EventArgs e)
@@ -97,6 +116,11 @@ namespace ProjectX
         {
             FhistoricoItensAlterados tela = new FhistoricoItensAlterados();
             tela.ShowDialog();
+        }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //aba usuarios
         }
     }
 

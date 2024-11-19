@@ -1,0 +1,4 @@
+Nivel 1 (Adm) = Acesso Total (Pode criar novos users)
+Nivel 2 = Visualizar, Adicionar, Alterar e Excluir Itens (Não pode criar novos users)
+Nivel 3 = Visualizar e Adicionar Itens (Não pode criar novos users)
+Nivel 4 = Visualizar Itens (Não pode criar novos users)

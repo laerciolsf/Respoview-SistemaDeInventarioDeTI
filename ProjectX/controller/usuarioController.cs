@@ -1,10 +1,5 @@
-﻿
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using ProjectX.model;
@@ -24,29 +19,27 @@ namespace ProjectX.controller
         {
             try
             {
-                string sql = @"insert into usuarios 
-                                (nomeCompleto,login,
-                                senha) values 
-                                (@nome,@login,
-                                MD5(@senha));";
+                string sql = @"INSERT INTO usuarios 
+                               (nomeCompleto, login, senha, nivelAcesso) 
+                               VALUES 
+                               (@nome, @login, MD5(@senha), @nivelAcesso);";
 
-                MySqlCommand executacmd = new MySqlCommand(sql,conexao);
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
 
                 executacmd.Parameters.AddWithValue("@nome", obj.nome);
-                executacmd.Parameters.AddWithValue("@login", obj.login);               
+                executacmd.Parameters.AddWithValue("@login", obj.login);
                 executacmd.Parameters.AddWithValue("@senha", obj.senha);
+                executacmd.Parameters.AddWithValue("@nivelAcesso", obj.nivelAcesso); // Novo campo
 
                 conexao.Open();
                 executacmd.ExecuteNonQuery();
                 MessageBox.Show("Usuário cadastrado com sucesso");
                 conexao.Close();
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao cadastrar: " + ex.Message);
             }
-            
         }
 
         public DataTable listarUsuarios()
@@ -54,7 +47,7 @@ namespace ProjectX.controller
             try
             {
                 DataTable tabela = new DataTable();
-                string sql = "select * from usuarios;";
+                string sql = "SELECT id, nomeCompleto, login, nivelAcesso FROM usuarios;";
 
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 conexao.Open();
@@ -65,21 +58,20 @@ namespace ProjectX.controller
 
                 conexao.Close();
                 return tabela;
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("Erro ao consultar: " + ex.Message);
                 return null;
             }
-
         }
-
 
         public DataTable buscaPorNome(string nome)
         {
             try
             {
                 DataTable tabela = new DataTable();
-                string sql = "select * from usuarios where nomeCompleto like @nome;";
+                string sql = "SELECT * FROM usuarios WHERE nomeCompleto LIKE @nome;";
 
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 executacmd.Parameters.AddWithValue("@nome", nome);
@@ -97,67 +89,63 @@ namespace ProjectX.controller
                 MessageBox.Show("Erro ao consultar: " + ex.Message);
                 return null;
             }
-
         }
 
         public void alterarUsuario(Usuario obj)
         {
             try
             {
-                string sql = @"update usuarios set nomeComleto = @nome,
-                                login = @login,                
-                                senha = MD5(@senha)
-                                where id = @idusuario;";
+                string sql = @"UPDATE usuarios 
+                               SET nomeCompleto = @nome,
+                                   login = @login,                
+                                   senha = MD5(@senha),
+                                   nivelAcesso = @nivelAcesso
+                               WHERE id = @idusuario;";
 
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
 
                 executacmd.Parameters.AddWithValue("@nome", obj.nome);
                 executacmd.Parameters.AddWithValue("@login", obj.login);
                 executacmd.Parameters.AddWithValue("@senha", obj.senha);
+                executacmd.Parameters.AddWithValue("@nivelAcesso", obj.nivelAcesso); // Novo campo
                 executacmd.Parameters.AddWithValue("@idusuario", obj.id);
 
                 conexao.Open();
                 executacmd.ExecuteNonQuery();
                 MessageBox.Show("Usuário alterado com sucesso");
                 conexao.Close();
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao alterar: " + ex.Message);
             }
-
         }
 
         public void excluirUsuario(Usuario obj)
         {
             try
             {
-                string sql = "delete from usuarios where id = @idusuario;";
+                string sql = "DELETE FROM usuarios WHERE id = @idusuario;";
 
-                MySqlCommand executacmd = new MySqlCommand(sql,conexao);
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 executacmd.Parameters.AddWithValue("@idusuario", obj.id);
 
                 conexao.Open();
                 executacmd.ExecuteNonQuery();
                 MessageBox.Show("Usuário excluído com sucesso!");
                 conexao.Close();
-
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Aconteceu um erro: " + ex.Message);
             }
-
         }
 
-
-        //Busca login
         public Usuario buscaLogin(string login, string senha)
         {
             try
             {
-                string sql = "select * from usuarios where login = @login and senha= MD5(@senha)";
+                string sql = "select * from usuarios where login = @login and senha = MD5(@senha)";
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 executacmd.Parameters.AddWithValue("@login", login);
                 executacmd.Parameters.AddWithValue("@senha", senha);
@@ -176,7 +164,9 @@ namespace ProjectX.controller
                         u.nome = resultado.GetString("nomeCompleto");
                         u.login = resultado.GetString("login");
                         u.senha = resultado.GetString("senha");
-                        
+
+                        // Certifique-se de que o campo nivelAcesso existe na tabela
+                        u.nivelAcesso = resultado.GetInt16("nivelAcesso");
                     }
 
                     resultado.Close();
@@ -189,7 +179,6 @@ namespace ProjectX.controller
                     conexao.Close();
                     return null;
                 }
-
             }
             catch (Exception ex)
             {
@@ -198,6 +187,5 @@ namespace ProjectX.controller
             }
         }
 
-       
     }
 }
