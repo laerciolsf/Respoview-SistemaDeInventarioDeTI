@@ -108,6 +108,7 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(679, 66);
             panel2.TabIndex = 0;
+            panel2.Paint += panel2_Paint;
             // 
             // BPesquisa
             // 
