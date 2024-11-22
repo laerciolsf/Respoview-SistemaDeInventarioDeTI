@@ -171,11 +171,19 @@ namespace ProjectX.view
         }
         private void botaoNovo_Click(object sender, EventArgs e)
         {
+            if (FMenu.usuario_logado.nivelAcesso == 3) // Usuário de nível 3 (somente leitura)
+            {
+                MessageBox.Show("Você não tem permissão para adicionar novos itens.",
+                    "Acesso Negado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             habilitarCampos();
             limparCampos();
             status = "inserindo";
             tabControl1.SelectedTab = tabDados;
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
             string nome = "%" + textBox1.Text + "%";
@@ -198,59 +206,97 @@ namespace ProjectX.view
         private void FItens_Load(object sender, EventArgs e)
         {
             desabilitarCampos();
+
+            // Verifica o nível de acesso do usuário logado
+            if (FMenu.usuario_logado.nivelAcesso == 3) // Somente leitura
+            {
+                MessageBox.Show($"Bem-vindo(a), {FMenu.usuario_logado.nome}. Você está em modo somente leitura.",
+                    "Acesso Restrito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Desabilita os botões que permitem alterações
+                botaoNovo.Enabled = false;
+                botaoEditar.Enabled = false;
+                botaoExcluir.Enabled = false;
+
+                // Desabilita a edição no DataGridView
+                dataGridView1.ReadOnly = true;
+                dataGridView1.AllowUserToAddRows = false;
+                dataGridView1.AllowUserToDeleteRows = false;
+                dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+                // Caso necessário, desabilite outros controles específicos
+                buttonPesquisa1.Enabled = false;
+                buttonPesquisa2.Enabled = false;
+            }
         }
+
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //if para evitar o bug do botao novo
             if (status == "inserindo")
             {
                 desabilitarCampos();
                 status = "";
             }
 
-            //Pegar os dados da grid para os campos
-            txtId.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            txtUsuarioResponsavel.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            txtNome.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            txtQtde.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-            txtTipo.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-            txtFabricante.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-            txtModelo.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-            txtProcessador.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-            txtMemoria.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
-            txtHd.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
-            txtSo.Text = dataGridView1.CurrentRow.Cells[10].Value.ToString();
-            txtValor.Text = dataGridView1.CurrentRow.Cells[11].Value.ToString();
-            txtLoja.Text = dataGridView1.CurrentRow.Cells[12].Value.ToString();
-            txtDpto.Text = dataGridView1.CurrentRow.Cells[13].Value.ToString();
+            // Pegar os dados da grid para os campos
+            if (dataGridView1.CurrentRow != null)
+            {
+                txtId.Text = dataGridView1.CurrentRow.Cells[0].Value?.ToString() ?? string.Empty;
+                txtUsuarioResponsavel.Text = dataGridView1.CurrentRow.Cells[1].Value?.ToString() ?? string.Empty;
+                txtNome.Text = dataGridView1.CurrentRow.Cells[2].Value?.ToString() ?? string.Empty;
+                txtQtde.Text = dataGridView1.CurrentRow.Cells[3].Value?.ToString() ?? string.Empty;
+                txtTipo.Text = dataGridView1.CurrentRow.Cells[4].Value?.ToString() ?? string.Empty;
+                txtFabricante.Text = dataGridView1.CurrentRow.Cells[5].Value?.ToString() ?? string.Empty;
+                txtModelo.Text = dataGridView1.CurrentRow.Cells[6].Value?.ToString() ?? string.Empty;
+                txtProcessador.Text = dataGridView1.CurrentRow.Cells[7].Value?.ToString() ?? string.Empty;
+                txtMemoria.Text = dataGridView1.CurrentRow.Cells[8].Value?.ToString() ?? string.Empty;
+                txtHd.Text = dataGridView1.CurrentRow.Cells[9].Value?.ToString() ?? string.Empty;
+                txtSo.Text = dataGridView1.CurrentRow.Cells[10].Value?.ToString() ?? string.Empty;
+                txtValor.Text = dataGridView1.CurrentRow.Cells[11].Value?.ToString() ?? string.Empty;
+                txtLoja.Text = dataGridView1.CurrentRow.Cells[12].Value?.ToString() ?? string.Empty;
+                txtDpto.Text = dataGridView1.CurrentRow.Cells[13].Value?.ToString() ?? string.Empty;
+                txtchaveBitLocker.Text = dataGridView1.CurrentRow.Cells[14].Value?.ToString() ?? string.Empty;
+                txtidBitLocker.Text = dataGridView1.CurrentRow.Cells[15].Value?.ToString() ?? string.Empty;
 
-            txtchaveBitLocker.Text = dataGridView1.CurrentRow.Cells[14].Value.ToString();
-            txtidBitLocker.Text = dataGridView1.CurrentRow.Cells[15].Value.ToString();
+                // Habilita/desabilita botões com base no nível de acesso
+                if (FMenu.usuario_logado.nivelAcesso == 3) // Nível 3: Somente leitura
+                {
+                    botaoEditar.Enabled = false;
+                    botaoExcluir.Enabled = false;
+                }
+                else
+                {
+                    botaoEditar.Enabled = true;
+                    botaoExcluir.Enabled = true;
+                }
 
-
-            //habilita os botões
-            botaoEditar.Enabled = true;
-            botaoExcluir.Enabled = true;
-            //Vai para a aba de dados
-            tabControl1.SelectedTab = tabDados;
+                // Define a aba de dados como ativa
+                tabControl1.SelectedTab = tabDados;
+            }
         }
+
 
         private void botaoExcluir_Click(object sender, EventArgs e)
         {
+            if (FMenu.usuario_logado.nivelAcesso == 3) // Usuário de nível 3
+            {
+                MessageBox.Show("Você não tem permissão para excluir itens.",
+                    "Acesso Negado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             DialogResult dialogResult =
-             MessageBox.Show
-             ("Tem certeza que deseja excluir?",
-             "Pergunta", MessageBoxButtons.YesNo);
+                MessageBox.Show("Tem certeza que deseja excluir?", "Pergunta", MessageBoxButtons.YesNo);
+
             if (dialogResult == DialogResult.Yes)
             {
-                //Faz a exclusão
                 Itens obj = new Itens();
                 obj.id = int.Parse(txtId.Text);
 
                 itensController controller = new itensController();
                 controller.excluirItens(obj);
+
                 dataGridView1.DataSource = controller.listarItens();
                 limparCampos();
                 botaoEditar.Enabled = false;
@@ -259,11 +305,20 @@ namespace ProjectX.view
             }
         }
 
+
         private void botaoEditar_Click(object sender, EventArgs e)
         {
+            if (FMenu.usuario_logado.nivelAcesso == 3) // Usuário de nível 3
+            {
+                MessageBox.Show("Você não tem permissão para editar itens.",
+                    "Acesso Negado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             habilitarCampos();
             status = "alterando";
         }
+
 
         private void button3_Click(object sender, EventArgs e)
         {
