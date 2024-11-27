@@ -82,6 +82,74 @@ LOCK TABLES `itens` WRITE;
 INSERT INTO `itens` VALUES (21,'Henry Abakati','VWCNI-TI','1','Notebook','Dell','Ispiron','I5 ','8GB DDR3','1TB HDD / 480GB SSD','Windows 10 Pro',10000,1,3,'',''),(22,'Laércio Soares Fragoso','TOYCNI-TI','1','Notebook','Dell','Vostro','I7 8565U','8GB DDR4','1TB HDD / 120 SSD','Windows 10 Pro',3000,3,3,'446127-670747-219296-399410-232782-496848-262163-373032','446127-670747-219296-399410-232782-496848-262163-373032'),(23,'Maria','TOYCNI-TABLET','1','Tablet','Sony','12435JDC','','8GB','64GB','Android 11',3000,3,2,NULL,NULL),(24,'Maicon Solza','TOYCNI-PECAS','1','Descktop','ASUS','X552E','Intel I9','32GB','1TB','Windows 11',12000,3,10,'',''),(26,'Mateus','BabySung','1','Notebook','Sansung','Sansungbook','I3 1115g4','4GB','240SSD','Windows 11 ',3000,14,11,NULL,NULL),(28,'Rafa','TOYCNI-GARANTIA','1','Notebook','Dell','VOSTRO 78944','I9 9967K','8GB DDR4','1TB HDD 1TBSSD\'','Windows 12 pro',8000,3,2,'446127-670747-219296-399410-232782-496848-262163-373032','446127-670747-219296-399410-232782-496848-262163-373032'),(29,'Leandro','TOYCNI-RH','10','Notebook','Dell','ABC123','I9 1000K','8 GB DDR7','120SSD 2TB HDDD','Windows 15',15000,3,9,'DEU-CERTO','DEU-CERTO'),(30,'Lucas Santos','TOYCNI-OFCINA3','1','Notebook','Dell','X552E','I7 3770','16GB','480SSD','WINDOWS XP',19000,3,2,'SUA CHAVE TESTE DEU BOA','TESTE'),(32,'Eduardo','TOYCNI-OFICINA10','1','Notebook','Positivo','X66y','I7 3770','8GB DDR4','240SSD 1TB','Windows 10',2500,3,2,'teste','kkkkkkkkk');
 /*!40000 ALTER TABLE `itens` ENABLE KEYS */;
 UNLOCK TABLES;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `antes_de_atualizar_item` BEFORE UPDATE ON `itens` FOR EACH ROW BEGIN
+    INSERT INTO `log_alteracoes` (
+        `idItem`, 
+        `usuarioResponsavel_antes`, `nomeEquipamento_antes`, `quantidade_antes`, `tipo_antes`, `fabricante_antes`, `modelo_antes`, 
+        `processador_antes`, `memoria_antes`, `hd_ssd_antes`, `sistemaOperacional_antes`, `valorEstimado_antes`, 
+        `idLoja_antes`, `idDepartamento_antes`, `idBitLocker_antes`, `chaveBitLocker_antes`, 
+        `usuarioResponsavel_depois`, `nomeEquipamento_depois`, `quantidade_depois`, `tipo_depois`, `fabricante_depois`, 
+        `modelo_depois`, `processador_depois`, `memoria_depois`, `hd_ssd_depois`, `sistemaOperacional_depois`, 
+        `valorEstimado_depois`, `idLoja_depois`, `idDepartamento_depois`, `idBitLocker_depois`, `chaveBitLocker_depois`, 
+        `dataHoraAlteracao`
+    )
+    VALUES (
+        -- Valores antigos (antes da alteração)
+        OLD.id, OLD.usuarioResponsavel, OLD.nomeEquipamento, OLD.quantidade, OLD.tipo, OLD.fabricante, OLD.modelo, 
+        OLD.processador, OLD.memoria, OLD.hd_ssd, OLD.sistemaOperacional, OLD.valorEstimado, 
+        OLD.idLoja, OLD.idDepartamento, OLD.idBitLocker, OLD.chaveBitLocker,
+        
+        -- Valores novos (depois da alteração)
+        NEW.usuarioResponsavel, NEW.nomeEquipamento, NEW.quantidade, NEW.tipo, NEW.fabricante, 
+        NEW.modelo, NEW.processador, NEW.memoria, NEW.hd_ssd, NEW.sistemaOperacional, 
+        NEW.valorEstimado, NEW.idLoja, NEW.idDepartamento, NEW.idBitLocker, NEW.chaveBitLocker, 
+
+        -- Data e hora da alteração
+        NOW()
+    );
+END */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `após_excluir_item` AFTER DELETE ON `itens` FOR EACH ROW BEGIN
+    INSERT INTO `log_exclusoes` (
+        `idItem`, `usuarioResponsavel`, `nomeEquipamento`, `quantidade`, `tipo`, `fabricante`, `modelo`, 
+        `processador`, `memoria`, `hd_ssd`, `sistemaOperacional`, `valorEstimado`, 
+        `idLoja`, `idDepartamento`, `idBitLocker`, `chaveBitLocker`, 
+        `usuarioExclusao`, `dataHoraExclusao`
+    )
+    VALUES (
+        OLD.id, OLD.usuarioResponsavel, OLD.nomeEquipamento, OLD.quantidade, OLD.tipo, OLD.fabricante, OLD.modelo, 
+        OLD.processador, OLD.memoria, OLD.hd_ssd, OLD.sistemaOperacional, OLD.valorEstimado, 
+        OLD.idLoja, OLD.idDepartamento, OLD.idBitLocker, OLD.chaveBitLocker, 
+        NULL, NOW()  -- O campo `usuarioExclusao` será preenchido pelo sistema ou deixado em branco
+    );
+END */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 
 --
 -- Table structure for table `log_alteracoes`
@@ -229,6 +297,14 @@ LOCK TABLES `usuarios` WRITE;
 INSERT INTO `usuarios` VALUES (1,'Administrador','admin','202cb962ac59075b964b07152d234b70',1),(2,'','','d41d8cd98f00b204e9800998ecf8427e',4),(3,'sdfdsfdsf','dfdsfdsf','7f4b53f61cfce6127a298189802d7c6e',4),(4,'Laercio','laio','caf1a3dfb505ffed0d024130f58c5cfa',4),(5,'cxvcxv','xcvxcv','0376f6bba322ff9b8c3c692914e9de19',4),(6,'laio','laio soares','202cb962ac59075b964b07152d234b70',3);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Dumping events for database 'mallon_bd'
+--
+
+--
+-- Dumping routines for database 'mallon_bd'
+--
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -239,4 +315,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-11-27  0:32:39
+-- Dump completed on 2024-11-27  2:05:02
