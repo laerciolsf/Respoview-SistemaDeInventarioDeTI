@@ -70,7 +70,11 @@
             Controls.Add(buttonAtualizar);
             Controls.Add(label1);
             Controls.Add(dataGridItensRemovidos);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FhistoricoItensAlterados";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FhistoricoItensAlterados";
             ((System.ComponentModel.ISupportInitialize)dataGridItensRemovidos).EndInit();
             ResumeLayout(false);

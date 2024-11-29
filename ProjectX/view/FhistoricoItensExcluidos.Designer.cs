@@ -64,7 +64,7 @@
             buttonAtualizar.UseVisualStyleBackColor = true;
             buttonAtualizar.Click += buttonAtualizar_Click;
             // 
-            // FhistoricoExclusao
+            // FhistoricoItensExcluidos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -72,7 +72,11 @@
             Controls.Add(buttonAtualizar);
             Controls.Add(label1);
             Controls.Add(dataGridItensRemovidos);
-            Name = "FhistoricoExclusao";
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "FhistoricoItensExcluidos";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FhistoricoExclusao";
             Load += FhistoricoExclusao_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridItensRemovidos).EndInit();
